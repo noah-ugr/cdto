@@ -1,0 +1,213 @@
+[
+  {
+    "node": "orchestrator",
+    "update": {
+      "task_queue": [
+        "simulator",
+        "xai"
+      ],
+      "retry_count": 0,
+      "validation_violations": [],
+      "episodic_delta": {},
+      "episodic_reference_kpis": {},
+      "reference_config": {},
+      "reference_kpis": {},
+      "turn_log_start": 15,
+      "report": "",
+      "episodic_report": "",
+      "xai_failed": false,
+      "correction_history": [],
+      "context_data": ""
+    }
+  },
+  {
+    "node": "dispatcher",
+    "update": {
+      "current_task": "simulator",
+      "task_queue": [
+        "xai"
+      ]
+    }
+  },
+  {
+    "node": "simulator",
+    "update": {
+      "simulation_ready": true,
+      "validation_errors": [],
+      "current_kpis": {
+        "general_results[0].Simulation_period_hours": 2000.0,
+        "general_results[0].P4_total_busy_hours": 956.0,
+        "general_results[0].P4_total_busy_percent": 47.8,
+        "general_results[0].Intervention_time_hours": 1088.0,
+        "general_results[0].Activities_overlap_percent": 0.0,
+        "general_results[0].Net_plan_unavailability_hours": 282.0,
+        "general_results[0].Net_plan_unavailability_percent": 14.1,
+        "general_results[0].Net_plan_availability_hours": 1718.0,
+        "general_results[0].Net_plan_availability_percent": 85.9
+      },
+      "kpi_delta": {
+        "general_results[0].Activities_overlap_percent": {
+          "baseline": 0.0,
+          "current": 0.0,
+          "delta_abs": 0.0,
+          "delta_pct": null
+        },
+        "general_results[0].Intervention_time_hours": {
+          "baseline": 1130.0,
+          "current": 1088.0,
+          "delta_abs": -42.0,
+          "delta_pct": -3.7168141592920354
+        },
+        "general_results[0].Net_plan_availability_hours": {
+          "baseline": 1750.0,
+          "current": 1718.0,
+          "delta_abs": -32.0,
+          "delta_pct": -1.8285714285714287
+        },
+        "general_results[0].Net_plan_availability_percent": {
+          "baseline": 87.5,
+          "current": 85.9,
+          "delta_abs": -1.5999999999999943,
+          "delta_pct": -1.828571428571422
+        },
+        "general_results[0].Net_plan_unavailability_hours": {
+          "baseline": 250.0,
+          "current": 282.0,
+          "delta_abs": 32.0,
+          "delta_pct": 12.8
+        },
+        "general_results[0].Net_plan_unavailability_percent": {
+          "baseline": 12.5,
+          "current": 14.1,
+          "delta_abs": 1.5999999999999996,
+          "delta_pct": 12.799999999999997
+        },
+        "general_results[0].P4_total_busy_hours": {
+          "baseline": 1002.0,
+          "current": 956.0,
+          "delta_abs": -46.0,
+          "delta_pct": -4.590818363273453
+        },
+        "general_results[0].P4_total_busy_percent": {
+          "baseline": 50.1,
+          "current": 47.8,
+          "delta_abs": -2.3000000000000043,
+          "delta_pct": -4.590818363273462
+        },
+        "general_results[0].Simulation_period_hours": {
+          "baseline": 2000.0,
+          "current": 2000.0,
+          "delta_abs": 0.0,
+          "delta_pct": 0.0
+        }
+      },
+      "execution_log": [
+        "Simulación (Estándar) ejecutada exitosamente.",
+        "KPIs detectados: 9.",
+        "Delta KPI calculado contra baseline: 9 métricas."
+      ]
+    }
+  },
+  {
+    "node": "dispatcher",
+    "update": {
+      "current_task": "xai",
+      "task_queue": []
+    }
+  },
+  {
+    "node": "xai",
+    "update": {
+      "report": "1. JSON Changes\n\n- **Wait Time**: A002 T_wait increased from 4 to 6 (+50%).\n- **Task Duration**: A002 T002 Duration decreased from 100 to 85 (-15%).\n\n2. KPI Changes\n\n| KPI | Baseline | Current | Delta abs | Delta % |\n|---|---:|---:|---:|---:|\n| Activities Overlap (%) | 0.0000 | 0.0000 | 0.0000 | N/A |\n| Intervention Time (h) | 1130.0000 | 1088.0000 | -42.0000 | -3.72% |\n| Net Plan Availability (h) | 1750.0000 | 1718.0000 | -32.0000 | -1.83% |\n| Net Plan Availability (%) | 87.5000 | 85.9000 | -1.6000 | -1.83% |\n| Net Plan Unavailability (h) | 250.0000 | 282.0000 | 32.0000 | 12.80% |\n| Net Plan Unavailability (%) | 12.5000 | 14.1000 | 1.6000 | 12.80% |\n| P4 Busy Time (h) | 1002.0000 | 956.0000 | -46.0000 | -4.59% |\n| P4 Busy Time (%) | 50.1000 | 47.8000 | -2.3000 | -4.59% |\n| Simulation Period (h) | 2000.0000 | 2000.0000 | 0.0000 | 0.00% |\n\n**Top positive shift**: Net Plan Unavailability (+12.8%).\n**Top negative shift**: P4 Busy Time (%) (-4.59%).\n\n3. Causality Between JSON Delta and KPI Delta (Detailed Explanation)\n\n- The 50 % increase in A002 T_wait (+2 units) contributes to a modest rise in overall unavailability, but the 15 % reduction in T002 Duration (-15 units) dominates, leading to a net decrease in Intervention Time by 42 h.\n- Shorter task duration directly reduces P4 busy time (–46 h, –4.59 %) and consequently lowers Net Plan Availability by 32 h (–1.83 %) while increasing Net Plan Unavailability by the same amount.\n- The increased wait time adds to the unavailability pool, amplifying the Net Plan Unavailability rise.\n- Secondary effect: Lower P4 busy time reduces resource utilization, which further limits plan availability, creating a cascade that worsens Net Plan Availability and increases Unavailability.\n\n**Verdict**: Mixed impact – intervention and resource utilization improved, but plan availability and unavailability worsened.",
+      "current_kpis": {
+        "general_results[0].Simulation_period_hours": 2000.0,
+        "general_results[0].P4_total_busy_hours": 956.0,
+        "general_results[0].P4_total_busy_percent": 47.8,
+        "general_results[0].Intervention_time_hours": 1088.0,
+        "general_results[0].Activities_overlap_percent": 0.0,
+        "general_results[0].Net_plan_unavailability_hours": 282.0,
+        "general_results[0].Net_plan_unavailability_percent": 14.1,
+        "general_results[0].Net_plan_availability_hours": 1718.0,
+        "general_results[0].Net_plan_availability_percent": 85.9
+      },
+      "kpi_delta": {
+        "general_results[0].Activities_overlap_percent": {
+          "baseline": 0.0,
+          "current": 0.0,
+          "delta_abs": 0.0,
+          "delta_pct": null
+        },
+        "general_results[0].Intervention_time_hours": {
+          "baseline": 1130.0,
+          "current": 1088.0,
+          "delta_abs": -42.0,
+          "delta_pct": -3.7168141592920354
+        },
+        "general_results[0].Net_plan_availability_hours": {
+          "baseline": 1750.0,
+          "current": 1718.0,
+          "delta_abs": -32.0,
+          "delta_pct": -1.8285714285714287
+        },
+        "general_results[0].Net_plan_availability_percent": {
+          "baseline": 87.5,
+          "current": 85.9,
+          "delta_abs": -1.5999999999999943,
+          "delta_pct": -1.828571428571422
+        },
+        "general_results[0].Net_plan_unavailability_hours": {
+          "baseline": 250.0,
+          "current": 282.0,
+          "delta_abs": 32.0,
+          "delta_pct": 12.8
+        },
+        "general_results[0].Net_plan_unavailability_percent": {
+          "baseline": 12.5,
+          "current": 14.1,
+          "delta_abs": 1.5999999999999996,
+          "delta_pct": 12.799999999999997
+        },
+        "general_results[0].P4_total_busy_hours": {
+          "baseline": 1002.0,
+          "current": 956.0,
+          "delta_abs": -46.0,
+          "delta_pct": -4.590818363273453
+        },
+        "general_results[0].P4_total_busy_percent": {
+          "baseline": 50.1,
+          "current": 47.8,
+          "delta_abs": -2.3000000000000043,
+          "delta_pct": -4.590818363273462
+        },
+        "general_results[0].Simulation_period_hours": {
+          "baseline": 2000.0,
+          "current": 2000.0,
+          "delta_abs": 0.0,
+          "delta_pct": 0.0
+        }
+      },
+      "execution_log": [
+        "✅ xAI análisis completado. Reporte mostrado arriba."
+      ]
+    }
+  },
+  {
+    "node": "dispatcher",
+    "update": {
+      "current_task": "__end__"
+    }
+  },
+  {
+    "node": "chat",
+    "update": {
+      "final_response": "I see the detailed xAI report has already been shared. A key takeaway is that the 15% reduction in task duration lowered intervention time and P4 busy time, but the 50% increase in wait time pushed net plan unavailability up by 12.8%. Next, you might want to run a sensitivity test on the wait time to see if a smaller increase could balance the unavailability without hurting intervention time.",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "I see the detailed xAI report has already been shared. A key takeaway is that the 15% reduction in task duration lowered intervention time and P4 busy time, but the 50% increase in wait time pushed net plan unavailability up by 12.8%. Next, you might want to run a sensitivity test on the wait time to see if a smaller increase could balance the unavailability without hurting intervention time."
+        }
+      ],
+      "execution_log": []
+    }
+  }
+]

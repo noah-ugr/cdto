@@ -1,0 +1,152 @@
+{
+  "Teams": {
+    "Teams": 1,
+    "Simulation_period": 2000
+  },
+  "PNIpnt": {
+    "ActID1": {
+      "tasks": {
+        "T1": 10,
+        "T2": 30,
+        "T3": 40
+      },
+      "T_period": 480,
+      "T_wait": 3.8469394008671562,
+      "Start_disp": 20.162826192031524,
+      "Team": "TeamA",
+      "Team members": 20,
+      "Shift_duration": 8
+    },
+    "ActID2": {
+      "tasks": {
+        "T1": 80,
+        "T2": 85,
+        "T3": 60,
+        "T4": 10
+      },
+      "T_period": 720,
+      "T_wait": 0.9992018988748135,
+      "Start_disp": 21.124578111594403,
+      "Team": "TeamA",
+      "Team members": 20,
+      "Shift_duration": 8
+    }
+  },
+  "PNIpnt_full": {
+    "ActID1": {
+      "tasks": {
+        "T1": {
+          "Duration": 10,
+          "Requires_Shutdown": false
+        },
+        "T2": {
+          "Duration": 30,
+          "Requires_Shutdown": true
+        },
+        "T3": {
+          "Duration": 40,
+          "Requires_Shutdown": false,
+          "Order_Enforced": true,
+          "Order_Before": [
+            "T1",
+            "T2"
+          ]
+        }
+      },
+      "T_period": 480,
+      "T_wait": 3.8469394008671562,
+      "Start_disp": 20.162826192031524,
+      "Team": "TeamA",
+      "Team members": 20,
+      "Shift_duration": 8
+    },
+    "ActID2": {
+      "tasks": {
+        "T1": {
+          "Duration": 80,
+          "Requires_Shutdown": false
+        },
+        "T2": {
+          "Duration": 85,
+          "Requires_Shutdown": false,
+          "Order_Enforced": true,
+          "Order_Before": [
+            "T1"
+          ]
+        },
+        "T3": {
+          "Duration": 60,
+          "Requires_Shutdown": true,
+          "Order_Enforced": true,
+          "Order_Before": [
+            "T1"
+          ]
+        },
+        "T4": {
+          "Duration": 10,
+          "Requires_Shutdown": false,
+          "Order_Enforced": true,
+          "Order_Before": [
+            "T2",
+            "T3"
+          ]
+        }
+      },
+      "T_period": 720,
+      "T_wait": 0.9992018988748135,
+      "Start_disp": 21.124578111594403,
+      "Team": "TeamA",
+      "Team members": 20,
+      "Shift_duration": 8,
+      "Activity_Order_Enforced": true,
+      "Activity_Order_Before": [
+        "ActID1"
+      ]
+    }
+  },
+  "TaskPrecedence": {
+    "t000711": {
+      "after": [
+        "t000731"
+      ],
+      "enforced": true
+    },
+    "t000721": {
+      "after": [
+        "t000731"
+      ],
+      "enforced": true
+    },
+    "t000712": {
+      "after": [
+        "t000722",
+        "t000732"
+      ],
+      "enforced": true
+    },
+    "t000722": {
+      "after": [
+        "t000742"
+      ],
+      "enforced": true
+    },
+    "t000732": {
+      "after": [
+        "t000742"
+      ],
+      "enforced": true
+    }
+  },
+  "ActivityPrecedence": {
+    "ActID1": {
+      "after": [
+        "ActID2"
+      ],
+      "enforced": true
+    }
+  },
+  "ActivityPriorityModel": {
+    "method": "manual",
+    "note": "Using Activity_Order_* fields"
+  }
+}

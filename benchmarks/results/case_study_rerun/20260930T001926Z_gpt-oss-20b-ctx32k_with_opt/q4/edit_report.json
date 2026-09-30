@@ -1,0 +1,120 @@
+{
+  "planner_batches": [
+    {
+      "plan": {
+        "thought_process": "The user specified a new dispatch start time for A001 (hour 3), an increase of 50% in A002's wait time (from 4 to 6 hours), and a reduction of Task T002's duration in A002 to 85 units. No team member names were provided, so the 'Team members' field is left unchanged.",
+        "instructions": [
+          {
+            "operation": "SET",
+            "path": "A001.Start_disp",
+            "value": 3
+          },
+          {
+            "operation": "SET",
+            "path": "A002.T_wait",
+            "value": 6
+          },
+          {
+            "operation": "SET",
+            "path": "A002.tasks.T002.Duration",
+            "value": 85
+          }
+        ]
+      },
+      "paths": [
+        "A001.Start_disp",
+        "A002.T_wait",
+        "A002.tasks.T002.Duration"
+      ],
+      "routes_resolved": true,
+      "unresolved_routes": []
+    }
+  ],
+  "executor_runs": [
+    {
+      "outcome": "commit",
+      "validation_violations": [],
+      "validation_errors": [],
+      "task_queue": null,
+      "execution_log": [
+        "Executor aplicó los cambios exitosamente. Configuración actualizada con estas instrucciones: [Instruction(operation=<OpType.SET: 'SET'>, path='A001.Start_disp', value=3), Instruction(operation=<OpType.SET: 'SET'>, path='A002.T_wait', value=6), Instruction(operation=<OpType.SET: 'SET'>, path='A002.tasks.T002.Duration', value=85)]. "
+      ]
+    }
+  ],
+  "config_after": {
+    "runId": 25,
+    "Teams": 1,
+    "Simulation_period": 2000,
+    "A001": {
+      "tasks": {
+        "T001": {
+          "Duration": 10,
+          "Requires_Shutdown": false
+        },
+        "T002": {
+          "Duration": 30,
+          "Requires_Shutdown": true
+        },
+        "T003": {
+          "Duration": 40,
+          "Requires_Shutdown": false,
+          "taskDependency": true,
+          "taskCode": [
+            "T001",
+            "T002"
+          ]
+        }
+      },
+      "T_period": 480,
+      "T_wait": 2,
+      "Start_disp": 3,
+      "Team": "TeamA",
+      "Team members": 2,
+      "Shift_duration": 8
+    },
+    "A002": {
+      "tasks": {
+        "T001": {
+          "Duration": 80,
+          "Requires_Shutdown": false
+        },
+        "T002": {
+          "Duration": 85,
+          "Requires_Shutdown": false,
+          "taskDependency": true,
+          "taskCode": [
+            "T001"
+          ]
+        },
+        "T003": {
+          "Duration": 60,
+          "Requires_Shutdown": true,
+          "taskDependency": true,
+          "taskCode": [
+            "T001"
+          ]
+        },
+        "T004": {
+          "Duration": 10,
+          "Requires_Shutdown": false,
+          "taskDependency": true,
+          "taskCode": [
+            "T002",
+            "T003"
+          ]
+        }
+      },
+      "T_period": 720,
+      "T_wait": 6,
+      "Start_disp": 1,
+      "Team": "TeamA",
+      "Team members": 2,
+      "Shift_duration": 8,
+      "activityDependency": true,
+      "activityCode": [
+        "A001"
+      ]
+    }
+  },
+  "outcome": "commit"
+}

@@ -1,0 +1,57 @@
+{
+  "run_id": "20260929T084426Z_gantt",
+  "timestamp_utc": "2026-09-29T08:44:34.199985+00:00",
+  "git": {
+    "head": "62aa68d77f586a4e7d3976a53db90867a83f07da",
+    "dirty_paths": [],
+    "script_commit": "62aa68d77f586a4e7d3976a53db90867a83f07da"
+  },
+  "simulation": "input_agent.src.fresh_simulation.run_petrinets_simulation_fresh (one new process per configuration)",
+  "original_generator": "not found in this repository, its history or the sibling repositories",
+  "configurations": {
+    "S_0": "core/api.py initial_input",
+    "S_k+1": "S_0 with A002.T002.Duration = 85 and A002.T_wait = 6"
+  },
+  "kpis": {
+    "S_0": {
+      "Simulation_period_hours": 2000.0,
+      "P4_total_busy_hours": 1002.0,
+      "P4_total_busy_percent": 50.1,
+      "Intervention_time_hours": 1130.0,
+      "Activities_overlap_percent": 0.0,
+      "Net_plan_unavailability_hours": 250.0,
+      "Net_plan_unavailability_percent": 12.5,
+      "Net_plan_availability_hours": 1750.0,
+      "Net_plan_availability_percent": 87.5
+    },
+    "S_k+1": {
+      "Simulation_period_hours": 2000.0,
+      "P4_total_busy_hours": 956.0,
+      "P4_total_busy_percent": 47.8,
+      "Intervention_time_hours": 1088.0,
+      "Activities_overlap_percent": 0.0,
+      "Net_plan_unavailability_hours": 282.0,
+      "Net_plan_unavailability_percent": 14.1,
+      "Net_plan_availability_hours": 1718.0,
+      "Net_plan_availability_percent": 85.9
+    }
+  },
+  "files": {
+    "gantt_chart_comparison.pdf": "8a5bd1eb03067fef309c896cd19742c6677ebeeaba08acdc1855ea5a2ae465d9",
+    "gantt_chart_comparison.png": "f94f33894eb4e1957885641ff8a6e2f24ad966aadc4b02b5c9c683b2abbf9941",
+    "S_0/calculated_task_durations.xlsx": "51a528507498d3232750e3af39a2cd0b759a3bb09cf56a2827cfe5c11570ee1e",
+    "S_0/config.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "S_0/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "S_0/per_activity/gantt_Activity_021.pdf": "799f076dda856bac89248a84ab28e34ae3dfb2e16534c2ad829355f2fae65c90",
+    "S_0/per_activity/gantt_Activity_021.png": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+    "S_0/per_activity/gantt_Activity_022.pdf": "50383ef6593b6fecd6ee0c337e3a777bcf4462dc12e189866ac14915a0ff100c",
+    "S_0/per_activity/gantt_Activity_022.png": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+    "S_k+1/calculated_task_durations.xlsx": "799a9ec43dae85db38d159d910b6d26e1725edb459c38f664aef2e47ef08d6c4",
+    "S_k+1/config.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "S_k+1/general_outputs_all.json": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff",
+    "S_k+1/per_activity/gantt_Activity_021.pdf": "ec9edd3afdf7c2473fe0d0567a483327059ba06ef0817bea785a8b01fab31bba",
+    "S_k+1/per_activity/gantt_Activity_021.png": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+    "S_k+1/per_activity/gantt_Activity_022.pdf": "d7b271daa67da972c7fbaf545c42a8b8d32b7b4c7bbbc816bcf6015349b33a1a",
+    "S_k+1/per_activity/gantt_Activity_022.png": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74"
+  }
+}

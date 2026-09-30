@@ -1,0 +1,140 @@
+{
+  "humanizer_model": "qwen2.5:32b",
+  "base_url": "http://localhost:11435/v1",
+  "ollama": {
+    "base_url": "http://localhost:11435/v1",
+    "version": "0.24.0",
+    "models": {
+      "qwen2.5:32b": {
+        "name": "qwen2.5:32b",
+        "present": true,
+        "digest": "9f13ba1299afea09d9a956fc6a85becc99115a6d596fae201a5487a03bdc4368",
+        "short_id": "9f13ba1299af",
+        "expected_short_id": "9f13ba1299af",
+        "short_id_matches": true,
+        "size": 19851349669,
+        "modified_at": "2026-05-27T12:20:58.433268826Z",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "32.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "parameters": null,
+        "template_sha256": "eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175",
+        "template_has_current_date": false,
+        "capabilities": [
+          "completion",
+          "tools"
+        ],
+        "context_length_trained": {
+          "qwen2.context_length": 32768
+        },
+        "weights_blobs": [
+          "eabc98a9bcbfce7fd70f3e07de599f8fda98120fefed5881934161ede8bd1a41"
+        ],
+        "modelfile_sha256": "fd8c3797006c3ebfe8dd9d96c6912236e48dbf6930c4f9145d9068a6fe6c0591"
+      }
+    },
+    "loaded": [
+      {
+        "name": "qwen2.5:32b",
+        "digest": "9f13ba1299afea09d9a956fc6a85becc99115a6d596fae201a5487a03bdc4368",
+        "size": 21441736704,
+        "size_vram": 15766736896,
+        "fraction_on_gpu": 0.7353,
+        "fully_on_gpu": false,
+        "context_length": 4096,
+        "expires_at": "2026-09-28T16:15:09.127223584Z"
+      }
+    ]
+  },
+  "llm_settings": {
+    "mode": "openai_compatible",
+    "temperature": 0.7,
+    "seed": null,
+    "max_tokens": null,
+    "timeout": null,
+    "request_profile": "2026-03-humaniser",
+    "request_profile_spec": {
+      "json_suffix": false,
+      "response_format": true,
+      "default_max_tokens": null,
+      "extra_body": false,
+      "strict_json": true
+    },
+    "extra_body_in_environment": null,
+    "request_params_sent": [
+      "{\"model\": \"qwen2.5:32b\", \"response_format\": {\"type\": \"json_object\"}, \"temperature\": 0.7}"
+    ],
+    "max_parallel": 4
+  },
+  "original_humanizer": {
+    "model": "gpt-oss:20b on Ollama (paper, Subsection 4.1; OLLAMA_MODEL default of LLMService at the time)",
+    "code": {
+      "complexity": "input_agent/src/dataset_generator_complexity.py::humanize_instruction (dataset of 2026-03-23; prompt as committed in d523e8a, unchanged since)",
+      "completeness": "input_agent/src/dataset_generator_completeness.py::humanize_instruction_batch (dataset of 2026-03-24; prompt as committed in 865521e, unchanged since)"
+    },
+    "llm": "LLMService(api_key=os.getenv('GROQ_API'), temperature=0.7) with input_agent/src/llm.py at 12e3297/6e07a45: mode 'server' (Ollama), request profile 2026-03-humaniser",
+    "max_parallel_llm": 4
+  },
+  "system_prompt_sha256": {
+    "complexity": [
+      "0b5f76e0fc6ce42b02559c23918ed37cf88788962a9dbc4c706c8e26c421d79a"
+    ],
+    "completeness": [
+      "97225de5758fd160178293a8482314aff230de87b1169dd3a8dc2eb8bd14e3bc"
+    ]
+  },
+  "sample_ids_file": {
+    "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/sample_ids.json",
+    "sha256": "1e78c331733a63bffea91957a1b6933b96046649737915baffa083cc2335f552"
+  },
+  "datasets": {
+    "completeness": {
+      "path": "benchmarks/datasets/benchmark_dataset_completeness_1_16_50samples.jsonl",
+      "sha256": "891ce23092b256c04d9ebbfcf1d4fdab15d124fbb0d958d1ae6dd7089cd0754a"
+    },
+    "complexity": {
+      "path": "benchmarks/datasets/benchmark_dataset_1_150.jsonl",
+      "sha256": "9ac10df3a0458fa29c79ba2a9e5a6b9caa2069c9038275152403a96fab03f7be"
+    }
+  },
+  "requests_file": {
+    "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/requests_qwen2.5_32b.jsonl",
+    "sha256": "a550edb245ff1b3b9a0e2286e37b5710ccab79115aa8c3a5630950a176d04b92"
+  },
+  "format_check": {
+    "n": 200,
+    "ok": 200,
+    "failed": []
+  },
+  "empty_requests": [],
+  "python_version": "3.13.14",
+  "platform": "Windows 11",
+  "git": {
+    "commit": "bdd0ae60ee3606cd46c05dbcec149996f53be3cb",
+    "branch": "codex-refactoring",
+    "dirty": true,
+    "uncommitted": [
+      "M .gitignore",
+      " M benchmarks/comparisons/benchmark_compare_completeness.py",
+      " M benchmarks/comparisons/benchmark_compare_complexity.py",
+      " M input_agent/src/llm.py",
+      "?? benchmarks/comparisons/sample_overrides.py",
+      "?? benchmarks/humanisation_check/",
+      "?? benchmarks/metrics/budget_complexity.py",
+      "?? benchmarks/results/humanisation_check/",
+      "?? tests/unit/test_humanisation_check.py",
+      "?? tests/unit/test_llm_request_profiles.py",
+      "?? tests/unit/test_runner_flags.py"
+    ]
+  },
+  "started_utc": "2026-09-28T15:41:18.837179+00:00",
+  "finished_utc": "2026-09-28T16:10:10.993120+00:00",
+  "elapsed_s": 1732.2
+}

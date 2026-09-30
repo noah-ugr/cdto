@@ -1,0 +1,63 @@
+{
+  "run_id": "20260929T093403Z_gantt_paper_format",
+  "timestamp_utc": "2026-09-29T09:34:05.088271+00:00",
+  "source": {
+    "folder": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt",
+    "run_id": "20260929T084426Z_gantt",
+    "head": "62aa68d77f586a4e7d3976a53db90867a83f07da",
+    "hashes_checked": true
+  },
+  "simulated": false,
+  "git": {
+    "head": "7bb3d5c6b54b7ed45a98540c668ffa1c1aa32271",
+    "script_commit": "7bb3d5c6b54b7ed45a98540c668ffa1c1aa32271"
+  },
+  "configurations": {
+    "S_0": "core/api.py initial_input",
+    "S_k+1": "S_0 with A002.T002.Duration = 85 and A002.T_wait = 6"
+  },
+  "kpis": {
+    "S_0": {
+      "Simulation_period_hours": 2000.0,
+      "P4_total_busy_hours": 1002.0,
+      "P4_total_busy_percent": 50.1,
+      "Intervention_time_hours": 1130.0,
+      "Activities_overlap_percent": 0.0,
+      "Net_plan_unavailability_hours": 250.0,
+      "Net_plan_unavailability_percent": 12.5,
+      "Net_plan_availability_hours": 1750.0,
+      "Net_plan_availability_percent": 87.5
+    },
+    "S_k+1": {
+      "Simulation_period_hours": 2000.0,
+      "P4_total_busy_hours": 956.0,
+      "P4_total_busy_percent": 47.8,
+      "Intervention_time_hours": 1088.0,
+      "Activities_overlap_percent": 0.0,
+      "Net_plan_unavailability_hours": 282.0,
+      "Net_plan_unavailability_percent": 14.1,
+      "Net_plan_availability_hours": 1718.0,
+      "Net_plan_availability_percent": 85.9
+    }
+  },
+  "transitions": {
+    "gantt_A001": {
+      "t000731": "A001.T003",
+      "t000711": "A001.T001",
+      "t000721": "A001.T002"
+    },
+    "gantt_A002": {
+      "t000742": "A002.T004",
+      "t000732": "A002.T003",
+      "t000722": "A002.T002",
+      "t000712": "A002.T001"
+    }
+  },
+  "files": {
+    "gantt_A001.pdf": "08f70e7fbe3d16c39d3a2bed4b9dfbcb6df84c804446df591e0487db9a403423",
+    "gantt_A001.png": "b30482499534fe899c08ec910f723304c4764f50770ed7029a8c355b88f9cf3d",
+    "gantt_A002.pdf": "c52482965fb994577eea90dd6c1387dc816021332520a286e6c4caac7874360c",
+    "gantt_A002.png": "d426e926b3d096eabde4d815da68bd6da0d23fd4bcfb127cb992ca7f731acd32",
+    "gantt_tables.json": "75323546f737db7ffa7409c7be8c7f416495eb96cd5d89cd1d5b95bb08c9876a"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "approach": "planner_executor",
+  "n_samples": 200,
+  "conclusion_metrics": [
+    "exact_match_pct",
+    "f1_micro",
+    "omission_rate",
+    "collateral_rate"
+  ],
+  "control_metrics": [
+    "tokens_total",
+    "tokens_prompt",
+    "tokens_completion",
+    "truncated_pct",
+    "completion tokens by level",
+    "timeouts",
+    "prompt tokens B vs A"
+  ],
+  "prompt_tokens_B_vs_A": {
+    "match": 200
+  },
+  "b_minus_a_valid": true,
+  "b_minus_a_possible_sources": [
+    "Ollama 0.24.0",
+    "OLLAMA_KV_CACHE_TYPE=q8_0",
+    "OLLAMA_FLASH_ATTENTION=1",
+    "OLLAMA_MAX_LOADED_MODELS=2",
+    "OLLAMA_NUM_PARALLEL=2",
+    "model gpt-oss-20b-ctx32k loaded with num_ctx 32768",
+    "2 workers (4 in the original run)",
+    "chat template stamps the current date (different from the original run's)"
+  ],
+  "fidelity_flagged_excluded": 23,
+  "adjudication": {
+    "file": "discordant_pairs_planner_executor.md",
+    "n_discordant": 43,
+    "classified": {
+      "humanisation": 36,
+      "model": 5,
+      "unclear": 2
+    },
+    "unclassified": 0,
+    "complete": true
+  },
+  "timeouts": {
+    "A": 0,
+    "B": 0,
+    "C": 0
+  },
+  "finish_reason": {
+    "B": {
+      "stop": 196,
+      "length": 4
+    },
+    "C": {
+      "stop": 190,
+      "length": 10
+    }
+  },
+  "finish_reason_agrees_with_completion_rule": {
+    "B": 200,
+    "C": 200
+  },
+  "bootstrap": {
+    "n_boot": 10000,
+    "alpha": 0.05,
+    "seed": 42,
+    "resampling": "paired samples; stratified by level for axis and overall totals"
+  }
+}

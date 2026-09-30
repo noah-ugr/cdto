@@ -1,0 +1,6 @@
+backend,model,outputs,scaling,median_ratio,median_offset,r_b,m_b,c_star_low,c_star_mean,c_star_high,marker,matches_marker
+Claude Sonnet 4.6,claude-sonnet-4-6,622,ratio,1.443,402.0,1.443,0.0,34,47,47,34,True
+Llama 3.1 8B,llama3.1_latest,101,ratio,1.282,154.0,1.282,0.0,38,70,80,38,True
+gpt-oss:20b,gpt-oss_20b,532,offset,1.3,296.0,1.0,296.0,45,90,100,45,True
+GPT-5.4,gpt-5.4,676,ratio,1.005,5.0,1.005,0.0,48,90,115,48,True
+cl100k (r = 1),,,none,,,1.0,0.0,49,90,115,,

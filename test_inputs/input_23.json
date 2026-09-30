@@ -1,0 +1,49 @@
+{
+  "runId": 23,
+  "Teams": 1,
+  "Simulation_period": 8760,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      },
+      "T003": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      },
+      "T004": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      },
+      "T005": {
+        "Duration": 1,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001", "T002"]
+      },
+      "T006": {
+        "Duration": 1,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T003", "T004"]
+      },
+      "T007": {
+        "Duration": 1,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T005", "T006"]
+      }
+    },
+    "T_period": 720,
+    "T_wait": 1,
+    "Start_disp": 30,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 8
+  }
+}

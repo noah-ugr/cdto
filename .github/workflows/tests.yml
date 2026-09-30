@@ -1,0 +1,20 @@
+name: Tests
+
+# Manual only: the environment includes torch and takes several minutes to install.
+on:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: windows-latest
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install the pinned environment
+        run: python -m pip install --no-deps -r requirements.lock
+      - name: Tests
+        run: python -m pytest tests

@@ -1,0 +1,5 @@
+configuration,Intervention_time_hours,P4_total_busy_hours,Net_plan_availability_percent,Net_plan_unavailability_hours,A002.T001_calendar_h_exec1,A002.T001_calendar_h_exec2,A002.T002_calendar_h_exec1,A002.T002_calendar_h_exec2,A002.T003_calendar_h_exec1,A002.T003_calendar_h_exec2,A002.T004_calendar_h_exec1,A002.T004_calendar_h_exec2
+S_0,1130.0,1002.0,87.5,250.0,120.0,120.0,162.0,162.0,78.0,78.0,21.0,21.0
+S_0_T_wait_6,1134.0,1002.0,85.9,282.0,120.0,120.0,146.0,146.0,94.0,94.0,21.0,21.0
+S_0_T002_85,1084.0,956.0,87.5,250.0,120.0,120.0,139.0,139.0,78.0,78.0,21.0,21.0
+S_k+1,1088.0,956.0,85.9,282.0,120.0,120.0,123.0,123.0,94.0,94.0,21.0,21.0

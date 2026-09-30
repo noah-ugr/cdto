@@ -1,0 +1,33 @@
+# TODO before publishing: add repository-code, the Zenodo DOI under identifiers, and the
+# journal, year and DOI of the article once they exist.
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+type: software
+title: "CDTO: Cognitive Digital Twin Orchestrator"
+version: "1.0.0"
+license: MIT
+authors:
+  - family-names: "Masegosa Cáceres"
+    given-names: "Noah"
+    orcid: "https://orcid.org/0009-0000-0306-9976"
+    affiliation: "University of Granada"
+preferred-citation:
+  type: article
+  title: "A Cognitive Digital Twin Orchestrator: Agentic Artificial Intelligence for Operator-Driven Modification, Simulation and Optimisation of Petri Net Maintenance Models"
+  authors:
+    - family-names: "Masegosa Cáceres"
+      given-names: "Noah"
+      orcid: "https://orcid.org/0009-0000-0306-9976"
+      affiliation: "University of Granada"
+    - family-names: "Haghbin"
+      given-names: "Masoud"
+      orcid: "https://orcid.org/0000-0002-2042-6645"
+      affiliation: "University of Granada"
+    - family-names: "Díaz-Rodríguez"
+      given-names: "Natalia"
+      orcid: "https://orcid.org/0000-0003-3362-9326"
+      affiliation: "University of Granada"
+    - family-names: "Chiachío Ruano"
+      given-names: "Manuel"
+      orcid: "https://orcid.org/0000-0003-4577-9380"
+      affiliation: "University of Granada"

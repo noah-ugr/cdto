@@ -1,0 +1,267 @@
+{
+  "runId": 24,
+  "Teams": 1,
+  "Simulation_period": 8760,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 10,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 1,
+    "Start_disp": 25,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A002": {
+    "tasks": {
+      "T001": {
+        "Duration": 12,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 14,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 2,
+    "Start_disp": 30,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A003": {
+    "tasks": {
+      "T001": {
+        "Duration": 14,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 0,
+    "Start_disp": 35,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A004": {
+    "tasks": {
+      "T001": {
+        "Duration": 16,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 1,
+    "Start_disp": 40,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A005": {
+    "tasks": {
+      "T001": {
+        "Duration": 8,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 14,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 2,
+    "Start_disp": 45,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A006": {
+    "tasks": {
+      "T001": {
+        "Duration": 10,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 0,
+    "Start_disp": 50,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A007": {
+    "tasks": {
+      "T001": {
+        "Duration": 12,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 1,
+    "Start_disp": 55,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A008": {
+    "tasks": {
+      "T001": {
+        "Duration": 14,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 14,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 2,
+    "Start_disp": 60,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A009": {
+    "tasks": {
+      "T001": {
+        "Duration": 16,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 0,
+    "Start_disp": 65,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A010": {
+    "tasks": {
+      "T001": {
+        "Duration": 8,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 1,
+    "Start_disp": 70,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A011": {
+    "tasks": {
+      "T001": {
+        "Duration": 10,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 14,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 2,
+    "Start_disp": 75,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A012": {
+    "tasks": {
+      "T001": {
+        "Duration": 12,
+        "Requires_Shutdown": true
+      },
+      "T002": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 0,
+    "Start_disp": 80,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8
+  },
+  "A013": {
+    "tasks": {
+      "T001": {
+        "Duration": 12,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 20,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 840,
+    "T_wait": 2,
+    "Start_disp": 120,
+    "Team": "TeamA",
+    "Team members": 4,
+    "Shift_duration": 8,
+    "activityDependency": true,
+    "activityCode": ["A001", "A003", "A005", "A007", "A009", "A011", "A012"]
+  }
+}

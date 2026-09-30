@@ -1,0 +1,1043 @@
+{
+  "created_utc": "2026-09-28T15:41:16.402183+00:00",
+  "seed": 42,
+  "per_level": 25,
+  "levels": {
+    "complexity": [
+      1,
+      16,
+      50,
+      150
+    ],
+    "completeness": [
+      1,
+      5,
+      10,
+      15
+    ]
+  },
+  "selection": "random.Random(derive_group_seed(seed, 'humanisation_check:<axis>', level)).sample(pool, per_level), sorted",
+  "pool": "sample_idx of the gpt-oss:20b planner_executor calls in condition A, equal to the dataset's samples at that level",
+  "condition_a": {
+    "complexity": {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/benchmark_compare_complexity_rescored.json",
+      "sha256": "929b16366419e067ca4faa77b16c5128be3eb03e457b9792539691c784b29445"
+    },
+    "completeness": {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/benchmark_compare_completeness_rescored.json",
+      "sha256": "c40b5c4fa8a48322ce4795ffded3730dcd993e5e9016c746d89272c4bee58c08"
+    }
+  },
+  "datasets": {
+    "complexity": {
+      "path": "benchmarks/datasets/benchmark_dataset_1_150.jsonl",
+      "sha256": "9ac10df3a0458fa29c79ba2a9e5a6b9caa2069c9038275152403a96fab03f7be"
+    },
+    "completeness": {
+      "path": "benchmarks/datasets/benchmark_dataset_completeness_1_16_50samples.jsonl",
+      "sha256": "891ce23092b256c04d9ebbfcf1d4fdab15d124fbb0d958d1ae6dd7089cd0754a"
+    }
+  },
+  "samples": [
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 1
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 5
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 6
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 8
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 11
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 12
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 13
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 15
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 16
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 17
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 19
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 20
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 23
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 27
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 30
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 31
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 32
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 33
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 35
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 37
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 39
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 40
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 41
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 43
+    },
+    {
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 49
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 751
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 752
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 753
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 754
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 756
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 757
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 758
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 761
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 763
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 765
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 767
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 769
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 771
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 773
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 776
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 777
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 778
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 780
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 781
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 783
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 787
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 788
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 791
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 797
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "sample_idx": 798
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2450
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2451
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2452
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2453
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2456
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2457
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2458
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2459
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2460
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2462
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2463
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2464
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2465
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2467
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2468
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2471
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2473
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2474
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2476
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2479
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2485
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2490
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2496
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2497
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2498
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2851
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2852
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2853
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2854
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2855
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2858
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2859
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2861
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2862
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2863
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2865
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2871
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2873
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2874
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2880
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2882
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2884
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2885
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2890
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2892
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2893
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2894
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2896
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2897
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "sample_idx": 2899
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 2
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 5
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 6
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 7
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 9
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 11
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 14
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 15
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 20
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 21
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 23
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 27
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 28
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 30
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 31
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 33
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 35
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 37
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 38
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 41
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 42
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 44
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 45
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 48
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 49
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 201
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 204
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 205
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 206
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 209
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 211
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 212
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 217
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 221
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 222
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 226
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 227
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 228
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 232
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 233
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 234
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 235
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 236
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 237
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 238
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 242
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 243
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 246
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 248
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "sample_idx": 249
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 450
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 452
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 453
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 457
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 459
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 465
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 466
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 467
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 468
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 469
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 470
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 472
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 473
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 474
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 475
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 476
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 478
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 479
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 480
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 482
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 486
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 488
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 491
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 493
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "sample_idx": 497
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 700
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 701
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 704
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 705
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 707
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 708
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 711
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 714
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 717
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 718
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 719
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 724
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 725
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 727
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 728
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 732
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 735
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 736
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 739
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 740
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 741
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 743
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 745
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 746
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 748
+    }
+  ]
+}

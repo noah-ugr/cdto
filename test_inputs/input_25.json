@@ -1,0 +1,125 @@
+{
+  "runId": 25,
+  "Teams": 2,
+  "Simulation_period": 4320,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 1,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      },
+      "T003": {
+        "Duration": 1,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001", "T002"]
+      }
+    },
+    "T_period": 480,
+    "T_wait": 2,
+    "Start_disp": 3,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 8
+  },
+  "A002": {
+    "tasks": {
+      "T001": {
+        "Duration": 8,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 1,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      },
+      "T003": {
+        "Duration": 6,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      },
+      "T004": {
+        "Duration": 1,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T002", "T003"]
+      }
+    },
+    "T_period": 720,
+    "T_wait": 4,
+    "Start_disp": 1,
+    "Team": "TeamB",
+    "Team members": 2,
+    "Shift_duration": 8,
+    "activityDependency": true,
+    "activityCode": ["A001"]
+  },
+  "A003": {
+    "tasks": {
+      "T001": {
+        "Duration": 18,
+        "Requires_Shutdown": true
+      }
+    },
+    "T_period": 360,
+    "T_wait": 1,
+    "Start_disp": 20,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 6
+  },
+  "A004": {
+    "tasks": {
+      "T001": {
+        "Duration": 10,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 14,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 360,
+    "T_wait": 1,
+    "Start_disp": 50,
+    "Team": "TeamB",
+    "Team members": 2,
+    "Shift_duration": 6,
+    "activityDependency": true,
+    "activityCode": ["A003"]
+  },
+  "A005": {
+    "tasks": {
+      "T001": {
+        "Duration": 6,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 8,
+        "Requires_Shutdown": false
+      },
+      "T003": {
+        "Duration": 20,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001", "T002"]
+      }
+    },
+    "T_period": 960,
+    "T_wait": 8,
+    "Start_disp": 2,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 8,
+    "activityDependency": true,
+    "activityCode": ["A002", "A004"]
+  }
+}

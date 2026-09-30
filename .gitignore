@@ -1,0 +1,29 @@
+# Environment
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime outputs of the agent and the simulations
+agent_debug.log
+agent_FULL.png
+chroma_db_data/
+chroma_episodic_db/
+Modules/petrinet_shared_dicts.json
+
+# Files of the Zenodo deposit, extracted into the repository
+# (listed in benchmarks/results/zenodo_files.sha256)
+benchmarks/datasets/
+benchmarks/results/models/*/*/benchmark_compare_*.json
+!benchmarks/results/models/*/*/benchmark_compare_*_manifest.json
+benchmarks/results/models/*/*/petri_uq_plot.png
+benchmarks/results/validator_pass/*/pe_batches.csv
+benchmarks/results/validator_pass/*/vanilla_pass.csv
+benchmarks/results/humanisation_check/*/calls.jsonl
+benchmarks/results/humanisation_check/*/benchmark_compare_*.json
+benchmarks/results/case_study_*/**/*.png
+benchmarks/results/case_study_rerun/*/agent_debug.log

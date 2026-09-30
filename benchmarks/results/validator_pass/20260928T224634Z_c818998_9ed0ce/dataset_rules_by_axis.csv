@@ -1,0 +1,5 @@
+axis,config,n,any_rule,campos_esquema,tipos,equipos,ids,limites,referencias,rangos,sanity_batch,campos_fuera_de_nivel,campos_leidos,no_vacia,dom_real,dom_int,turno_minimo,prec_tipos,prec_aciclica
+complexity,base,2900,1079,0,0,1079,0,0,0,0,0,0,0,0,0,0,0,0,0
+complexity,gt,2900,1344,119,0,1072,0,0,0,0,0,0,264,0,0,0,0,0,37
+completeness,base,750,189,0,0,189,0,0,0,0,0,0,0,0,0,0,0,0,0
+completeness,gt,750,567,195,0,182,0,0,0,0,0,0,402,0,0,0,0,0,90

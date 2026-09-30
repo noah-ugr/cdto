@@ -1,0 +1,23 @@
+{
+  "runId": 14,
+  "Teams": 1,
+  "Simulation_period": 168,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 6,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 1,
+        "Requires_Shutdown": true
+      }
+    },
+    "T_period": 84,
+    "T_wait": 1,
+    "Start_disp": 0,
+    "Team": "TeamA",
+    "Team members": 1,
+    "Shift_duration": 8
+  }
+}

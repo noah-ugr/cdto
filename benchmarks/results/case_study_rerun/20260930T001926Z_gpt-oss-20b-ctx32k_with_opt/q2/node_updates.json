@@ -1,0 +1,57 @@
+[
+  {
+    "node": "orchestrator",
+    "update": {
+      "task_queue": [
+        "context"
+      ],
+      "retry_count": 0,
+      "validation_violations": [],
+      "episodic_delta": {},
+      "episodic_reference_kpis": {},
+      "reference_config": {},
+      "reference_kpis": {},
+      "turn_log_start": 1,
+      "report": "",
+      "episodic_report": "",
+      "xai_failed": false,
+      "correction_history": [],
+      "context_data": ""
+    }
+  },
+  {
+    "node": "dispatcher",
+    "update": {
+      "current_task": "context",
+      "task_queue": []
+    }
+  },
+  {
+    "node": "context",
+    "update": {
+      "context_data": "- Path: 'A001.Team members' | Current Value: 2\n- Path: 'A001.Start_disp' | Current Value: 3\n",
+      "execution_log": [
+        "Context updated with relevant information: - Path: 'A001.Team members' | Current Value: 2\n- Path: 'A001.Start_disp' | Current Value: 3\n..."
+      ]
+    }
+  },
+  {
+    "node": "dispatcher",
+    "update": {
+      "current_task": "__end__"
+    }
+  },
+  {
+    "node": "chat",
+    "update": {
+      "final_response": "There are 2 technicians assigned to A001, and its dispatch starts at hour 3 of the shift. This start time is relative to the shift’s beginning, so it’s the third hour after the shift starts. Would you like to review their availability or adjust the schedule?",
+      "messages": [
+        {
+          "type": "ai",
+          "content": "There are 2 technicians assigned to A001, and its dispatch starts at hour 3 of the shift. This start time is relative to the shift’s beginning, so it’s the third hour after the shift starts. Would you like to review their availability or adjust the schedule?"
+        }
+      ],
+      "execution_log": []
+    }
+  }
+]

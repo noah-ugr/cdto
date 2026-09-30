@@ -1,0 +1,150 @@
+{
+  "S_0": {
+    "description": "core/api.py initial_input",
+    "kpis": {
+      "Intervention_time_hours": 1130.0,
+      "P4_total_busy_hours": 1002.0,
+      "Net_plan_availability_percent": 87.5,
+      "Net_plan_unavailability_hours": 250.0
+    },
+    "a002_calendar_durations": {
+      "T001": [
+        120.0,
+        120.0
+      ],
+      "T002": [
+        162.0,
+        162.0
+      ],
+      "T003": [
+        78.0,
+        78.0
+      ],
+      "T004": [
+        21.0,
+        21.0
+      ]
+    },
+    "kpi_delta_vs_S_0": {
+      "Intervention_time_hours": 0.0,
+      "P4_total_busy_hours": 0.0,
+      "Net_plan_availability_percent": 0.0,
+      "Net_plan_unavailability_hours": 0.0
+    },
+    "a002_T003_delta_vs_S_0": [
+      0.0,
+      0.0
+    ]
+  },
+  "S_0_T_wait_6": {
+    "description": "S_0 with only A002.T_wait = 6",
+    "kpis": {
+      "Intervention_time_hours": 1134.0,
+      "P4_total_busy_hours": 1002.0,
+      "Net_plan_availability_percent": 85.9,
+      "Net_plan_unavailability_hours": 282.0
+    },
+    "a002_calendar_durations": {
+      "T001": [
+        120.0,
+        120.0
+      ],
+      "T002": [
+        146.0,
+        146.0
+      ],
+      "T003": [
+        94.0,
+        94.0
+      ],
+      "T004": [
+        21.0,
+        21.0
+      ]
+    },
+    "kpi_delta_vs_S_0": {
+      "Intervention_time_hours": 4.0,
+      "P4_total_busy_hours": 0.0,
+      "Net_plan_availability_percent": -1.5999999999999943,
+      "Net_plan_unavailability_hours": 32.0
+    },
+    "a002_T003_delta_vs_S_0": [
+      16.0,
+      16.0
+    ]
+  },
+  "S_0_T002_85": {
+    "description": "S_0 with only A002.tasks.T002.Duration = 85",
+    "kpis": {
+      "Intervention_time_hours": 1084.0,
+      "P4_total_busy_hours": 956.0,
+      "Net_plan_availability_percent": 87.5,
+      "Net_plan_unavailability_hours": 250.0
+    },
+    "a002_calendar_durations": {
+      "T001": [
+        120.0,
+        120.0
+      ],
+      "T002": [
+        139.0,
+        139.0
+      ],
+      "T003": [
+        78.0,
+        78.0
+      ],
+      "T004": [
+        21.0,
+        21.0
+      ]
+    },
+    "kpi_delta_vs_S_0": {
+      "Intervention_time_hours": -46.0,
+      "P4_total_busy_hours": -46.0,
+      "Net_plan_availability_percent": 0.0,
+      "Net_plan_unavailability_hours": 0.0
+    },
+    "a002_T003_delta_vs_S_0": [
+      0.0,
+      0.0
+    ]
+  },
+  "S_k+1": {
+    "description": "S_0 with both edits",
+    "kpis": {
+      "Intervention_time_hours": 1088.0,
+      "P4_total_busy_hours": 956.0,
+      "Net_plan_availability_percent": 85.9,
+      "Net_plan_unavailability_hours": 282.0
+    },
+    "a002_calendar_durations": {
+      "T001": [
+        120.0,
+        120.0
+      ],
+      "T002": [
+        123.0,
+        123.0
+      ],
+      "T003": [
+        94.0,
+        94.0
+      ],
+      "T004": [
+        21.0,
+        21.0
+      ]
+    },
+    "kpi_delta_vs_S_0": {
+      "Intervention_time_hours": -42.0,
+      "P4_total_busy_hours": -46.0,
+      "Net_plan_availability_percent": -1.5999999999999943,
+      "Net_plan_unavailability_hours": 32.0
+    },
+    "a002_T003_delta_vs_S_0": [
+      16.0,
+      16.0
+    ]
+  }
+}

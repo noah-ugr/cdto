@@ -1,0 +1,31 @@
+{
+  "runId": 21,
+  "Teams": 1,
+  "Simulation_period": 720,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 20,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      },
+      "T003": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      }
+    },
+    "T_period": 1000,
+    "T_wait": 2,
+    "Start_disp": 10,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 8
+  }
+}

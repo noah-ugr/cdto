@@ -1,0 +1,105 @@
+{
+  "run_id": "20260928T224634Z_c818998_9ed0ce",
+  "timestamp_utc": "2026-09-28T22:46:57.716731+00:00",
+  "rules_commit": "c818998",
+  "head_commit": "066abeb972080d47cfa4c01cebf584476afff82e",
+  "worktree_clean_for_validator": true,
+  "commits": {
+    "validator (input_agent/src/tools.py)": "c818998e047321d83cbd20f821924d9984041b47",
+    "reindex_structure (input_agent/src/PetriNetConfig.py)": "cef1698f49c432aa7773e5ae45f9142c478f2f5b",
+    "executor (input_agent/nodes.py)": "b2f7baf3337800876add132404294a1b26f7602f",
+    "script (benchmarks/metrics/validator_pass.py)": "066abeb972080d47cfa4c01cebf584476afff82e"
+  },
+  "rules": {
+    "campos_esquema": "DOMINIO",
+    "tipos": "DOMINIO",
+    "equipos": "DOMINIO",
+    "ids": "DOMINIO",
+    "limites": "DOMINIO",
+    "referencias": "DOMINIO",
+    "rangos": "DOMINIO",
+    "sanity_batch": "DOMINIO",
+    "campos_fuera_de_nivel": "DOMINIO",
+    "campos_leidos": "RED DE PETRI",
+    "no_vacia": "RED DE PETRI",
+    "dom_real": "RED DE PETRI",
+    "dom_int": "RED DE PETRI",
+    "turno_minimo": "RED DE PETRI",
+    "prec_tipos": "RED DE PETRI",
+    "prec_aciclica": "RED DE PETRI"
+  },
+  "script": {
+    "path": "benchmarks\\metrics\\validator_pass.py",
+    "sha256": "84caeead316cd0e796e5e6c80596a6625c391683bb9abd4d908c0e000a9e6361"
+  },
+  "datasets": {
+    "complexity": {
+      "path": "benchmarks\\datasets\\benchmark_dataset_1_150.jsonl",
+      "sha256": "9ac10df3a0458fa29c79ba2a9e5a6b9caa2069c9038275152403a96fab03f7be"
+    },
+    "completeness": {
+      "path": "benchmarks\\datasets\\benchmark_dataset_completeness_1_16_50samples.jsonl",
+      "sha256": "891ce23092b256c04d9ebbfcf1d4fdab15d124fbb0d958d1ae6dd7089cd0754a"
+    }
+  },
+  "inputs": {
+    "claude-sonnet-4-6/complexity": {
+      "path": "benchmarks\\results\\models\\claude-sonnet-4-6\\complexity\\benchmark_compare_complexity_rescored.json",
+      "sha256": "d55e2cc819b7955398fe9df40b242da5cb116c9acfbc76b47a2cd4ca6f441bdb"
+    },
+    "claude-sonnet-4-6/completeness": {
+      "path": "benchmarks\\results\\models\\claude-sonnet-4-6\\completeness\\benchmark_compare_completeness_rescored.json",
+      "sha256": "3f01b69aee0cd9be3f55a3b6d63c317dabf61adb2bcd6f5953bb44f8af3fa4b1"
+    },
+    "gpt-5.4/complexity": {
+      "path": "benchmarks\\results\\models\\gpt-5.4\\complexity\\benchmark_compare_complexity_rescored.json",
+      "sha256": "e93ec4ac668c8cfb7536ab2bcb69e12af450507dc1b0d77c9e08582d0d13d33e"
+    },
+    "gpt-5.4/completeness": {
+      "path": "benchmarks\\results\\models\\gpt-5.4\\completeness\\benchmark_compare_completeness_rescored.json",
+      "sha256": "a1d119ae6ac8370b8a2c0848eceb4e965eef3ceb33f96a4df25facbd02279f40"
+    },
+    "gpt-oss_20b/complexity": {
+      "path": "benchmarks\\results\\models\\gpt-oss_20b\\complexity\\benchmark_compare_complexity_rescored.json",
+      "sha256": "929b16366419e067ca4faa77b16c5128be3eb03e457b9792539691c784b29445"
+    },
+    "gpt-oss_20b/completeness": {
+      "path": "benchmarks\\results\\models\\gpt-oss_20b\\completeness\\benchmark_compare_completeness_rescored.json",
+      "sha256": "c40b5c4fa8a48322ce4795ffded3730dcd993e5e9016c746d89272c4bee58c08"
+    },
+    "llama3.1_latest/complexity": {
+      "path": "benchmarks\\results\\models\\llama3.1_latest\\complexity\\benchmark_compare_complexity_rescored.json",
+      "sha256": "fc000f5bb5d8cc72d6ce1b8577c0dbe7995dc7f13eea95412c420147471f04cf"
+    },
+    "llama3.1_latest/completeness": {
+      "path": "benchmarks\\results\\models\\llama3.1_latest\\completeness\\benchmark_compare_completeness_rescored.json",
+      "sha256": "58772b15240a3fea6fe312dbbeea4e106de393db7b9e99155b5d4bde5c060e8d"
+    }
+  },
+  "reconstruction": "node_executor with skip_deterministic_validation=True on a copy of json_base; then find_unresolved_routes, reindex_structure and check_configuration",
+  "categories": {
+    "a": "no usable batch (empty instructions, or ModificationBatch schema error)",
+    "b": "some route does not resolve (find_unresolved_routes)",
+    "c1-base": "rejected; GT and base inadmissible",
+    "c1-request": "rejected; GT inadmissible, base admissible",
+    "c2": "rejected; GT admissible",
+    "d0": "admitted; EM=1, GT admissible",
+    "d1": "admitted; EM=0, GT admissible",
+    "d2": "admitted; GT inadmissible",
+    "per_rule_group": "same categories with the validator restricted to the group's rules",
+    "base_and_gt_batches": "base checked with an empty batch; GT with the dataset instruction(s)"
+  },
+  "bootstrap": {
+    "method": "percentile, Binomial(n, p_hat) draws == nonparametric resampling of Bernoulli units",
+    "B": 10000,
+    "seed": 42
+  },
+  "checks": {
+    "em1_candidate_equals_gt": 4700,
+    "em1_candidate_differs_from_gt": 0,
+    "reindex_changed_candidate": 0,
+    "em0_candidate_equals_recorded_pred": 1459,
+    "em0_candidate_differs_from_recorded_pred": 0
+  },
+  "python": "3.13.14"
+}

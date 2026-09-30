@@ -1,0 +1,73 @@
+{
+  "runId": 15,
+  "Teams": 1,
+  "Simulation_period": 720,
+  "A001": {
+    "tasks": {
+      "T001": {
+        "Duration": 4,
+        "Requires_Shutdown": false
+      },
+      "T002": {
+        "Duration": 6,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T001"]
+      },
+      "T003": {
+        "Duration": 7,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T002"]
+      },
+      "T004": {
+        "Duration": 8,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T003"]
+      },
+      "T005": {
+        "Duration": 9,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T004", "T001"]
+      },
+      "T006": {
+        "Duration": 10,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T005"]
+      },
+      "T007": {
+        "Duration": 11,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T006"]
+      },
+      "T008": {
+        "Duration": 12,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T007", "T001"]
+      },
+      "T009": {
+        "Duration": 13,
+        "Requires_Shutdown": true,
+        "taskDependency": true,
+        "taskCode": ["T008"]
+      },
+      "T010": {
+        "Duration": 14,
+        "Requires_Shutdown": false,
+        "taskDependency": true,
+        "taskCode": ["T009"]
+      }
+    },
+    "T_period": 720,
+    "T_wait": 2,
+    "Start_disp": 2,
+    "Team": "TeamA",
+    "Team members": 2,
+    "Shift_duration": 8
+  }
+}

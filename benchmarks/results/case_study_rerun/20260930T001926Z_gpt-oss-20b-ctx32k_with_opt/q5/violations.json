@@ -1,0 +1,35 @@
+{
+  "source": "executor node update",
+  "validation_violations": [
+    {
+      "rule": "referencias",
+      "group": "DOMINIO",
+      "path": "A002.tasks.T002.taskCode",
+      "detail": "A002.T002 lists T001 in taskCode, but T001 no longer exists in A002"
+    },
+    {
+      "rule": "referencias",
+      "group": "DOMINIO",
+      "path": "A002.tasks.T003.taskCode",
+      "detail": "A002.T003 lists T001 in taskCode, but T001 no longer exists in A002"
+    }
+  ],
+  "validation_errors": [
+    "[referencias | DOMINIO] A002.tasks.T002.taskCode: A002.T002 lists T001 in taskCode, but T001 no longer exists in A002",
+    "[referencias | DOMINIO] A002.tasks.T003.taskCode: A002.T003 lists T001 in taskCode, but T001 no longer exists in A002"
+  ],
+  "episodic_delta": {
+    "global_changes": {},
+    "deleted_global": {},
+    "new_activities": [],
+    "deleted_activities": [],
+    "new_tasks": {},
+    "deleted_tasks": {
+      "A002": [
+        "T001"
+      ]
+    },
+    "activity_values": {},
+    "task_values": {}
+  }
+}

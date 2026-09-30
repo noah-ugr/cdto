@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDTO - Cognitive Digital Twin Orchestrator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>CDTO</span>
+                </div>
+                <h1>Cognitive Digital Twin Orchestrator</h1>
+                <div class="header-status">
+                    <span id="status-indicator" class="status-dot"></span>
+                    <span id="status-text">Connecting...</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-layout">
+            <!-- Left Panel: Chat -->
+            <div class="panel chat-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-comments"></i> Conversation</h2>
+                    <button id="clear-chat-btn" class="btn-icon" title="Clear chat">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+                <div id="messages-container" class="messages-container">
+                    <div class="welcome-message">
+                        <h3><i class="fas fa-sparkles"></i> Welcome to CDTO</h3>
+                        <p>I am an AI assistant specialized in managing Petri nets (Digital Twins).</p>
+                        <p>I can help you with:</p>
+                        <ul>
+                            <li>📋 Modify configurations using natural language</li>
+                            <li>✅ Validate changes and prevent errors</li>
+                            <li>⚙️ Run simulations</li>
+                            <li>🔍 Analyze results and explain causal relationships</li>
+                            <li>🧠 Remember and learn from previous errors</li>
+                            <li>⚙️ Performance optimization using QGA and IWO algorithms</li>
+                        </ul>
+                        <p><strong>Example:</strong> "Increase task T001 duration to 3"</p>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <form id="chat-form">
+                        <input 
+                            type="text" 
+                            id="message-input" 
+                            placeholder="Write your query here..."
+                            autocomplete="off"
+                        >
+                        <button type="submit" class="btn-send" title="Send (Enter)">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="input-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="episodic-memory-toggle" checked>
+                            <span>Episodic Memory</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Config + Logs -->
+            <div class="right-column">
+                <!-- Top Right: Configuration -->
+                <div class="panel config-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-cogs"></i> Configuration</h2>
+                        <div class="header-buttons">
+                            <button id="reset-config-btn" class="btn-icon" title="Reset to initial">
+                                <i class="fas fa-redo"></i>
+                            </button>
+                            <button id="toggle-config-btn" class="btn-icon" title="Toggle view">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="config-content" class="config-content">
+                        <div class="config-loading">
+                            <i class="fas fa-spinner fa-spin"></i> Loading configuration...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Right: Logs -->
+                <div class="panel logs-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-terminal"></i> Logs & Errors</h2>
+                        <button id="clear-logs-btn" class="btn-icon" title="Clear logs">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="logs-container" class="logs-container">
+                        <div class="log-entry log-info">
+                            <span class="log-time">[INIT]</span>
+                            <span class="log-message">CDTO Initialized</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="config-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Full Configuration</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div id="modal-config-json" class="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeConfigModal()">Close</button>
+                <button class="btn btn-primary" onclick="copyConfigJson()">Copy JSON</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-group">
+        <!-- Visualization Buttons (top) -->
+        <button class="fab fab-viz" id="fab-bottleneck" title="View Bottleneck Heatmap" onclick="showBottleneckHeatmap()">
+            <i class="fas fa-fire"></i>
+        </button>
+        <button class="fab fab-viz" id="fab-gantt" title="View Gantt Charts" onclick="showGanttCharts()">
+            <i class="fas fa-chart-gantt"></i>
+        </button>
+        <!-- Original buttons (bottom) -->
+        <button class="fab fab-info" title="System Info" onclick="showSystemInfo()">
+            <i class="fas fa-info-circle"></i>
+        </button>
+        <button class="fab fab-baseline" title="Baseline Report" onclick="showBaseline()">
+            <i class="fas fa-chart-bar"></i>
+        </button>
+    </div>
+
+    <!-- Markdown Parser & Sanitizer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.8/dist/purify.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

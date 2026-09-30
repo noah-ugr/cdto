@@ -1,0 +1,1962 @@
+{
+  "run_id": "veritas_qwen25_32b",
+  "created_utc": "2026-09-28T16:10:46.928631+00:00",
+  "status": "completed",
+  "design": {
+    "A": "logged gpt-oss:20b results of the original run (old server, original requests), re-scored",
+    "B": "new server, original requests",
+    "C": "new server, requests re-humanised by qwen2.5:32b",
+    "effect": "C - B (humanisation); B - A checks that the new server reproduces the old one",
+    "approaches": [
+      "planner_executor"
+    ],
+    "interleaving": "per level, B and C of each sample submitted back to back (order alternates with sample position) to one pool of max_workers sharing one throttle per approach"
+  },
+  "git": {
+    "commit": "bdd0ae60ee3606cd46c05dbcec149996f53be3cb",
+    "branch": "codex-refactoring",
+    "dirty": true,
+    "uncommitted": [
+      "M .gitignore",
+      " M benchmarks/comparisons/benchmark_compare_completeness.py",
+      " M benchmarks/comparisons/benchmark_compare_complexity.py",
+      " M input_agent/src/llm.py",
+      "?? benchmarks/comparisons/sample_overrides.py",
+      "?? benchmarks/humanisation_check/",
+      "?? benchmarks/metrics/budget_complexity.py",
+      "?? benchmarks/results/humanisation_check/",
+      "?? tests/unit/test_humanisation_check.py",
+      "?? tests/unit/test_llm_request_profiles.py",
+      "?? tests/unit/test_runner_flags.py"
+    ]
+  },
+  "client": {
+    "python": "3.13.14",
+    "platform": "Windows AMD64 11",
+    "packages": {
+      "openai": "2.24.0",
+      "httpx": "0.28.1",
+      "langchain-core": "1.2.11",
+      "langgraph": "1.0.8",
+      "pydantic": "2.12.5",
+      "numpy": "2.2.6",
+      "scipy": "1.17.0"
+    },
+    "openai_client_max_retries": 2
+  },
+  "ollama": {
+    "base_url": "http://localhost:11435/v1",
+    "version": "0.24.0",
+    "models": {
+      "gpt-oss-20b-ctx32k": {
+        "name": "gpt-oss-20b-ctx32k",
+        "present": true,
+        "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+        "short_id": "65086a4a68ab",
+        "expected_short_id": null,
+        "short_id_matches": true,
+        "size": 13793441260,
+        "modified_at": "2026-09-28T15:12:15.130295034Z",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gptoss",
+          "families": [
+            "gptoss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "parameters": "num_ctx                        32768\ntemperature                    1",
+        "template_sha256": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c",
+        "template_has_current_date": true,
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ],
+        "context_length_trained": {
+          "gptoss.context_length": 131072
+        },
+        "weights_blobs": [
+          "e7b273f9636059a689e3ddcab3716e4f65abe0143ac978e46673ad0e52d09efb"
+        ],
+        "modelfile_sha256": "f283ebdfab03544bfedf7721d6713d1d8691e7b615ed3d568de0c67ca7debbea"
+      },
+      "gpt-oss:20b": {
+        "name": "gpt-oss:20b",
+        "present": true,
+        "digest": "17052f91a42e97930aa6e28a6c6c06a983e6a58dbb00434885a0cf5313e376f7",
+        "short_id": "17052f91a42e",
+        "expected_short_id": "17052f91a42e",
+        "short_id_matches": true,
+        "size": 13793441244,
+        "modified_at": "2026-08-22T19:15:41.273298836Z",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "gptoss",
+          "families": [
+            "gptoss"
+          ],
+          "parameter_size": "20.9B",
+          "quantization_level": "MXFP4"
+        },
+        "parameters": "temperature                    1",
+        "template_sha256": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c",
+        "template_has_current_date": true,
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ],
+        "context_length_trained": {
+          "gptoss.context_length": 131072
+        },
+        "weights_blobs": [
+          "e7b273f9636059a689e3ddcab3716e4f65abe0143ac978e46673ad0e52d09efb"
+        ],
+        "modelfile_sha256": "f6d22f9abe95b082b353afb1aac2793c50565bc594089d3bf1d541d0416fa5a4"
+      },
+      "qwen2.5:32b": {
+        "name": "qwen2.5:32b",
+        "present": true,
+        "digest": "9f13ba1299afea09d9a956fc6a85becc99115a6d596fae201a5487a03bdc4368",
+        "short_id": "9f13ba1299af",
+        "expected_short_id": "9f13ba1299af",
+        "short_id_matches": true,
+        "size": 19851349669,
+        "modified_at": "2026-05-27T12:20:58.433268826Z",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen2",
+          "families": [
+            "qwen2"
+          ],
+          "parameter_size": "32.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "parameters": null,
+        "template_sha256": "eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175",
+        "template_has_current_date": false,
+        "capabilities": [
+          "completion",
+          "tools"
+        ],
+        "context_length_trained": {
+          "qwen2.context_length": 32768
+        },
+        "weights_blobs": [
+          "eabc98a9bcbfce7fd70f3e07de599f8fda98120fefed5881934161ede8bd1a41"
+        ],
+        "modelfile_sha256": "fd8c3797006c3ebfe8dd9d96c6912236e48dbf6930c4f9145d9068a6fe6c0591"
+      }
+    },
+    "loaded": [
+      {
+        "name": "gpt-oss-20b-ctx32k:latest",
+        "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+        "size": 15156581760,
+        "size_vram": 15156581760,
+        "fraction_on_gpu": 1.0,
+        "fully_on_gpu": true,
+        "context_length": 32768,
+        "expires_at": "2026-09-28T16:15:25.782790252Z"
+      }
+    ],
+    "unloaded": {},
+    "evaluated_model_at_start": {
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:15:39.059094158Z"
+    },
+    "other_loaded_at_start": []
+  },
+  "server_info": {
+    "hostname": "veritas",
+    "gpu": {
+      "cmd": "nvidia-smi --query-gpu=index,name,memory.total,memory.used,driver_version --format=csv,noheader",
+      "rc": 0,
+      "stdout": "0, NVIDIA GeForce RTX 5080, 16303 MiB, 13772 MiB, 595.84",
+      "stderr": ""
+    },
+    "gpu_processes": {
+      "cmd": "nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv,noheader",
+      "rc": 0,
+      "stdout": "3074067, <redacted>/ollama, 13762 MiB",
+      "stderr": ""
+    },
+    "nvidia_smi": {
+      "cmd": "nvidia-smi",
+      "rc": 0,
+      "stdout": "Mon Sep 28 16:10:37 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.84                 Driver Version: 595.84         CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5080        Off |   00000000:81:00.0 Off |                  N/A |\n| 30%   32C    P1             46W /  360W |   13772MiB /  16303MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A         3074067      C   <redacted>/ollama                     13762MiB |\n+-----------------------------------------------------------------------------------------+",
+      "stderr": ""
+    },
+    "ollama_version": {
+      "cmd": "ollama --version",
+      "rc": 0,
+      "stdout": "ollama version is 0.24.0",
+      "stderr": ""
+    },
+    "ollama_list": {
+      "cmd": "ollama list",
+      "rc": 0,
+      "stdout": "NAME                         ID              SIZE      MODIFIED       \ngpt-oss-20b-ctx32k:latest    65086a4a68ab    13 GB     58 minutes ago    \nqwen3-coder:latest           06c1097efce0    18 GB     2 weeks ago       \nxlam2-3b-fc:latest           3b5c07446b0b    3.3 GB    3 weeks ago       \nqwen2.5vl:3b                 fb90415cde1e    3.2 GB    4 weeks ago       \nphi4-mini:latest             78fad5d182a7    2.5 GB    4 weeks ago       \ngpt-oss:20b                  17052f91a42e    13 GB     5 weeks ago       \nqwen3:14b                    bdbd181c33f2    9.3 GB    5 weeks ago       \ngemma3:1b                    8648f39daa8f    815 MB    5 weeks ago       \ngemma2:2b                    8ccf136fdd52    1.6 GB    5 weeks ago       \ngemma3:4b                    a2af6cc3eb7f    3.3 GB    5 weeks ago       \nphi4:14b                     ac896e5b8b34    9.1 GB    8 weeks ago       \ndeepseek-r1:14b              c333b7232bdb    9.0 GB    8 weeks ago       \nmistral:7b                   6577803aa9a0    4.4 GB    8 weeks ago       \nllama3.1:8b                  46e0c10c039e    4.9 GB    8 weeks ago       \nqwen2.5:14b                  7cdf5a0187d5    9.0 GB    3 months ago      \ngemma4:26b                   5571076f3d70    17 GB     3 months ago      \nnomic-embed-text:latest      0a109f422b47    274 MB    3 months ago      \nqwen2.5vl:7b                 5ced39dfa4ba    6.0 GB    3 months ago      \nqwen2.5:32b                  9f13ba1299af    19 GB     4 months ago",
+      "stderr": ""
+    },
+    "ollama_ps": {
+      "cmd": "ollama ps",
+      "rc": 0,
+      "stdout": "NAME                         ID              SIZE     PROCESSOR    CONTEXT    UNTIL              \ngpt-oss-20b-ctx32k:latest    65086a4a68ab    15 GB    100% GPU     32768      4 minutes from now",
+      "stderr": ""
+    },
+    "env_systemd": {
+      "OLLAMA_HOST": "<redacted>",
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_FLASH_ATTENTION": "1"
+    },
+    "env_systemd_raw": {
+      "cmd": "systemctl show ollama --property=Environment --no-pager",
+      "rc": 0,
+      "stdout": "Environment=PATH=<redacted> OLLAMA_HOST=<redacted> \"OLLAMA_ORIGINS=<redacted>\" OLLAMA_NUM_PARALLEL=2 OLLAMA_MAX_LOADED_MODELS=2 OLLAMA_KV_CACHE_TYPE=q8_0 OLLAMA_FLASH_ATTENTION=1",
+      "stderr": ""
+    },
+    "env_process": {
+      "705583": {
+        "error": "[Errno 13] Permission denied: '<redacted>'"
+      }
+    },
+    "env_docker": null,
+    "env_shell": {},
+    "python": "3.12.3",
+    "env_effective": {
+      "OLLAMA_HOST": "<redacted>",
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_FLASH_ATTENTION": "1"
+    }
+  },
+  "derived_model": {
+    "base": "gpt-oss:20b",
+    "derived": "gpt-oss-20b-ctx32k",
+    "weights_blobs": {
+      "gpt-oss:20b": [
+        "e7b273f9636059a689e3ddcab3716e4f65abe0143ac978e46673ad0e52d09efb"
+      ],
+      "gpt-oss-20b-ctx32k": [
+        "e7b273f9636059a689e3ddcab3716e4f65abe0143ac978e46673ad0e52d09efb"
+      ]
+    },
+    "template_sha256": {
+      "gpt-oss:20b": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c",
+      "gpt-oss-20b-ctx32k": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c"
+    },
+    "derived_parent_model": "gpt-oss:20b",
+    "parameters_only_in_base": [],
+    "parameters_only_in_derived": [
+      [
+        "num_ctx",
+        "32768"
+      ]
+    ],
+    "num_ctx": 32768,
+    "checks": {
+      "weights_blobs_equal": true,
+      "template_equal": true,
+      "system_equal": true,
+      "details_equal": true,
+      "model_info_equal": true,
+      "only_num_ctx_differs": true
+    },
+    "ok": true
+  },
+  "environment": {
+    "client": {
+      "LLM_EXTRA_BODY_JSON": null,
+      "BENCHMARK_LLM_EXTRA_BODY_JSON": null,
+      "LLM_REQUEST_PROFILE": "2026-04-28-benchmark"
+    },
+    "client_effective_extra_body": null,
+    "server": {
+      "OLLAMA_CONTEXT_LENGTH": null,
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_FLASH_ATTENTION": "1",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KEEP_ALIVE": null,
+      "OLLAMA_NEW_ENGINE": null,
+      "OLLAMA_SCHED_SPREAD": null,
+      "CUDA_VISIBLE_DEVICES": null
+    },
+    "server_collected": {
+      "OLLAMA_HOST": "<redacted>",
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_FLASH_ATTENTION": "1"
+    },
+    "server_stated": {
+      "OLLAMA_NUM_PARALLEL": "2",
+      "OLLAMA_MAX_LOADED_MODELS": "2",
+      "OLLAMA_KV_CACHE_TYPE": "q8_0",
+      "OLLAMA_FLASH_ATTENTION": "1"
+    },
+    "server_disagreements": {},
+    "context_length_reported_by_ps": 32768,
+    "min_context_required": 8192
+  },
+  "config": {
+    "new": {
+      "provider": "openai_compatible",
+      "model_name": "gpt-oss-20b-ctx32k",
+      "num_ctx": 32768,
+      "request_profile": "2026-04-28-benchmark",
+      "extra_body": null,
+      "temperature": 0.0,
+      "seed": null,
+      "llm_timeout_s": 600.0,
+      "max_tokens_effective": 4096,
+      "min_interval_s": 0.35,
+      "max_retries": 2,
+      "backoff_base_s": 0.8,
+      "jitter_s": 0.2,
+      "max_workers": 2,
+      "sample_timeout_s": 600.0,
+      "master_seed": 42,
+      "legacy_structural_keys": false
+    },
+    "original": {
+      "complexity": {
+        "run_id": "2543cd49-5477-4263-9a8d-377d95a5ea07",
+        "timestamp_utc": "2026-04-28T14:32:13.074911+00:00",
+        "dataset_sha256": "9ac10df3a0458fa29c79ba2a9e5a6b9caa2069c9038275152403a96fab03f7be",
+        "provider": "openai_compatible",
+        "llm_mode": "openai_compatible",
+        "model_name": "gpt-oss:20b",
+        "model_version": null,
+        "base_url": null,
+        "temperature": 0.0,
+        "seed": null,
+        "llm_timeout_s": 600.0,
+        "max_tokens": null,
+        "max_tokens_effective": 4096,
+        "min_interval_s": 0.35,
+        "max_retries": 2,
+        "backoff_base_s": 0.8,
+        "jitter_s": 0.2,
+        "max_workers": 4,
+        "master_seed": 42,
+        "samples_per_level": 50,
+        "sample_timeout_s": 600.0,
+        "sample_timeout_recovered_from_fingerprint": true,
+        "request_profile": "2026-04-28-benchmark",
+        "code_commit": "a224cae (HEAD recorded by the bootstrap manifest written between the two runs)",
+        "extra_body": null,
+        "extra_body_source": "LLM_EXTRA_BODY_JSON was not defined in the original run (author's statement; not logged)",
+        "num_ctx": "not logged (>= 17485: longest untruncated prompt of the gpt-oss runs)",
+        "config_fingerprint_sha256": "c71f1d5c6045a22e89aeb28afb6d836b0c928a6d0535e5929d3e72b75b2e50ea",
+        "not_logged": [
+          "Ollama version",
+          "model digest",
+          "server context length (OLLAMA_CONTEXT_LENGTH / num_ctx)",
+          "OLLAMA_NUM_PARALLEL",
+          "GPU"
+        ]
+      },
+      "completeness": {
+        "run_id": "36ccb9e8-b2d5-417b-8104-66a5a40dc81f",
+        "timestamp_utc": "2026-04-28T17:52:51.405327+00:00",
+        "dataset_sha256": "891ce23092b256c04d9ebbfcf1d4fdab15d124fbb0d958d1ae6dd7089cd0754a",
+        "provider": "openai_compatible",
+        "llm_mode": "openai_compatible",
+        "model_name": "gpt-oss:20b",
+        "model_version": null,
+        "base_url": null,
+        "temperature": 0.0,
+        "seed": null,
+        "llm_timeout_s": 600.0,
+        "max_tokens": null,
+        "max_tokens_effective": 4096,
+        "min_interval_s": 0.35,
+        "max_retries": 2,
+        "backoff_base_s": 0.8,
+        "jitter_s": 0.2,
+        "max_workers": 4,
+        "master_seed": 42,
+        "samples_per_level": null,
+        "sample_timeout_s": 600.0,
+        "sample_timeout_recovered_from_fingerprint": true,
+        "request_profile": "2026-04-28-benchmark",
+        "code_commit": "a224cae (HEAD recorded by the bootstrap manifest written between the two runs)",
+        "extra_body": null,
+        "extra_body_source": "LLM_EXTRA_BODY_JSON was not defined in the original run (author's statement; not logged)",
+        "num_ctx": "not logged (>= 17485: longest untruncated prompt of the gpt-oss runs)",
+        "config_fingerprint_sha256": "c0fd6f99d1713431e04f82bbb79839a11324a20ebcf685186f453537c05013e2",
+        "not_logged": [
+          "Ollama version",
+          "model digest",
+          "server context length (OLLAMA_CONTEXT_LENGTH / num_ctx)",
+          "OLLAMA_NUM_PARALLEL",
+          "GPU"
+        ]
+      }
+    },
+    "comparison": [
+      {
+        "setting": "provider",
+        "new": "openai_compatible",
+        "original_complexity": "openai_compatible",
+        "original_completeness": "openai_compatible",
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "model_name",
+        "new": "gpt-oss-20b-ctx32k",
+        "original_complexity": "gpt-oss:20b",
+        "original_completeness": "gpt-oss:20b",
+        "match": false,
+        "declared_deviation": "gpt-oss-20b-ctx32k = FROM gpt-oss:20b + PARAMETER num_ctx 32768: weights blob, chat template, system prompt, details and other parameters verified identical; only num_ctx changes"
+      },
+      {
+        "setting": "num_ctx",
+        "new": 32768,
+        "original_complexity": "not logged (>= 17485: longest untruncated prompt of the gpt-oss runs)",
+        "original_completeness": "not logged (>= 17485: longest untruncated prompt of the gpt-oss runs)",
+        "match": null,
+        "declared_deviation": null
+      },
+      {
+        "setting": "request_profile",
+        "new": "2026-04-28-benchmark",
+        "original_complexity": "2026-04-28-benchmark",
+        "original_completeness": "2026-04-28-benchmark",
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "extra_body",
+        "new": null,
+        "original_complexity": null,
+        "original_completeness": null,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "temperature",
+        "new": 0.0,
+        "original_complexity": 0.0,
+        "original_completeness": 0.0,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "seed",
+        "new": null,
+        "original_complexity": null,
+        "original_completeness": null,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "llm_timeout_s",
+        "new": 600.0,
+        "original_complexity": 600.0,
+        "original_completeness": 600.0,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "max_tokens_effective",
+        "new": 4096,
+        "original_complexity": 4096,
+        "original_completeness": 4096,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "min_interval_s",
+        "new": 0.35,
+        "original_complexity": 0.35,
+        "original_completeness": 0.35,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "max_retries",
+        "new": 2,
+        "original_complexity": 2,
+        "original_completeness": 2,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "backoff_base_s",
+        "new": 0.8,
+        "original_complexity": 0.8,
+        "original_completeness": 0.8,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "jitter_s",
+        "new": 0.2,
+        "original_complexity": 0.2,
+        "original_completeness": 0.2,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "max_workers",
+        "new": 2,
+        "original_complexity": 4,
+        "original_completeness": 4,
+        "match": false,
+        "declared_deviation": "workers = OLLAMA_NUM_PARALLEL of the new server, so no call waits in the server queue or reaches the timeout there; B and C share the same pool and concurrency"
+      },
+      {
+        "setting": "sample_timeout_s",
+        "new": 600.0,
+        "original_complexity": 600.0,
+        "original_completeness": 600.0,
+        "match": true,
+        "declared_deviation": null
+      },
+      {
+        "setting": "master_seed",
+        "new": 42,
+        "original_complexity": 42,
+        "original_completeness": 42,
+        "match": true,
+        "declared_deviation": null
+      }
+    ],
+    "deviations": {
+      "model_name": {
+        "original": [
+          "gpt-oss:20b",
+          "gpt-oss:20b"
+        ],
+        "new": "gpt-oss-20b-ctx32k",
+        "reason": "gpt-oss-20b-ctx32k = FROM gpt-oss:20b + PARAMETER num_ctx 32768: weights blob, chat template, system prompt, details and other parameters verified identical; only num_ctx changes"
+      },
+      "max_workers": {
+        "original": [
+          4,
+          4
+        ],
+        "new": 2,
+        "reason": "workers = OLLAMA_NUM_PARALLEL of the new server, so no call waits in the server queue or reaches the timeout there; B and C share the same pool and concurrency"
+      }
+    },
+    "concurrency": {
+      "workers": 2,
+      "server_OLLAMA_NUM_PARALLEL": "2",
+      "shared_by_B_and_C": true
+    },
+    "planner_llm_runtime": {
+      "provider": "openai_compatible",
+      "model_name": "gpt-oss-20b-ctx32k",
+      "temperature": 0.0,
+      "seed": null,
+      "seed_effective": false,
+      "timeout": 600.0,
+      "max_tokens": null,
+      "request_count": 0,
+      "last_latency_s": 0.0,
+      "last_token_usage": {
+        "prompt": 0,
+        "completion": 0,
+        "total": 0
+      },
+      "request_profile": "2026-04-28-benchmark"
+    },
+    "run_llm_metadata": {
+      "provider": "openai_compatible",
+      "llm_mode": "openai_compatible",
+      "model_name": "gpt-oss-20b-ctx32k",
+      "model_version": "sha256:65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "base_url": "http://localhost:11435/v1",
+      "temperature": 0.0,
+      "seed": null,
+      "seed_effective": false,
+      "timeout_s": 600.0
+    },
+    "code_locations": [
+      {
+        "setting": "mode openai_compatible",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:130"
+      },
+      {
+        "setting": "request format of the original run (profile 2026-04-28-benchmark)",
+        "where": "input_agent/src/llm.py:119"
+      },
+      {
+        "setting": "max_tokens 4096 (max_tokens None)",
+        "where": "input_agent/src/llm.py:430"
+      },
+      {
+        "setting": "response_format json_object (current format; dropped by the profile)",
+        "where": "input_agent/src/llm.py:420"
+      },
+      {
+        "setting": "JSON-only suffix (current format; dropped by the profile)",
+        "where": "input_agent/src/llm.py:411"
+      },
+      {
+        "setting": "extra_body from LLM_EXTRA_BODY_JSON",
+        "where": "input_agent/src/llm.py:174"
+      },
+      {
+        "setting": "temperature 0.0 (greedy), no top_p/top_k sent",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1305"
+      },
+      {
+        "setting": "seed None",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1306"
+      },
+      {
+        "setting": "planner LLM from env (temperature, seed, timeout, model, URL)",
+        "where": "input_agent/nodes.py:83"
+      },
+      {
+        "setting": "request timeout 600 s",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1307"
+      },
+      {
+        "setting": "sample (firewall) timeout 600 s",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1317"
+      },
+      {
+        "setting": "throttle 0.35 s",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1296"
+      },
+      {
+        "setting": "retries 2",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1297"
+      },
+      {
+        "setting": "backoff 0.8 s",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1298"
+      },
+      {
+        "setting": "jitter 0.2 s",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1299"
+      },
+      {
+        "setting": "4 workers per approach",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1300"
+      },
+      {
+        "setting": "master seed 42",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:1309"
+      },
+      {
+        "setting": "sub-agents off: no context retrieval",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:299"
+      },
+      {
+        "setting": "sub-agents off: no deterministic validation / recovery loop",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:307"
+      },
+      {
+        "setting": "sub-agents off: only planner + deterministic executor",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:312"
+      },
+      {
+        "setting": "benchmark mode in the executor",
+        "where": "input_agent/nodes.py:336"
+      },
+      {
+        "setting": "corrected metric (legacy_structural_keys False)",
+        "where": "benchmarks/metrics/comparison_metrics.py:91"
+      },
+      {
+        "setting": "calls without configuration scored as json_base",
+        "where": "benchmarks/comparisons/benchmark_compare_complexity.py:410"
+      }
+    ]
+  },
+  "sample_ids": {
+    "file": {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/sample_ids.json",
+      "sha256": "1e78c331733a63bffea91957a1b6933b96046649737915baffa083cc2335f552"
+    },
+    "seed": 42,
+    "per_level": 25,
+    "samples": [
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 1
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 5
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 6
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 8
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 11
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 12
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 13
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 15
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 16
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 17
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 19
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 20
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 23
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 27
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 30
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 31
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 32
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 33
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 35
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 37
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 39
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 40
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 41
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 43
+      },
+      {
+        "axis": "complexity",
+        "level": 1,
+        "sample_idx": 49
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 751
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 752
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 753
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 754
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 756
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 757
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 758
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 761
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 763
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 765
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 767
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 769
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 771
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 773
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 776
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 777
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 778
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 780
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 781
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 783
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 787
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 788
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 791
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 797
+      },
+      {
+        "axis": "complexity",
+        "level": 16,
+        "sample_idx": 798
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2450
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2451
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2452
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2453
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2456
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2457
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2458
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2459
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2460
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2462
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2463
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2464
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2465
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2467
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2468
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2471
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2473
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2474
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2476
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2479
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2485
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2490
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2496
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2497
+      },
+      {
+        "axis": "complexity",
+        "level": 50,
+        "sample_idx": 2498
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2851
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2852
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2853
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2854
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2855
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2858
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2859
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2861
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2862
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2863
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2865
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2871
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2873
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2874
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2880
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2882
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2884
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2885
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2890
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2892
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2893
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2894
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2896
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2897
+      },
+      {
+        "axis": "complexity",
+        "level": 150,
+        "sample_idx": 2899
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 2
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 5
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 6
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 7
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 9
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 11
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 14
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 15
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 20
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 21
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 23
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 27
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 28
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 30
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 31
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 33
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 35
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 37
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 38
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 41
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 42
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 44
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 45
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 48
+      },
+      {
+        "axis": "completeness",
+        "level": 1,
+        "sample_idx": 49
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 201
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 204
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 205
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 206
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 209
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 211
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 212
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 217
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 221
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 222
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 226
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 227
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 228
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 232
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 233
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 234
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 235
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 236
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 237
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 238
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 242
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 243
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 246
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 248
+      },
+      {
+        "axis": "completeness",
+        "level": 5,
+        "sample_idx": 249
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 450
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 452
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 453
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 457
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 459
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 465
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 466
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 467
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 468
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 469
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 470
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 472
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 473
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 474
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 475
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 476
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 478
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 479
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 480
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 482
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 486
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 488
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 491
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 493
+      },
+      {
+        "axis": "completeness",
+        "level": 10,
+        "sample_idx": 497
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 700
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 701
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 704
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 705
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 707
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 708
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 711
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 714
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 717
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 718
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 719
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 724
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 725
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 727
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 728
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 732
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 735
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 736
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 739
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 740
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 741
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 743
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 745
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 746
+      },
+      {
+        "axis": "completeness",
+        "level": 15,
+        "sample_idx": 748
+      }
+    ]
+  },
+  "humanizer": {
+    "model": "qwen2.5:32b",
+    "requests_file": {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/requests_qwen2.5_32b.jsonl",
+      "sha256": "a550edb245ff1b3b9a0e2286e37b5710ccab79115aa8c3a5630950a176d04b92"
+    },
+    "meta": {
+      "ollama": {
+        "base_url": "http://localhost:11435/v1",
+        "version": "0.24.0",
+        "models": {
+          "qwen2.5:32b": {
+            "name": "qwen2.5:32b",
+            "present": true,
+            "digest": "9f13ba1299afea09d9a956fc6a85becc99115a6d596fae201a5487a03bdc4368",
+            "short_id": "9f13ba1299af",
+            "expected_short_id": "9f13ba1299af",
+            "short_id_matches": true,
+            "size": 19851349669,
+            "modified_at": "2026-05-27T12:20:58.433268826Z",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "qwen2",
+              "families": [
+                "qwen2"
+              ],
+              "parameter_size": "32.8B",
+              "quantization_level": "Q4_K_M"
+            },
+            "parameters": null,
+            "template_sha256": "eb4402837c7829a690fa845de4d7f3fd842c2adee476d5341da8a46ea9255175",
+            "template_has_current_date": false,
+            "capabilities": [
+              "completion",
+              "tools"
+            ],
+            "context_length_trained": {
+              "qwen2.context_length": 32768
+            },
+            "weights_blobs": [
+              "eabc98a9bcbfce7fd70f3e07de599f8fda98120fefed5881934161ede8bd1a41"
+            ],
+            "modelfile_sha256": "fd8c3797006c3ebfe8dd9d96c6912236e48dbf6930c4f9145d9068a6fe6c0591"
+          }
+        },
+        "loaded": [
+          {
+            "name": "qwen2.5:32b",
+            "digest": "9f13ba1299afea09d9a956fc6a85becc99115a6d596fae201a5487a03bdc4368",
+            "size": 21441736704,
+            "size_vram": 15766736896,
+            "fraction_on_gpu": 0.7353,
+            "fully_on_gpu": false,
+            "context_length": 4096,
+            "expires_at": "2026-09-28T16:15:09.127223584Z"
+          }
+        ]
+      },
+      "llm_settings": {
+        "mode": "openai_compatible",
+        "temperature": 0.7,
+        "seed": null,
+        "max_tokens": null,
+        "timeout": null,
+        "request_profile": "2026-03-humaniser",
+        "request_profile_spec": {
+          "json_suffix": false,
+          "response_format": true,
+          "default_max_tokens": null,
+          "extra_body": false,
+          "strict_json": true
+        },
+        "extra_body_in_environment": null,
+        "request_params_sent": [
+          "{\"model\": \"qwen2.5:32b\", \"response_format\": {\"type\": \"json_object\"}, \"temperature\": 0.7}"
+        ],
+        "max_parallel": 4
+      },
+      "format_check": {
+        "n": 200,
+        "ok": 200,
+        "failed": []
+      },
+      "empty_requests": []
+    }
+  },
+  "fidelity": [
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/fidelity_qwen2.5_32b.csv",
+      "sha256": "88630df831ee390932398e37a13da8f13eef01de40c458ca4c491a7bff3ba490"
+    }
+  ],
+  "time_estimate_old_server": {
+    "complexity": {
+      "planner_executor": {
+        "n_calls": 100,
+        "completion_tokens": 44818,
+        "prompt_tokens": 274395,
+        "sum_latency_s_old_server": 757.2,
+        "wall_s_old_latencies": 378.6
+      }
+    },
+    "completeness": {
+      "planner_executor": {
+        "n_calls": 100,
+        "completion_tokens": 142138,
+        "prompt_tokens": 285131,
+        "sum_latency_s_old_server": 2603.5,
+        "wall_s_old_latencies": 1301.8
+      }
+    }
+  },
+  "gpu_checks": [
+    {
+      "axis": "complexity",
+      "level": 1,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:17:22.637192211Z"
+    },
+    {
+      "axis": "complexity",
+      "level": 16,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:20:01.315214264Z"
+    },
+    {
+      "axis": "complexity",
+      "level": 50,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:22:21.658344618Z"
+    },
+    {
+      "axis": "complexity",
+      "level": 150,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:24:26.9901965Z"
+    },
+    {
+      "axis": "completeness",
+      "level": 1,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:26:49.640861738Z"
+    },
+    {
+      "axis": "completeness",
+      "level": 5,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:33:02.119809223Z"
+    },
+    {
+      "axis": "completeness",
+      "level": 10,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:42:10.115822787Z"
+    },
+    {
+      "axis": "completeness",
+      "level": 15,
+      "name": "gpt-oss-20b-ctx32k:latest",
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "size": 15156581760,
+      "size_vram": 15156581760,
+      "fraction_on_gpu": 1.0,
+      "fully_on_gpu": true,
+      "context_length": 32768,
+      "expires_at": "2026-09-28T16:53:58.166524053Z"
+    }
+  ],
+  "finished_utc": "2026-09-28T16:48:58.582591+00:00",
+  "elapsed_s": 2291.5,
+  "calls": {
+    "logged": 400,
+    "errors": 0,
+    "timeouts": [],
+    "file": {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/calls.jsonl",
+      "sha256": "d6e4a3f5124e60668e50f3193e75ae6c3348fc5ec5edcd34de845fb60698acb4"
+    }
+  },
+  "throughput": {
+    "completion_tokens": 367249,
+    "sum_latency_s": 4558.8,
+    "completion_tokens_per_s": 80.6
+  },
+  "outputs": {
+    "B": {
+      "completeness": {
+        "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_completeness_B.json",
+        "sha256": "19593a4acbe846539e3192d99961b6536e3c1d0e5a323623772a590321eb242d"
+      },
+      "complexity": {
+        "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_complexity_B.json",
+        "sha256": "4309b7b856cd14d43e73629ff64257ab9acf446cb2c92aea63fc7b9ba98ec56f"
+      }
+    },
+    "C": {
+      "completeness": {
+        "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_completeness_C.json",
+        "sha256": "13d5591c8aa11becb974b5b0f558aafded1fcd91debe0f6fd20a0cf2bd371dbd"
+      },
+      "complexity": {
+        "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_complexity_C.json",
+        "sha256": "9679f487eb2b396c27b0d267d108dc61a540fb8745d31acd0d1720690143953a"
+      }
+    }
+  },
+  "redaction": {
+    "redacted": [
+      "environment.server_collected.OLLAMA_HOST",
+      "server_info.env_effective.OLLAMA_HOST",
+      "server_info.env_process.705583.error",
+      "server_info.env_systemd.OLLAMA_HOST",
+      "server_info.env_systemd_raw.stdout",
+      "server_info.gpu_processes.stdout",
+      "server_info.nvidia_smi.stdout"
+    ],
+    "what": "server network settings (OLLAMA_HOST, OLLAMA_ORIGINS) and server filesystem paths (PATH, the ollama binary path, a /proc path); none of them affects inference",
+    "kept": "host alias veritas, Ollama version, GPU and driver, model digests and the Ollama variables that affect inference (OLLAMA_NUM_PARALLEL, OLLAMA_MAX_LOADED_MODELS, OLLAMA_KV_CACHE_TYPE, OLLAMA_FLASH_ATTENTION, OLLAMA_CONTEXT_LENGTH)",
+    "unredacted_copy": "manifest.unredacted.json and server_info.json in this folder, kept locally and not versioned"
+  }
+}

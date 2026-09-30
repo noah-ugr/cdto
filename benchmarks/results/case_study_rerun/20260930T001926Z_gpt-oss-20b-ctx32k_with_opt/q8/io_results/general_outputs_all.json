@@ -1,0 +1,15 @@
+{
+  "general_results": [
+    {
+      "Simulation_period_hours": 2000.0,
+      "P4_total_busy_hours": 131.0406423838124,
+      "P4_total_busy_percent": 6.552032119190621,
+      "Intervention_time_hours": 591.0,
+      "Activities_overlap_percent": 0.0,
+      "Net_plan_unavailability_hours": 26.306919299390874,
+      "Net_plan_unavailability_percent": 1.3153459649695438,
+      "Net_plan_availability_hours": 1973.693080700609,
+      "Net_plan_availability_percent": 98.68465403503046
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+# gpt-oss:20b with a 32768-token context window; nothing else changes.
+# run_paired uses it with --derived-model on servers whose default context
+# (4096 without OLLAMA_CONTEXT_LENGTH) is too short for the Planner-Executor
+# prompt plus its 4096-token output budget, and verifies that weights,
+# template, system prompt, details and model info equal gpt-oss:20b's.
+#
+# Create it on the Ollama host (no sudo needed):
+#   ollama create gpt-oss-20b-ctx32k -f Modelfile.gpt-oss-20b-ctx32k
+# Check: `ollama show gpt-oss-20b-ctx32k --parameters` lists num_ctx 32768,
+# and once loaded `ollama ps` shows CONTEXT 32768.
+FROM gpt-oss:20b
+PARAMETER num_ctx 32768

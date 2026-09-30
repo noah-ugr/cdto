@@ -1,0 +1,8 @@
+group,c2,rule_campos_esquema,rule_tipos,rule_equipos,rule_ids,rule_limites,rule_referencias,rule_rangos,rule_sanity_batch,rule_campos_fuera_de_nivel,rule_campos_leidos,rule_no_vacia,rule_dom_real,rule_dom_int,rule_turno_minimo,rule_prec_tipos,rule_prec_aciclica
+total,77,7,33,0,0,0,16,6,0,8,3,0,1,16,1,0,2
+axis=completeness,38,6,15,0,0,0,5,1,0,7,2,0,0,11,0,0,1
+axis=complexity,39,1,18,0,0,0,11,5,0,1,1,0,1,5,1,0,1
+backend=claude-sonnet-4-6,5,0,0,0,0,0,2,0,0,2,0,0,0,1,0,0,0
+backend=gpt-5.4,2,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0
+backend=gpt-oss_20b,10,0,7,0,0,0,2,0,0,0,0,0,0,8,0,0,0
+backend=llama3.1_latest,60,7,26,0,0,0,11,6,0,6,3,0,1,6,1,0,2

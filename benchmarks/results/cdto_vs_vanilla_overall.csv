@@ -1,0 +1,7 @@
+metric,unit,mean_delta,n_values
+CollateralRate,%,-12.678472076923075,104
+ExactMatch,%,21.25,104
+F1Micro,%,17.171745903846155,104
+Latency,%,-58.63994243364288,104
+OmissionRate,%,-10.616357019230769,104
+TotalTokens,%,-4.447418241244271,104

@@ -1,0 +1,48 @@
+{
+  "source_commit": "2fe30ca78396bf4dbc123d4638075377fede71af",
+  "created_utc": "2026-09-30T13:28:03.807067+00:00",
+  "fixes": {
+    "fresh_simulations": {
+      "subject": "fix(agent): run every CDTO simulation in a fresh process",
+      "commit": "a98e080b5aa174f3e4761986424854cd3e698464"
+    },
+    "diagnostic_routine_inputs": {
+      "subject": "fix(agent): give the diagnostic routine the rejected candidate's delta and violations",
+      "commit": "b0c05101e1719e69d4674f041aa2c732d1545471"
+    },
+    "chat_current_query": {
+      "subject": "fix(agent): make the final chat answer summarise the current query",
+      "commit": "011684442affa04401f2c10c0db0655c4ed57bf5"
+    },
+    "candidate_kpis_against_s_k": {
+      "subject": "fix(agent): compare the rejected candidate's KPIs with the current configuration",
+      "commit": "724839a4800a49e68f4c88048b68ae945db61713"
+    },
+    "violation_messages": {
+      "subject": "fix(validator): English violation messages that say which field points to what",
+      "commit": "554296fe920991923fa171b2eab414da57b7fe16"
+    },
+    "xai_delta_log": {
+      "subject": "fix(agent): log the delta the xAI receives in the diagnostic routine",
+      "commit": "79ffdc32dbe1134607fc12233eaea06ce794314a"
+    },
+    "s_star_decision_variables": {
+      "subject": "fix(optimizer): build S* from the current configuration, changing only the IWO decision variables",
+      "commit": "5718b5859888055eb0e2d6c66e8091be3111b988"
+    },
+    "s_star_checked": {
+      "subject": "fix(agent): apply S* through the admissibility check, like a batch",
+      "commit": "ed8f83597c2681cba1ae3a6e8a2042d0c43636db"
+    },
+    "s_star_simulated_and_explained": {
+      "subject": "fix(agent): simulate and explain S* before the chat, against the configuration it replaced",
+      "commit": "2ba8831308decd672e8013908f2d89970f36d73f"
+    },
+    "precedence_direction": {
+      "subject": "fix(agent): describe taskCode and activityCode as what their owner precedes",
+      "commit": "52d74aa0f182c5dfda4b16d41baaa7991f4e2876"
+    }
+  },
+  "variant": "without",
+  "exported_utc": "2026-09-30T13:28:03.807117+00:00"
+}

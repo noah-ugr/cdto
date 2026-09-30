@@ -1,0 +1,53 @@
+[project]
+name = "cdto"
+version = "1.0.0"
+description = "Cognitive Digital Twin Orchestrator: agentic AI for the modification, simulation and optimisation of Petri net maintenance models."
+readme = "README.md"
+license = { text = "MIT (own code only; see THIRD_PARTY.md)" }
+requires-python = ">=3.13,<3.14"
+authors = [{ name = "Noah Masegosa Cáceres" }]
+# Direct dependencies, pinned to the versions the results were produced with.
+# requirements.lock pins the full environment.
+dependencies = [
+    "anthropic==0.96.0",
+    "chromadb==1.5.0",
+    "fastapi==0.135.1",
+    "httpx==0.28.1",
+    "joblib==1.5.3",
+    "langchain-chroma==1.1.0",
+    "langchain-community==0.4.1",
+    "langchain-core==1.2.11",
+    "langchain-huggingface==1.2.0",
+    "langchain-text-splitters==1.1.0",
+    "langgraph==1.0.8",
+    "matplotlib==3.10.8",
+    "numpy==2.2.6",
+    "openai==2.24.0",
+    "openpyxl==3.1.5",
+    "pandas==2.3.3",
+    "pydantic==2.12.5",
+    "pypdf==6.7.0",
+    "python-dotenv==1.2.1",
+    "rich==14.3.2",
+    "scikit-learn==1.8.0",
+    "scipy==1.17.0",
+    "sentence-transformers==5.2.2",
+    "tiktoken==0.13.0",
+    "torch==2.10.0",
+    "tqdm==4.67.3",
+    "uvicorn==0.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.3",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = [
+    "engine: needs the Petri net engine (Modules, PetriNetModules, utils, core/pipeline.py, config/models.py); skipped when it is not included",
+    "optimizer: needs the optimizer (optimizers/, core/main.py); skipped when it is not included",
+]

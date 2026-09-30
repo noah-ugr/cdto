@@ -1,0 +1,373 @@
+{
+  "run_id": "20260930T001541Z_gpt-oss-20b-ctx32k",
+  "started_utc": "2026-09-30T00:16:04.962244+00:00",
+  "finished_utc": "2026-09-30T00:18:57.147525+00:00",
+  "command": [
+    "benchmarks/case_study/rerun_case_study.py",
+    "--model",
+    "gpt-oss-20b-ctx32k",
+    "--base-url",
+    "http://localhost:11435/v1",
+    "--run-id",
+    "20260930T001541Z_gpt-oss-20b-ctx32k"
+  ],
+  "code_path": "core/api.py: AppState.initialize() and the /chat endpoint function, one thread",
+  "thread_id": "case_study_rerun",
+  "with_optimization": false,
+  "git": {
+    "head": "52d74aa0f182c5dfda4b16d41baaa7991f4e2876",
+    "branch": "codex-refactoring",
+    "dirty_paths": [],
+    "validator_commit": "52d74aa0f182c5dfda4b16d41baaa7991f4e2876",
+    "executor_commit": "55f56eef3f9f7c675f2d6b2d45079d484b77f53c",
+    "reindex_commit": "cef1698f49c432aa7773e5ae45f9142c478f2f5b",
+    "script_commit": "52d74aa0f182c5dfda4b16d41baaa7991f4e2876",
+    "fixes": {
+      "fresh_simulations": {
+        "subject": "fix(agent): run every CDTO simulation in a fresh process",
+        "commit": "a98e080b5aa174f3e4761986424854cd3e698464"
+      },
+      "diagnostic_routine_inputs": {
+        "subject": "fix(agent): give the diagnostic routine the rejected candidate's delta and violations",
+        "commit": "b0c05101e1719e69d4674f041aa2c732d1545471"
+      },
+      "chat_current_query": {
+        "subject": "fix(agent): make the final chat answer summarise the current query",
+        "commit": "011684442affa04401f2c10c0db0655c4ed57bf5"
+      },
+      "candidate_kpis_against_s_k": {
+        "subject": "fix(agent): compare the rejected candidate's KPIs with the current configuration",
+        "commit": "724839a4800a49e68f4c88048b68ae945db61713"
+      },
+      "violation_messages": {
+        "subject": "fix(validator): English violation messages that say which field points to what",
+        "commit": "554296fe920991923fa171b2eab414da57b7fe16"
+      },
+      "xai_delta_log": {
+        "subject": "fix(agent): log the delta the xAI receives in the diagnostic routine",
+        "commit": "79ffdc32dbe1134607fc12233eaea06ce794314a"
+      },
+      "s_star_decision_variables": {
+        "subject": "fix(optimizer): build S* from the current configuration, changing only the IWO decision variables",
+        "commit": "5718b5859888055eb0e2d6c66e8091be3111b988"
+      },
+      "s_star_checked": {
+        "subject": "fix(agent): apply S* through the admissibility check, like a batch",
+        "commit": "ed8f83597c2681cba1ae3a6e8a2042d0c43636db"
+      },
+      "s_star_simulated_and_explained": {
+        "subject": "fix(agent): simulate and explain S* before the chat, against the configuration it replaced",
+        "commit": "2ba8831308decd672e8013908f2d89970f36d73f"
+      },
+      "precedence_direction": {
+        "subject": "fix(agent): describe taskCode and activityCode as what their owner precedes",
+        "commit": "52d74aa0f182c5dfda4b16d41baaa7991f4e2876"
+      }
+    }
+  },
+  "model": "gpt-oss-20b-ctx32k",
+  "base_url": "http://localhost:11435/v1",
+  "server": {
+    "version": "0.24.0",
+    "model": {
+      "name": "gpt-oss-20b-ctx32k",
+      "present": true,
+      "digest": "65086a4a68ab43873b6e9d95ea7efc31cc1517c4a5a27f0c001f4abf129b731f",
+      "short_id": "65086a4a68ab",
+      "expected_short_id": null,
+      "short_id_matches": true,
+      "size": 13793441260,
+      "modified_at": "2026-09-28T15:12:15.130295034Z",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "gptoss",
+        "families": [
+          "gptoss"
+        ],
+        "parameter_size": "20.9B",
+        "quantization_level": "MXFP4"
+      },
+      "parameters": "num_ctx                        32768\ntemperature                    1",
+      "template_sha256": "fa6710a93d78da62641e192361344be7a8c0a1c3737f139cf89f20ce1626b99c",
+      "template_has_current_date": true,
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "context_length_trained": {
+        "gptoss.context_length": 131072
+      },
+      "weights_blobs": [
+        "e7b273f9636059a689e3ddcab3716e4f65abe0143ac978e46673ad0e52d09efb"
+      ],
+      "modelfile_sha256": "f283ebdfab03544bfedf7721d6713d1d8691e7b615ed3d568de0c67ca7debbea"
+    }
+  },
+  "llm_runtimes": {
+    "nodes.get_llm": {
+      "mode": "openai_compatible",
+      "model": "gpt-oss-20b-ctx32k",
+      "base_url": "http://localhost:11435/v1/",
+      "temperature": 0.0,
+      "seed": null,
+      "timeout": 600.0
+    },
+    "LLMService()": {
+      "mode": "openai_compatible",
+      "model": "gpt-oss-20b-ctx32k",
+      "base_url": "http://localhost:11435/v1/",
+      "temperature": 0,
+      "seed": null,
+      "timeout": null
+    }
+  },
+  "environment": {
+    "LLM_PROVIDER": "openai_compatible",
+    "LLM_MODEL": "gpt-oss-20b-ctx32k",
+    "LLM_BASE_URL": "http://localhost:11435/v1",
+    "LLM_TEMPERATURE": "0",
+    "LLM_SEED": null,
+    "LLM_TIMEOUT": "600",
+    "LLM_API_KEY": null,
+    "BENCHMARK_LLM_PROVIDER": "openai_compatible",
+    "BENCHMARK_LLM_MODEL": "gpt-oss-20b-ctx32k",
+    "BENCHMARK_LLM_BASE_URL": "http://localhost:11435/v1",
+    "BENCHMARK_LLM_TEMPERATURE": "0",
+    "BENCHMARK_LLM_SEED": null,
+    "BENCHMARK_LLM_TIMEOUT": "600",
+    "BENCHMARK_LLM_API_KEY": null,
+    "OPENAI_COMPATIBLE_API_KEY": null,
+    "CDTO_IO_DIR": "C:\\tmp\\cdto_case_rerun_20260930T001541Z_gpt-oss-20b-ctx32k",
+    "OLLAMA_MODEL": null,
+    "OPENAI_COMPATIBLE_MODEL": null,
+    "OPENAI_BASE_URL": null,
+    "OPENAI_COMPATIBLE_BASE_URL": null,
+    "OLLAMA_BASE_URL": null,
+    "LLM_EXTRA_BODY_JSON": null,
+    "BENCHMARK_LLM_EXTRA_BODY_JSON": null,
+    "LLM_REQUEST_PROFILE": null,
+    "LLM_MODE": null
+  },
+  "dotenv": "disabled (load_dotenv is a no-op for this run)",
+  "io_dir": "C:\\tmp\\cdto_case_rerun_20260930T001541Z_gpt-oss-20b-ctx32k",
+  "state_before_q5": {
+    "A002.tasks.T002.Duration": 85,
+    "A002.T_wait": 6,
+    "applied_T002_Duration_85": true,
+    "applied_T_wait_6": true,
+    "only_those_edits_vs_S0": true,
+    "candidate_simulated": true
+  },
+  "queries": [
+    {
+      "index": 1,
+      "category": null,
+      "query": "What are the duration and shutdown requirement of each task in A002?",
+      "success": true,
+      "elapsed_s": 29.8,
+      "message": null
+    },
+    {
+      "index": 2,
+      "category": null,
+      "query": "How many technicians are assigned to A001 and what is its dispatch start time?",
+      "success": true,
+      "elapsed_s": 8.6,
+      "message": null
+    },
+    {
+      "index": 3,
+      "category": null,
+      "query": "Task T002 in A002 is causing delays. Reduce its duration by 15 %.",
+      "success": true,
+      "elapsed_s": 12.9,
+      "message": null,
+      "outcome": "commit",
+      "routes_resolved": [
+        true
+      ]
+    },
+    {
+      "index": 4,
+      "category": null,
+      "query": "Increase the dispatching wait time of A002 by 50 %.",
+      "success": true,
+      "elapsed_s": 20.1,
+      "message": null,
+      "outcome": "commit",
+      "routes_resolved": [
+        true
+      ]
+    },
+    {
+      "index": 5,
+      "category": "C",
+      "query": "Remove task T001 from A002; it looks like a redundant initial check.",
+      "success": true,
+      "elapsed_s": 33.4,
+      "message": null,
+      "outcome": "rechazo (DOMINIO)",
+      "routes_resolved": [
+        true
+      ]
+    },
+    {
+      "index": 6,
+      "category": "D",
+      "query": "Simulate the updated configuration and explain the performance difference versus the original baseline.",
+      "success": true,
+      "elapsed_s": 29.4,
+      "message": null
+    },
+    {
+      "index": 7,
+      "category": "E",
+      "query": "What happens between t=400 and t=410 h? Show the A001–A002 handoff sequence.",
+      "success": true,
+      "elapsed_s": 32.7,
+      "message": null
+    },
+    {
+      "index": 8,
+      "category": "F",
+      "query": "Net plan availability of 87.5 % is insufficient. Optimize the system to reach at least 90 %.",
+      "skipped": "sin --with-optimization"
+    }
+  ],
+  "python": "3.13.14",
+  "files": {
+    "agent_debug.log": "d1861a2486abdd40fe62f1e072265e53f199868a28e6b38dfcb7e179c4780be6",
+    "q1/config_after.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "q1/config_before.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "q1/final_state.json": "e06799d7a822903510af6d0800e733dce1c1d8e55fbf203a0515689f4743933b",
+    "q1/io_results/bottleneck_heatmap.png": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+    "q1/io_results/calculated_task_durations.json": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0",
+    "q1/io_results/calculated_task_durations.xlsx": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328",
+    "q1/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q1/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q1/io_results/gantt_Activity_021.pdf": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3",
+    "q1/io_results/gantt_Activity_021.png": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+    "q1/io_results/gantt_Activity_022.pdf": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308",
+    "q1/io_results/gantt_Activity_022.png": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+    "q1/io_results/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "q1/io_results/Petrinet_A_simulator.xlsx": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54",
+    "q1/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q1/node_updates.json": "987a316f653b26c96ed9c7c567e51dd55d9dff83adcf26a52004b49a1b4a251c",
+    "q1/response.json": "fce6777b2c34f13b7eeb36a9fa1af20f4a32382408445cf2945cc527e4ba218d",
+    "q2/config_after.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "q2/config_before.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "q2/final_state.json": "e8e1aa6f6eca60ab7f98b27a44e97d076de989bb0e7aa77a4ba9f91579636dab",
+    "q2/io_results/bottleneck_heatmap.png": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+    "q2/io_results/calculated_task_durations.json": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0",
+    "q2/io_results/calculated_task_durations.xlsx": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328",
+    "q2/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q2/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q2/io_results/gantt_Activity_021.pdf": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3",
+    "q2/io_results/gantt_Activity_021.png": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+    "q2/io_results/gantt_Activity_022.pdf": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308",
+    "q2/io_results/gantt_Activity_022.png": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+    "q2/io_results/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "q2/io_results/Petrinet_A_simulator.xlsx": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54",
+    "q2/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q2/node_updates.json": "5c048f3af395f6ef5620096029838b401057f6436cecc782be65a24d6a064114",
+    "q2/response.json": "7fcffea4bb98ccb4f664a0d94fe424e1d31bb9c510ce4836cabd33bc69c8aff9",
+    "q3/config_after.json": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48",
+    "q3/config_before.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "q3/edit_report.json": "ce9d1584c6ab48b97a02b7967e33bb57242f9176acc30bae028a2434c539508c",
+    "q3/final_state.json": "1f615931c0966587bbf1cd56508819a37f28c09965610ccdf3359a7f163bb482",
+    "q3/io_results/bottleneck_heatmap.png": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+    "q3/io_results/calculated_task_durations.json": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0",
+    "q3/io_results/calculated_task_durations.xlsx": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328",
+    "q3/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q3/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q3/io_results/gantt_Activity_021.pdf": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3",
+    "q3/io_results/gantt_Activity_021.png": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+    "q3/io_results/gantt_Activity_022.pdf": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308",
+    "q3/io_results/gantt_Activity_022.png": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+    "q3/io_results/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "q3/io_results/Petrinet_A_simulator.xlsx": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54",
+    "q3/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q3/node_updates.json": "8a107a0e1503a876e20cbf53310ca3781391da2f725161743dd6fb6dd2b26691",
+    "q3/response.json": "7ae2f668b48e601016fdda5632d07968630d47810d0698280d3af1f885fbd002",
+    "q4/config_after.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q4/config_before.json": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48",
+    "q4/edit_report.json": "f41189fe89d8e353fd36d4e027d4397354daef091b512aaaa5f127f23ebc12c8",
+    "q4/final_state.json": "754757e004913970adcc57c10e7df9be4838f86b5d386c473e8db3e5b0037cf4",
+    "q4/io_results/bottleneck_heatmap.png": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+    "q4/io_results/calculated_task_durations.json": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0",
+    "q4/io_results/calculated_task_durations.xlsx": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328",
+    "q4/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q4/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q4/io_results/gantt_Activity_021.pdf": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3",
+    "q4/io_results/gantt_Activity_021.png": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+    "q4/io_results/gantt_Activity_022.pdf": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308",
+    "q4/io_results/gantt_Activity_022.png": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+    "q4/io_results/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "q4/io_results/Petrinet_A_simulator.xlsx": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54",
+    "q4/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q4/node_updates.json": "6e9b84917a81a8abf6be564940d3e1c97d43f356f33a120244772182ca0b973c",
+    "q4/response.json": "b90c6b496f04328ba5c4430682acba65e8769084803159e3f2c9790a152239ee",
+    "q5/config_after.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q5/config_before.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q5/edit_report.json": "e75fe5e86b786f8b70faa5ab15cd64b51ebc07a4930b2601adf25de483f30dd8",
+    "q5/explanation.md": "f4e4a91a608653c19df9efdfd312837c814990001427766f8f776e61d489ac1a",
+    "q5/feedback.json": "9367a417777618ec962e1d9902267fead742c1db76d0fc96adb245dc17999356",
+    "q5/final_state.json": "8de99bea60b48bfa9d607855be0f677ebf90d3cfa0495bdcb1851b2baf888aaf",
+    "q5/node_updates.json": "220cd0a7a146103137a0a851f6f93d06dd48c7053e462507836c3a7f7b1e6874",
+    "q5/rejected_candidate.json": "bb0c09781e5554be540b7f2dfa1c080acb709f300827912fa37166d200e38bca",
+    "q5/rejected_candidate_simulation/bottleneck_heatmap.png": "bae95d6d4b56b4c896c339c00042dccbd872dc07a5e460769f6f96d5dcda4770",
+    "q5/rejected_candidate_simulation/calculated_task_durations.json": "198ec696677f1845dcc0b7318c2c578eb167b21fb443dd3e492b21cd13bd8ba1",
+    "q5/rejected_candidate_simulation/calculated_task_durations.xlsx": "6293d5d1c268a88fba4be1652e60e44b32f7dec2d7ace16ac462f01eaa587068",
+    "q5/rejected_candidate_simulation/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q5/rejected_candidate_simulation/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q5/rejected_candidate_simulation/episodic_failures.csv": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01",
+    "q5/rejected_candidate_simulation/gantt_Activity_021.pdf": "63eb3398b769907126c6f354cf198d54fcfeac554c5d297f1d60c8950d841f7b",
+    "q5/rejected_candidate_simulation/gantt_Activity_021.png": "f9983974f10bfb90c1738e6fdb020548c49a439d566884d3b8fb7aaff5f22487",
+    "q5/rejected_candidate_simulation/gantt_Activity_022.pdf": "0fed2597d8766f30ad44ec81357a73c06b405681090d68075e6659c87a698ed6",
+    "q5/rejected_candidate_simulation/gantt_Activity_022.png": "85880ccc194e3638c0a0d663e65485bb8a2dbee143bdc1e4f4a3c51ca84fd054",
+    "q5/rejected_candidate_simulation/general_outputs_all.json": "291138cbcb85741be43f9f3b56e7581f3d1b768dea8232a743b2c6b802446785",
+    "q5/rejected_candidate_simulation/Petrinet_A_simulator.xlsx": "e694159f19cfe43a60434f828fb3159998e63ee94257a3735c9cd13919692060",
+    "q5/rejected_candidate_simulation/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q5/response.json": "006da98e9a0015e8ed46a9f816ab235f17a08bd9170e2af418a1c4402555c081",
+    "q5/violations.json": "45c6bfc7af596bc7349ef0469cecefb204b5b7e4a2e88f1a62251b5cfec753e5",
+    "q6/config_after.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q6/config_before.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q6/final_state.json": "5a3dcc972ecafdbd93ee2c9c842496e14b279189e2bdd1348ef6d376d830d10d",
+    "q6/io_results/bottleneck_heatmap.png": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+    "q6/io_results/calculated_task_durations.json": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f",
+    "q6/io_results/calculated_task_durations.xlsx": "f22fdae3bf9c77d37cec2d2338f18c5108bc8f7042c3672108f60898c5a61ce8",
+    "q6/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q6/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q6/io_results/episodic_failures.csv": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01",
+    "q6/io_results/gantt_Activity_021.pdf": "7f8d7e79f137744523dd66bffe7d0300d2f111387a8c71adb167090e7e4ac3a3",
+    "q6/io_results/gantt_Activity_021.png": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+    "q6/io_results/gantt_Activity_022.pdf": "91ce59b6e3d38f05e34f52c6fbf8529ff9e7c8e8cf778810bf72f958c27f35a6",
+    "q6/io_results/gantt_Activity_022.png": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+    "q6/io_results/general_outputs_all.json": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff",
+    "q6/io_results/Petrinet_A_simulator.xlsx": "1df8593133df798668d3288a67aec10636ce5b47e00598a4d0825ca898d52ae7",
+    "q6/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q6/node_updates.json": "65907185e2919401b7a49e959a778fe2e968a1f80b5aa8e82c5ae32129148bec",
+    "q6/response.json": "e438b31dedb68f676142f8dc298aba3af85f8f923c4386b87974b7f84fe463bc",
+    "q7/config_after.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q7/config_before.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "q7/final_state.json": "cfa64f20632a23db8c834b6b7727362d946551ed7fffd96719b907484dbf41c2",
+    "q7/io_results/bottleneck_heatmap.png": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+    "q7/io_results/calculated_task_durations.json": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f",
+    "q7/io_results/calculated_task_durations.xlsx": "f22fdae3bf9c77d37cec2d2338f18c5108bc8f7042c3672108f60898c5a61ce8",
+    "q7/io_results/dynamic_documentation.md": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b",
+    "q7/io_results/dynamic_documentation.txt": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215",
+    "q7/io_results/episodic_failures.csv": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01",
+    "q7/io_results/gantt_Activity_021.pdf": "7f8d7e79f137744523dd66bffe7d0300d2f111387a8c71adb167090e7e4ac3a3",
+    "q7/io_results/gantt_Activity_021.png": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+    "q7/io_results/gantt_Activity_022.pdf": "91ce59b6e3d38f05e34f52c6fbf8529ff9e7c8e8cf778810bf72f958c27f35a6",
+    "q7/io_results/gantt_Activity_022.png": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+    "q7/io_results/general_outputs_all.json": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff",
+    "q7/io_results/Petrinet_A_simulator.xlsx": "1df8593133df798668d3288a67aec10636ce5b47e00598a4d0825ca898d52ae7",
+    "q7/io_results/visualization_metadata.json": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb",
+    "q7/node_updates.json": "81fd3f983b29b2507a4064861e9639d563ca0ef3559258c0ace837801288a970",
+    "q7/response.json": "1a8bf759032a571645a7a62710fe0a1a0d97245ed05a1efd8989671c8ef3675c",
+    "S0.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+  }
+}

@@ -1,0 +1,2698 @@
+{
+  "variant": "without",
+  "source_commit": "2fe30ca78396bf4dbc123d4638075377fede71af",
+  "exported_utc": "2026-09-30T13:28:03.870348+00:00",
+  "third_party_included": false,
+  "files": [
+    {
+      "path": "benchmarks/aggregator/c_star.py",
+      "group": "own",
+      "sha256": "94841590a5708c3899bfc84547b747209ac410da0c4c56979a74dbc98797b365"
+    },
+    {
+      "path": "benchmarks/aggregator/plot_delta_uq.py",
+      "group": "own",
+      "sha256": "b59fe8a8926b228d03d498dd911dafbc439e6188e50295599d4daa180230496b"
+    },
+    {
+      "path": "benchmarks/aggregator/plot_multi_model_uq.py",
+      "group": "own",
+      "sha256": "ba38018033f062e4d0ef11ef3eb13d1e47a7a4d4cfc1e0d12a7991122dbb70b0"
+    },
+    {
+      "path": "benchmarks/case_study/plot_gantt_comparison.py",
+      "group": "own",
+      "sha256": "d12c60e36b652867a99ad3b1b0b57df5b2def86bc7e03aa538c3ed956fa609a3"
+    },
+    {
+      "path": "benchmarks/case_study/regenerate_gantt.py",
+      "group": "own",
+      "sha256": "f1d84d35ea60eb47c864eacbd7e9a78f53d20eb937f1ff9af723890c013fdbfb"
+    },
+    {
+      "path": "benchmarks/case_study/release_info.py",
+      "group": "own",
+      "sha256": "b8820e0d1cd1a54e300e4f605718657897d57acf1ccd9c36e2d4a53bff65c80a"
+    },
+    {
+      "path": "benchmarks/case_study/rerun_case_study.py",
+      "group": "own",
+      "sha256": "671ed66fa38e98577cf67fbf476a772c03b1d9f83e1a4c50066707a4fb81e2d2"
+    },
+    {
+      "path": "benchmarks/case_study/single_edit_attribution.py",
+      "group": "own",
+      "sha256": "8077eca136b539833bf8ede8b245fe60dc3d38979187abfc5019a80df0541ee7"
+    },
+    {
+      "path": "benchmarks/comparisons/benchmark_compare_completeness.py",
+      "group": "own",
+      "sha256": "1c7cd88d641f962c66e700dc7242d1a11b5774ab8fdde6498e31eb41bb829b42"
+    },
+    {
+      "path": "benchmarks/comparisons/benchmark_compare_complexity.py",
+      "group": "own",
+      "sha256": "ba8180c030ed0c89b99009f12b623a0ca9e6bb062e37586f45c929c83dabba89"
+    },
+    {
+      "path": "benchmarks/comparisons/sample_overrides.py",
+      "group": "own",
+      "sha256": "be6867f72243288c611b62ef6afc161bde8b262b17d9e26f0c902e695e37aeab"
+    },
+    {
+      "path": "benchmarks/comparisons/traceability.py",
+      "group": "own",
+      "sha256": "6da71dec5a9ff290a20e77610071caa4f811abc6998224b6729a82c1019518b9"
+    },
+    {
+      "path": "benchmarks/humanisation_check/Modelfile.gpt-oss-20b-ctx32k",
+      "group": "own",
+      "sha256": "c8ad0577eebea54875b7d92fca56104e78dedba70d1acf0389954b7b1adc5301"
+    },
+    {
+      "path": "benchmarks/humanisation_check/__init__.py",
+      "group": "own",
+      "sha256": "74d91e416cd70a80c1018c01eb067c0ee89e1a90200974c86d36519d40b46da0"
+    },
+    {
+      "path": "benchmarks/humanisation_check/collect_server_info.py",
+      "group": "own",
+      "sha256": "54c495835432b9ea3e5293cfb4abd36af1da5baeb93892c5f6a1de9ccb0ddf85"
+    },
+    {
+      "path": "benchmarks/humanisation_check/common.py",
+      "group": "own",
+      "sha256": "8b24eea5d89c010249fb1937a61fccb16b5e7936c7d512522f162a14b1f5d2bb"
+    },
+    {
+      "path": "benchmarks/humanisation_check/compare.py",
+      "group": "own",
+      "sha256": "f439c040ea21fee5542b9e0d32d5bf9ba346634e77de60e5bd54e20d6dae97ca"
+    },
+    {
+      "path": "benchmarks/humanisation_check/fidelity.py",
+      "group": "own",
+      "sha256": "d359d15c8d60ed67a801ba665741133bdda876f4ffe480784a56bcb0964a7db1"
+    },
+    {
+      "path": "benchmarks/humanisation_check/ollama_api.py",
+      "group": "own",
+      "sha256": "2064625a9351849f33e205021d326fd4f978b6f8670896aadd3b81aba6d393e0"
+    },
+    {
+      "path": "benchmarks/humanisation_check/provenance.py",
+      "group": "own",
+      "sha256": "a8eb7b9dc8507206868e7131fff314f27dce77e5952fa0b7a489b09103e99beb"
+    },
+    {
+      "path": "benchmarks/humanisation_check/rehumanise.py",
+      "group": "own",
+      "sha256": "1106773d5e8424f84e12ecb21fd7f0311bf5ebdb421b27a1424d500c6fa5895f"
+    },
+    {
+      "path": "benchmarks/humanisation_check/run_paired.py",
+      "group": "own",
+      "sha256": "50362b6e62a288ac155be4d83766c8d0478ab2e9992d313dc3f5f3d23eb0fedb"
+    },
+    {
+      "path": "benchmarks/humanisation_check/select_samples.py",
+      "group": "own",
+      "sha256": "0d9f83cb0f70e222c47ed88b445a851799046f2ed391c8a3e69a883cebdf8e3f"
+    },
+    {
+      "path": "benchmarks/metrics/__init__.py",
+      "group": "own",
+      "sha256": "43480e748da5cdf6ef4a42a41995ba38c6d8e9cb094a88d59b04bb3ec9ae631a"
+    },
+    {
+      "path": "benchmarks/metrics/budget_complexity.py",
+      "group": "own",
+      "sha256": "73c1c9c7614e7490752ffc6880fecfc472b75eacdc1c4af84bdb3cbf9bc11a36"
+    },
+    {
+      "path": "benchmarks/metrics/c_star_by_backend.py",
+      "group": "own",
+      "sha256": "00347d61ab75a5dc3abbcf4098df77cc6ffa2d5a48ace1aaf2928bca1e28a8e5"
+    },
+    {
+      "path": "benchmarks/metrics/cdto_vs_vanilla_summary.py",
+      "group": "own",
+      "sha256": "f5312f8f277fa2048f8fa1020bfc088f0769315dc9c7ed562b1a9eb01a0418a5"
+    },
+    {
+      "path": "benchmarks/metrics/comparison_metrics.py",
+      "group": "own",
+      "sha256": "93bab8912d7e51b0492b39b34f5bfe759f49c8b664daecbebf0ddba4ed88a80e"
+    },
+    {
+      "path": "benchmarks/metrics/normalization.py",
+      "group": "own",
+      "sha256": "f60bf24827e47dbaea403c1b30cbb49a3ea4b5824fc262090bfe985da769060e"
+    },
+    {
+      "path": "benchmarks/metrics/output_truncation.py",
+      "group": "own",
+      "sha256": "f7be8bc12cba3fe638f8271e58ef7f4ed3b6dd2c66ea210454d47a09f93b943c"
+    },
+    {
+      "path": "benchmarks/metrics/per_level_tables.py",
+      "group": "own",
+      "sha256": "e7b3b60048fd04359c547ebb1d83a866b5c5fb6365d64b98129d6b9d34d49065"
+    },
+    {
+      "path": "benchmarks/metrics/petri_net_uq.py",
+      "group": "own",
+      "sha256": "35fc8cf87fc736f246a45652455f51978bd212d2af3cc8b80690198477ee33dd"
+    },
+    {
+      "path": "benchmarks/metrics/rescore_results.py",
+      "group": "own",
+      "sha256": "dc7e0ac34a321fa2ed73f1d4718dbc6b609fc7a5850f7cd3002789cc29b3a5da"
+    },
+    {
+      "path": "benchmarks/metrics/token_cost_summary.py",
+      "group": "own",
+      "sha256": "8a0a614a0a520e7cf271c91551bf825c6a87139d1d658a59770ef48a58d0f611"
+    },
+    {
+      "path": "benchmarks/metrics/validator_pass.py",
+      "group": "own",
+      "sha256": "753f08f1225249c2b88706a10cf241f1ae88e5c3c9d99a7afc483ed0a4ba1b1c"
+    },
+    {
+      "path": "benchmarks/metrics/validator_rule_table.py",
+      "group": "own",
+      "sha256": "5d6912cfe3d1cec256706cdeef5e84f36033b04be145eb3df0252c38a714ad66"
+    },
+    {
+      "path": "benchmarks/metrics/zero_token_calls.py",
+      "group": "own",
+      "sha256": "9faaa88c4c4f88420b1fe9262ed486b18d61db251fb67655187d9c9fb3cb7654"
+    },
+    {
+      "path": "benchmarks/results/budget_complexity_cl100k.csv",
+      "group": "results",
+      "sha256": "bb0c6ccedb109eed30349166f5012145168c0baa445af4a9b694c2459d9b0ed2"
+    },
+    {
+      "path": "benchmarks/results/c_star_by_backend.csv",
+      "group": "results",
+      "sha256": "6ac7547bdb102328f611ec5761716d0d897040fa2778dc9f5cffdf5c56bbeb3e"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "bf08d9c0f1820c7538b789dde97dd0062122e2d764562e24e3a1580895c19eef"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0/config.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T002_85/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "97e72b170c45e78814f6ccbce1c8f866fc170c7ce558b4d97b9e56a9b37312d8"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T002_85/config.json",
+      "group": "results",
+      "sha256": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T002_85/general_outputs_all.json",
+      "group": "results",
+      "sha256": "9f9508a9af7d81e59d22f7f2b2abe3fc8b38871c97487f828ceee8cd9baecbd2"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T_wait_6/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "994fdb78abeaed5df6792daf1ad9bbab74ee2740879b8dba59b856865816c929"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T_wait_6/config.json",
+      "group": "results",
+      "sha256": "3daf7e84f437a84b07e630812e33bbf4576288256d91c9d761bc8fdc7c9b1d4b"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_0_T_wait_6/general_outputs_all.json",
+      "group": "results",
+      "sha256": "72546ad3ee1252b9cde882842deb538087c141436cc725107a2aa63e98fb2e48"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_k+1/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "d32b90112652a6ae1da837fd8596ca0daaf31099305d4e3f9569783920b200fc"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_k+1/config.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/S_k+1/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/manifest.json",
+      "group": "results",
+      "sha256": "8831798e6bb19254d4d1d644fa3850b1531d9fb99de1ef258d9f4c83b87d571c"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/summary.csv",
+      "group": "results",
+      "sha256": "2210afb1025b2f29589a81c0206e10d8d3ce7c0ff7f5beb5767ec785096613ad"
+    },
+    {
+      "path": "benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/summary.json",
+      "group": "results",
+      "sha256": "80cee52056971394286069dc3bdfbfd14070c7cbc1e2de67329625c7d557bc1f"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "51a528507498d3232750e3af39a2cd0b759a3bb09cf56a2827cfe5c11570ee1e"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/config.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/per_activity/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "799f076dda856bac89248a84ab28e34ae3dfb2e16534c2ad829355f2fae65c90"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/per_activity/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "50383ef6593b6fecd6ee0c337e3a777bcf4462dc12e189866ac14915a0ff100c"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "799a9ec43dae85db38d159d910b6d26e1725edb459c38f664aef2e47ef08d6c4"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/config.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/per_activity/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "ec9edd3afdf7c2473fe0d0567a483327059ba06ef0817bea785a8b01fab31bba"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/per_activity/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "d7b271daa67da972c7fbaf545c42a8b8d32b7b4c7bbbc816bcf6015349b33a1a"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/gantt_chart_comparison.pdf",
+      "group": "results",
+      "sha256": "8a5bd1eb03067fef309c896cd19742c6677ebeeaba08acdc1855ea5a2ae465d9"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/manifest.json",
+      "group": "results",
+      "sha256": "7b84d6e6ed705ee272fc6226001e646e621dbdcfff89ea65b0814f33ee979766"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A001.pdf",
+      "group": "results",
+      "sha256": "08f70e7fbe3d16c39d3a2bed4b9dfbcb6df84c804446df591e0487db9a403423"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A002.pdf",
+      "group": "results",
+      "sha256": "c52482965fb994577eea90dd6c1387dc816021332520a286e6c4caac7874360c"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_tables.json",
+      "group": "results",
+      "sha256": "75323546f737db7ffa7409c7be8c7f416495eb96cd5d89cd1d5b95bb08c9876a"
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/manifest.json",
+      "group": "results",
+      "sha256": "851ebd1f4d6afb02673f08a1697d6e8c4b79538259e75a81ac289a8e8778ff5f"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/S0.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/manifest.json",
+      "group": "results",
+      "sha256": "3ac238f14fe3879508bda58d6ac6d62eec93fa19c77296aa0edb61593ebe1cf1"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/config_after.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/final_state.json",
+      "group": "results",
+      "sha256": "e06799d7a822903510af6d0800e733dce1c1d8e55fbf203a0515689f4743933b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/node_updates.json",
+      "group": "results",
+      "sha256": "987a316f653b26c96ed9c7c567e51dd55d9dff83adcf26a52004b49a1b4a251c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/response.json",
+      "group": "results",
+      "sha256": "fce6777b2c34f13b7eeb36a9fa1af20f4a32382408445cf2945cc527e4ba218d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/config_after.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/final_state.json",
+      "group": "results",
+      "sha256": "e8e1aa6f6eca60ab7f98b27a44e97d076de989bb0e7aa77a4ba9f91579636dab"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/node_updates.json",
+      "group": "results",
+      "sha256": "5c048f3af395f6ef5620096029838b401057f6436cecc782be65a24d6a064114"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/response.json",
+      "group": "results",
+      "sha256": "7fcffea4bb98ccb4f664a0d94fe424e1d31bb9c510ce4836cabd33bc69c8aff9"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/config_after.json",
+      "group": "results",
+      "sha256": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/edit_report.json",
+      "group": "results",
+      "sha256": "ce9d1584c6ab48b97a02b7967e33bb57242f9176acc30bae028a2434c539508c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/final_state.json",
+      "group": "results",
+      "sha256": "1f615931c0966587bbf1cd56508819a37f28c09965610ccdf3359a7f163bb482"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/node_updates.json",
+      "group": "results",
+      "sha256": "8a107a0e1503a876e20cbf53310ca3781391da2f725161743dd6fb6dd2b26691"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/response.json",
+      "group": "results",
+      "sha256": "7ae2f668b48e601016fdda5632d07968630d47810d0698280d3af1f885fbd002"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/config_before.json",
+      "group": "results",
+      "sha256": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/edit_report.json",
+      "group": "results",
+      "sha256": "f41189fe89d8e353fd36d4e027d4397354daef091b512aaaa5f127f23ebc12c8"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/final_state.json",
+      "group": "results",
+      "sha256": "754757e004913970adcc57c10e7df9be4838f86b5d386c473e8db3e5b0037cf4"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "6b047cda027d03c9ee74a828b90065d5eb93c68ddb74804aea0c4b9fcedb7b54"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "c0de345c8a05c461e669b6272e750ddc4fcfc96fde0860ced25b18cd1d6e1328"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "20de4e254d842c6160db5c35746b516a734d7bc9a9e1cd04aa0b74f38e5930a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "58583fa64928c2ca0facd221f8f3821108f84b99d06e1cda40e83628367fa308"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/node_updates.json",
+      "group": "results",
+      "sha256": "6e9b84917a81a8abf6be564940d3e1c97d43f356f33a120244772182ca0b973c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/response.json",
+      "group": "results",
+      "sha256": "b90c6b496f04328ba5c4430682acba65e8769084803159e3f2c9790a152239ee"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/edit_report.json",
+      "group": "results",
+      "sha256": "e75fe5e86b786f8b70faa5ab15cd64b51ebc07a4930b2601adf25de483f30dd8"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/explanation.md",
+      "group": "results",
+      "sha256": "f4e4a91a608653c19df9efdfd312837c814990001427766f8f776e61d489ac1a"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/feedback.json",
+      "group": "results",
+      "sha256": "9367a417777618ec962e1d9902267fead742c1db76d0fc96adb245dc17999356"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/final_state.json",
+      "group": "results",
+      "sha256": "8de99bea60b48bfa9d607855be0f677ebf90d3cfa0495bdcb1851b2baf888aaf"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/node_updates.json",
+      "group": "results",
+      "sha256": "220cd0a7a146103137a0a851f6f93d06dd48c7053e462507836c3a7f7b1e6874"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate.json",
+      "group": "results",
+      "sha256": "bb0c09781e5554be540b7f2dfa1c080acb709f300827912fa37166d200e38bca"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "e694159f19cfe43a60434f828fb3159998e63ee94257a3735c9cd13919692060"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "198ec696677f1845dcc0b7318c2c578eb167b21fb443dd3e492b21cd13bd8ba1"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "6293d5d1c268a88fba4be1652e60e44b32f7dec2d7ace16ac462f01eaa587068"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/episodic_failures.csv",
+      "group": "results",
+      "sha256": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "63eb3398b769907126c6f354cf198d54fcfeac554c5d297f1d60c8950d841f7b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "0fed2597d8766f30ad44ec81357a73c06b405681090d68075e6659c87a698ed6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/general_outputs_all.json",
+      "group": "results",
+      "sha256": "291138cbcb85741be43f9f3b56e7581f3d1b768dea8232a743b2c6b802446785"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/response.json",
+      "group": "results",
+      "sha256": "006da98e9a0015e8ed46a9f816ab235f17a08bd9170e2af418a1c4402555c081"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/violations.json",
+      "group": "results",
+      "sha256": "45c6bfc7af596bc7349ef0469cecefb204b5b7e4a2e88f1a62251b5cfec753e5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/final_state.json",
+      "group": "results",
+      "sha256": "5a3dcc972ecafdbd93ee2c9c842496e14b279189e2bdd1348ef6d376d830d10d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "1df8593133df798668d3288a67aec10636ce5b47e00598a4d0825ca898d52ae7"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "f22fdae3bf9c77d37cec2d2338f18c5108bc8f7042c3672108f60898c5a61ce8"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/episodic_failures.csv",
+      "group": "results",
+      "sha256": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "7f8d7e79f137744523dd66bffe7d0300d2f111387a8c71adb167090e7e4ac3a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "91ce59b6e3d38f05e34f52c6fbf8529ff9e7c8e8cf778810bf72f958c27f35a6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/node_updates.json",
+      "group": "results",
+      "sha256": "65907185e2919401b7a49e959a778fe2e968a1f80b5aa8e82c5ae32129148bec"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/response.json",
+      "group": "results",
+      "sha256": "e438b31dedb68f676142f8dc298aba3af85f8f923c4386b87974b7f84fe463bc"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/final_state.json",
+      "group": "results",
+      "sha256": "cfa64f20632a23db8c834b6b7727362d946551ed7fffd96719b907484dbf41c2"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "1df8593133df798668d3288a67aec10636ce5b47e00598a4d0825ca898d52ae7"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "f22fdae3bf9c77d37cec2d2338f18c5108bc8f7042c3672108f60898c5a61ce8"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/episodic_failures.csv",
+      "group": "results",
+      "sha256": "4ab3a608fa5d33a5fb174738c85e2d38d6c9c15a68b49a4d3f98c90f17eb1c01"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "7f8d7e79f137744523dd66bffe7d0300d2f111387a8c71adb167090e7e4ac3a3"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "91ce59b6e3d38f05e34f52c6fbf8529ff9e7c8e8cf778810bf72f958c27f35a6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "322c12842670b4eedd4ac55bb53aed5f80f4551e41f02fbd7d6f4a33e0c658fb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/node_updates.json",
+      "group": "results",
+      "sha256": "81fd3f983b29b2507a4064861e9639d563ca0ef3559258c0ace837801288a970"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/response.json",
+      "group": "results",
+      "sha256": "1a8bf759032a571645a7a62710fe0a1a0d97245ed05a1efd8989671c8ef3675c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/S0.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/manifest.json",
+      "group": "results",
+      "sha256": "6a79a2f76eaa05a440cba97e1a306b2c960015cb310302fe021f2346c09a05ec"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/config_after.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/final_state.json",
+      "group": "results",
+      "sha256": "a167d6526f09544964f998a442a9d88dd8f05dfb5fbe54673a3aedd351e371fc"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "b2d6f81d203f7858fc170350e8f455ebab3f4bc74db80106ed7b8d52aa87bcc5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "aa1a5ec7686d2bcc31aa44759a1461c5262f36ec7cf2ae048f04d8473c156b94"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "1cc20f9a32dc1c2fb6a390fc07c0885b73b1961521e2dd57a6f4e6d785bebf2d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "e0971803fb6beb2b73f03cf572d02513a0d7f6f2bf00102bdade44be5816079c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/node_updates.json",
+      "group": "results",
+      "sha256": "f5ad93cf6e8da2b49960c5b99b3cee3dfec735be4b27e6990a47b5a4c39a820b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/response.json",
+      "group": "results",
+      "sha256": "d82a8cdf431f2a97f0e7614fc70a5d0128315035360ae581475e1b327118878b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/config_after.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/final_state.json",
+      "group": "results",
+      "sha256": "c16fe3d354b6ae0b134ac28dec68182254d1d1abb59ea0b0029addc42aed0959"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "b2d6f81d203f7858fc170350e8f455ebab3f4bc74db80106ed7b8d52aa87bcc5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "aa1a5ec7686d2bcc31aa44759a1461c5262f36ec7cf2ae048f04d8473c156b94"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "1cc20f9a32dc1c2fb6a390fc07c0885b73b1961521e2dd57a6f4e6d785bebf2d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "e0971803fb6beb2b73f03cf572d02513a0d7f6f2bf00102bdade44be5816079c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/node_updates.json",
+      "group": "results",
+      "sha256": "9b07378f34751db18adfa5f152d7200522896a91acf10105164e9be5716a9b94"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/response.json",
+      "group": "results",
+      "sha256": "52aefddef6edff0560b5f95583df1fbecd8747ca015dae3a210b2e59c4687a12"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/config_after.json",
+      "group": "results",
+      "sha256": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/config_before.json",
+      "group": "results",
+      "sha256": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/edit_report.json",
+      "group": "results",
+      "sha256": "d679a6420aebe8777efb1306b0ec703138ca3de054172541ef516b0e11b09690"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/final_state.json",
+      "group": "results",
+      "sha256": "f0525f54d64b027cea71286e5fd678b4889268ebb7befd36352cd3b85abe7a3e"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "b2d6f81d203f7858fc170350e8f455ebab3f4bc74db80106ed7b8d52aa87bcc5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "aa1a5ec7686d2bcc31aa44759a1461c5262f36ec7cf2ae048f04d8473c156b94"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "1cc20f9a32dc1c2fb6a390fc07c0885b73b1961521e2dd57a6f4e6d785bebf2d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "e0971803fb6beb2b73f03cf572d02513a0d7f6f2bf00102bdade44be5816079c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/node_updates.json",
+      "group": "results",
+      "sha256": "6113a1ce9168e16b24093a88b336a23a0618443fe527558d87a1fa97535a9b8b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/response.json",
+      "group": "results",
+      "sha256": "7d98fea265ed4d7f8ff480958f53245115f2d73340e7dd9ab8a6d9e8d324dcdb"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/config_before.json",
+      "group": "results",
+      "sha256": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/edit_report.json",
+      "group": "results",
+      "sha256": "6f21a40b30aaf21025f6f0d53540f62cdeeeefc928db1d056a650751f9ce6706"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/final_state.json",
+      "group": "results",
+      "sha256": "688ba3abceb234d42ff58f9d23a13eb62ce1c6fb02539f3bd3663d99b6361132"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "b2d6f81d203f7858fc170350e8f455ebab3f4bc74db80106ed7b8d52aa87bcc5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "a4a5fc1c31182a334070feb4dd220ad0b68b306808706e69a882b397ea0bd8a0"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "aa1a5ec7686d2bcc31aa44759a1461c5262f36ec7cf2ae048f04d8473c156b94"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "1cc20f9a32dc1c2fb6a390fc07c0885b73b1961521e2dd57a6f4e6d785bebf2d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "e0971803fb6beb2b73f03cf572d02513a0d7f6f2bf00102bdade44be5816079c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/node_updates.json",
+      "group": "results",
+      "sha256": "0d28d37c2e30f1dc9ace4bd03be60771f36acdce6c44f8b3c3ae057c0b9a9405"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/response.json",
+      "group": "results",
+      "sha256": "aecacbdc8c8b21b1fa8cd975a8c67dd21e616bfe8239b1184987cdbecd41fd75"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/edit_report.json",
+      "group": "results",
+      "sha256": "e37bebf8434f2549817c7678e54f7a031cdabd71e22abe69c697e779cea810dd"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/explanation.md",
+      "group": "results",
+      "sha256": "96335ed56b3f7fc0502b465f26acc41df5b44975361db9c1894f608c78a508a6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/feedback.json",
+      "group": "results",
+      "sha256": "93672be0b7babf345615db3aa8018e95e98e29a250c70da4b2665bf9bb3c702e"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/final_state.json",
+      "group": "results",
+      "sha256": "afdf7e67591eaff8ce9a8391ff7e2a17dc92b4df683c5cc7564eda8fcf4edce6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/node_updates.json",
+      "group": "results",
+      "sha256": "24f9b4c2afa061fa04ba3726f4e545678d75bd8734ecdb968c6134e6a0505f85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate.json",
+      "group": "results",
+      "sha256": "bb0c09781e5554be540b7f2dfa1c080acb709f300827912fa37166d200e38bca"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "5bcb928b7c026ac11e3d015c7addd87d72fc47f504bd52a9f8fb5c1b363151c7"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "198ec696677f1845dcc0b7318c2c578eb167b21fb443dd3e492b21cd13bd8ba1"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "547bce62fa011e216f5eb06080d79ff967c17ced3f2e4cc57543c47ddda11cfd"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/episodic_failures.csv",
+      "group": "results",
+      "sha256": "ca912cb02b87cb52447bee5ff58ea01457e170dfd9ab9d0cc8106d9edbf13e71"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "a08f9a0a44348bf174526868ed73ea0cbdba30c33477845db874e3b1c376902b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "639b413499c3625200a5c789f08158c75fa778bc0f57e58d526363a0a6515375"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/general_outputs_all.json",
+      "group": "results",
+      "sha256": "291138cbcb85741be43f9f3b56e7581f3d1b768dea8232a743b2c6b802446785"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/response.json",
+      "group": "results",
+      "sha256": "24832d4c20c991ccbd2ebf6e69e6fde75fad40ddf7b06ba3972184845e4fa8aa"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/violations.json",
+      "group": "results",
+      "sha256": "45c6bfc7af596bc7349ef0469cecefb204b5b7e4a2e88f1a62251b5cfec753e5"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/final_state.json",
+      "group": "results",
+      "sha256": "373eb3ed876da9600bd198c5de7ec72c6cee13b850902ec7b94f8f9597808f7d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "89789597b742adfb764c49d285de74ce8c83911765720e3b845ab38caffba66c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "75c7c71387d0f5dc430983eef96b3e2a2ca06a5c0a3d5d12b2b4246744b78c60"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/episodic_failures.csv",
+      "group": "results",
+      "sha256": "ca912cb02b87cb52447bee5ff58ea01457e170dfd9ab9d0cc8106d9edbf13e71"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "a19a307019df3fc22f3686fe6fd5b411f89421bcebeab06939d9c6eb9915f96b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "236f5d666dab95eaaf6b0929db87e1625539febe89ed2907240036f6dd607a08"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/node_updates.json",
+      "group": "results",
+      "sha256": "87d6e5d5031bda0a547a90504de8346fd913f49e18b49b4cc134e50cd3d8fb16"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/response.json",
+      "group": "results",
+      "sha256": "2230a57999dab0f5f8b8e8f66b0b5f33975448b9406375e4736c4b79091012fd"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/config_after.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/final_state.json",
+      "group": "results",
+      "sha256": "ef663ff4776712e6eb62f8464ce6b6ecd776a1d6e92976dd518ddd39307bbc3e"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "89789597b742adfb764c49d285de74ce8c83911765720e3b845ab38caffba66c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "35c4ac96bf638a2c33c5ee7b63c20dca195438c4ad89f0899ae77c1d3565f00f"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "75c7c71387d0f5dc430983eef96b3e2a2ca06a5c0a3d5d12b2b4246744b78c60"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/episodic_failures.csv",
+      "group": "results",
+      "sha256": "ca912cb02b87cb52447bee5ff58ea01457e170dfd9ab9d0cc8106d9edbf13e71"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "a19a307019df3fc22f3686fe6fd5b411f89421bcebeab06939d9c6eb9915f96b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "236f5d666dab95eaaf6b0929db87e1625539febe89ed2907240036f6dd607a08"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/node_updates.json",
+      "group": "results",
+      "sha256": "425e642eb7c5372accc217db03fd79ace8731df57cd6ef5c83c7622fb4166859"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/response.json",
+      "group": "results",
+      "sha256": "93f21df4da7ac114b1c55886711e0c4006e7d945a4505492c4415052df871f42"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/config_after.json",
+      "group": "results",
+      "sha256": "05ca77184d4cc9da2d2b094b09bd6762c93b1767f86a21c557c8c32958d9c428"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/config_before.json",
+      "group": "results",
+      "sha256": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/final_state.json",
+      "group": "results",
+      "sha256": "4cd0787f3190d0cb0501ccf9eba49dcd1680993bbc8666d50d8e891d5a7a65f8"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/Petrinet_A_simulator.xlsx",
+      "group": "results",
+      "sha256": "37dd8020c33d086f9bb84682dd36a3770ac8b85bd69b9fc658607f7c9250871c"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/calculated_task_durations.json",
+      "group": "results",
+      "sha256": "d9b0274250a648094e1242a98820e9ca00cddc92d2f2fbfb6f2c6a6097cef7c1"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/calculated_task_durations.xlsx",
+      "group": "results",
+      "sha256": "cade359dfc9c8830bed423f424316ec175ea0b6ea5076ea7613d1bd5438dd8dc"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/dynamic_documentation.md",
+      "group": "results",
+      "sha256": "005befdaf6f90691294cde32474d5d3aca62d8a5dd546a6f56990a00bdf7e08b"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/dynamic_documentation.txt",
+      "group": "results",
+      "sha256": "d4218f971247d6689aefda61506ee97a08bdc5adc1145d645f861957a6ad4215"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/episodic_failures.csv",
+      "group": "results",
+      "sha256": "ca912cb02b87cb52447bee5ff58ea01457e170dfd9ab9d0cc8106d9edbf13e71"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/gantt_Activity_021.pdf",
+      "group": "results",
+      "sha256": "59b3ccb25b2df4a0e9391b747b858b19c28965f2825a34552175ede34a9407a1"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/gantt_Activity_022.pdf",
+      "group": "results",
+      "sha256": "68fa9d89a21ee7eae3765e9bf21c1a7a7e34e4c27c95fa3cc9811b37a5a5685d"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/general_outputs_all.json",
+      "group": "results",
+      "sha256": "ab3282219174229a087a797383fc902d569211c5659db36e18321cfa36c1ed18"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/visualization_metadata.json",
+      "group": "results",
+      "sha256": "7b41afb9c644fd27764cb750568ba3b6c3d6d80be3a309a7388f766fbdd67b85"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/node_updates.json",
+      "group": "results",
+      "sha256": "f29135acfb1ac14c5d1dc7f483e2ce394b34b85d98fb7c06a566c7126f734598"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/optimizer_petrinet_shared_dicts.json",
+      "group": "results",
+      "sha256": "6df4e9050c37bc32e745fe835e18040167d2311ac993f4be9d97084622223fe9"
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/response.json",
+      "group": "results",
+      "sha256": "b6aea4eb55893ba3260d193e40c8a71c035e904ca11128cc3781cd786de84fba"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv",
+      "group": "results",
+      "sha256": "bae2324b2b8f45b5ed14943866008287ed25656c461252c429ca76cceaa41bed"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_by_model_axis_regime_cut49.csv",
+      "group": "results",
+      "sha256": "b7c6b5c389b12d652590630ec4a3f2dac48a6f2e43a0c39e23e5a65d7bb1ffea"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_mean_per_model.csv",
+      "group": "results",
+      "sha256": "ca757abe2b799d05dff21332a845d48d943b33a3e3fd05798c1c89d133c710c8"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_mean_per_model_cut49.csv",
+      "group": "results",
+      "sha256": "12dc9986f077094e68b078a1138f414b2ee0320408cd0cb523d8b3199d3a24dd"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_overall.csv",
+      "group": "results",
+      "sha256": "243382db4102533529c182b50ea7046e6417d8f4fea26aea17c2a2262e90bfb7"
+    },
+    {
+      "path": "benchmarks/results/cdto_vs_vanilla_overall_cut49.csv",
+      "group": "results",
+      "sha256": "af68846673c20dc1c21b4219d587e928778783591ebcfbd992abf6843dc4c324"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/comparison_planner_executor.csv",
+      "group": "results",
+      "sha256": "cb07f5476b8e09a72c2eb6df0a95a569f8a872c087090ea1669acfd3a30546b7"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/comparison_summary_planner_executor.json",
+      "group": "results",
+      "sha256": "d7b9935ad95d7f1f487e723a2c63acd01f3ef3596b1669e2bcdd6f029bb7aed3"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/completion_by_level_planner_executor.csv",
+      "group": "results",
+      "sha256": "596c6b7827264a5d705fa9f4d624ab6b655e6c3b1edc08fbd606fd0a6d9903fe"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/controls_planner_executor.csv",
+      "group": "results",
+      "sha256": "e69f5bc21fd1b00823dd27277674288f49f4668d656a83008442c5a62c953cb2"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/discordant_pairs_planner_executor.md",
+      "group": "results",
+      "sha256": "accd13f27df1e70985ff90ce45aaa3a8bea3258ebb60a4be1766e9033d4fc05f"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/fidelity_qwen2.5_32b.csv",
+      "group": "results",
+      "sha256": "88630df831ee390932398e37a13da8f13eef01de40c458ca4c491a7bff3ba490"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/manifest.json",
+      "group": "results",
+      "sha256": "dd14ca5f3932967489325b4f7d8553eac809d865ea0e0594d9fdf19f43c2bd11"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/paired_samples_planner_executor.csv",
+      "group": "results",
+      "sha256": "6792bbc10136c26df5853659d3e45b937a87a5b6d2a184ac66c63970ae6f3226"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/prompt_tokens_planner_executor.csv",
+      "group": "results",
+      "sha256": "25601b7657a57c2f894575d568ad2db9e04560c1ad40e618e737b4b10e654c3d"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/requests_qwen2.5_32b.jsonl",
+      "group": "results",
+      "sha256": "a550edb245ff1b3b9a0e2286e37b5710ccab79115aa8c3a5630950a176d04b92"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/requests_qwen2.5_32b.meta.json",
+      "group": "results",
+      "sha256": "95cd04ffc927a01d32aac1bb38100b3300e0ea7f0a509045b2b3e8f091fa9c82"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/review_pairs_qwen2.5_32b.md",
+      "group": "results",
+      "sha256": "b1553345bb29711042d606f677dde3741af20b8064f09ef4a1ea93634b889392"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/sample_ids.json",
+      "group": "results",
+      "sha256": "1e78c331733a63bffea91957a1b6933b96046649737915baffa083cc2335f552"
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/timeouts_planner_executor.csv",
+      "group": "results",
+      "sha256": "3f7adb0d104712697a30ef8959070e67453cf489a2e9409552a8c6162e799b50"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_completeness/fig1_architecture_effect.pdf",
+      "group": "results",
+      "sha256": "fa3ece76dc78b778e6f6c766bf81e5d290f9375d3af080906c5b234e3890f935"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_completeness/fig2_model_effect_agentic.pdf",
+      "group": "results",
+      "sha256": "cea3095c8ca42fb07aedb5c9a5f16d0dda725273a5ca7dfc72460a00a5220ec7"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_completeness/fig3_model_effect_vanilla.pdf",
+      "group": "results",
+      "sha256": "cfd0101149c2968c08be027487894930857209cab9c297faa726e4b36366881b"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_complexity/fig1_architecture_effect.pdf",
+      "group": "results",
+      "sha256": "b16371b16749271adb20333eda450be7287b136ffc32af3a8e4f5f7499374984"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_complexity/fig2_model_effect_agentic.pdf",
+      "group": "results",
+      "sha256": "125c1e9bd15cb5917d53e18a90a5f4f9c33a6ea650a9aed43cebe558846808dc"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/delta_complexity/fig3_model_effect_vanilla.pdf",
+      "group": "results",
+      "sha256": "c1c57dc0ee7af50ef7007be134474dff336f4b3b981308183f7b5b427a5c2e2b"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/multi_model_uq_completeness_v2.pdf",
+      "group": "results",
+      "sha256": "9ea80cea1bf974c572f5bdec23a138d78b807f85a16c884b7402aa65b7952038"
+    },
+    {
+      "path": "benchmarks/results/models/aggregated/multi_model_uq_complexity_v2.pdf",
+      "group": "results",
+      "sha256": "a951c33072a9b01a6367c0eb716c1e3503e332c62a229fe3625f38e7904c7888"
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/completeness/benchmark_compare_completeness_manifest.json",
+      "group": "results",
+      "sha256": "d8bcd72fa303b32ec3fbc8f78fcc55bedc70370e39ecf25feb4f7f4458e292c9"
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/completeness/uq_completeness_results.csv",
+      "group": "results",
+      "sha256": "f343860e96be9dbe868d958172c053c7ae9b1ca21b4e20098d5a18729806a241"
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/complexity/benchmark_compare_complexity_manifest.json",
+      "group": "results",
+      "sha256": "e109f4a6ff25fe21d865b6df22ce143be966d435a81263ddb5a4f32beb36ecc6"
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/complexity/uq_complexity_results.csv",
+      "group": "results",
+      "sha256": "a2a5082d88b488b1e5ce6e82e77dcc134cf79f8e8132c77ea1eadf4869600198"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/completeness/benchmark_compare_completeness_manifest.json",
+      "group": "results",
+      "sha256": "f49ddac24c49fdc64f36fe38815d47e8cb66a3d9e45fa115304c2fa25700056a"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/completeness/uq_completeness_results.csv",
+      "group": "results",
+      "sha256": "515537550f66ec672bc407b237d744b30b993ea0ecf1640e0ca99a064fbdfac2"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/complexity/benchmark_compare_complexity_manifest.json",
+      "group": "results",
+      "sha256": "01c8ccf700dc09929d81991caefcb2826a0b1057ab430236dd63ae4b50ef243f"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/complexity/uq_complexity_results.csv",
+      "group": "results",
+      "sha256": "9339c927bc32a858cee08e9b93a70610bfa3e8668b4269b1a242d7ef9b76f2ba"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/benchmark_compare_completeness_manifest.json",
+      "group": "results",
+      "sha256": "0d57fc9b230ca0233e2726bc0ee59a027237f70ed501d6baac5591c61e563c36"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/uq_completeness_results.csv",
+      "group": "results",
+      "sha256": "3addba1576eebebc11021e2b1308a2ba5a9c9e50a0954c42f71b7b66ce508da5"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/benchmark_compare_complexity_manifest.json",
+      "group": "results",
+      "sha256": "5572f444092647bb7b39c0fb5b3f06d167ca188b7faa54384fc65570e49e0781"
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/uq_complexity_results.csv",
+      "group": "results",
+      "sha256": "8668329344c3206913147be96449e111aafb6d56d8440aedb96a5a0b64522c16"
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/completeness/benchmark_compare_completeness_manifest.json",
+      "group": "results",
+      "sha256": "2f35e2ae14c9ee40a8b59f56171e398c483347569596e143f61feef873167536"
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/completeness/uq_completeness_results.csv",
+      "group": "results",
+      "sha256": "806faff58de92cf715b1ce4bb042f88e493a4dafbaa3265979daa8bc03440f17"
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/complexity/benchmark_compare_complexity_manifest.json",
+      "group": "results",
+      "sha256": "0839024c87147ca6ecc4d26451816957104c690c01d6ecb41d5162dd7b5886ba"
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/complexity/uq_complexity_results.csv",
+      "group": "results",
+      "sha256": "806aad0d552611ea4a92a45f29ba2ece4ac0207b736f407a5d131ef9e27987c6"
+    },
+    {
+      "path": "benchmarks/results/per_level/per_level_completeness.csv",
+      "group": "results",
+      "sha256": "4391a45d1c5341be19f96eb8f96c032c957db1b2ed47da433b6ca825041ebc61"
+    },
+    {
+      "path": "benchmarks/results/per_level/per_level_complexity.csv",
+      "group": "results",
+      "sha256": "67dc4d616ce4394affe3b0e84ddee9ac5cec33e335e88dc60e95631367e68263"
+    },
+    {
+      "path": "benchmarks/results/per_level/per_level_tables.md",
+      "group": "results",
+      "sha256": "bdc921130c8b06d70f85871814ed5bc7850c418ab43b5db4d2f52f18aba0a9fb"
+    },
+    {
+      "path": "benchmarks/results/rescoring_validation.csv",
+      "group": "results",
+      "sha256": "97b6cf481831139adcb1410e13cb101f22c635f772dc90c50ef2bed2a9b9bc73"
+    },
+    {
+      "path": "benchmarks/results/token_cost_summary.csv",
+      "group": "results",
+      "sha256": "53c23dc8f577228151884fa5b8c8311743e74d1b083898d4cfa8380dbc310c5f"
+    },
+    {
+      "path": "benchmarks/results/token_cost_summary_exclude_zero_tokens.csv",
+      "group": "results",
+      "sha256": "6135c0cdf606248f8e6799ef03b1670bd08812ddf9087bc3b21e32eb64d5aaf1"
+    },
+    {
+      "path": "benchmarks/results/truncation_completeness_by_level.csv",
+      "group": "results",
+      "sha256": "0cb2e7f15de0b0ffd5a73998d50b6dbc2b43669a567f536bdc9822779630d86a"
+    },
+    {
+      "path": "benchmarks/results/truncation_complexity_by_level.csv",
+      "group": "results",
+      "sha256": "601ef72d6d93ab597971ce672580200030627e47b0aa12167ff30a80c3f7543a"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/dataset_pass.csv",
+      "group": "results",
+      "sha256": "af224064db5efdb677b4d10e85000a48ed582d7ed06f8c420ac2b29f642c3dde"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/dataset_rules_by_axis.csv",
+      "group": "results",
+      "sha256": "45068bcaecf3644d9a4aac4265c898ae23a49217a64012046ad1ba11dccd7913"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/manifest.json",
+      "group": "results",
+      "sha256": "e0c04bc8821f942794a8f9722c4f560c951358a8ed70b0501b56cf67da9493c7"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_c2_by_rule.csv",
+      "group": "results",
+      "sha256": "ad49a82a0f495c8e10b1d3f2d34b09f029752ce7e153053a4e407af296f825f0"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_c2_examples.json",
+      "group": "results",
+      "sha256": "f5f4ea81a85fae6238982987a40c89703274b6cab200fabad6248265e24d69ca"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_cycle_only_rejections.csv",
+      "group": "results",
+      "sha256": "aed2beb793bc8d6715af9f625894cfac7e662c7cd2df0d010e1cb89f058c128c"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_rules_by_category.csv",
+      "group": "results",
+      "sha256": "1c6c4f8da0569bffc47709d44185de0781ec81ba7ebbb74d4441602630f2e843"
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_summary.csv",
+      "group": "results",
+      "sha256": "035eb080719cc75a3c292449ae6d9741cd6629f48c8438fd5b3190518b2e4ec4"
+    },
+    {
+      "path": "benchmarks/results/zero_token_calls.csv",
+      "group": "results",
+      "sha256": "9df62bd4235fd74d43cb716383551ff2daef299694e7e6557c66667bbbceb72d"
+    },
+    {
+      "path": "benchmarks/results/zero_token_calls_by_axis.csv",
+      "group": "results",
+      "sha256": "9884601f9d01e464030dcc039ebe0420fe9bda111b1c03cbae4ee9e049122e22"
+    },
+    {
+      "path": "benchmarks/runner/run_model_benchmark_suite.py",
+      "group": "own",
+      "sha256": "5847ddcfb62ed39ec0785187692ef046aac6c122e7cfefb3c258919178fb2b04"
+    },
+    {
+      "path": "config/__init__.py",
+      "group": "own",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "config/paths.py",
+      "group": "own",
+      "sha256": "1596e31b095ae4e5e895689872b2083ba1477403341d38799ca9d0ac4534b817"
+    },
+    {
+      "path": "core/api.py",
+      "group": "own",
+      "sha256": "21b8d22ec0bcd782373a5e711fd378a0dc2ecf0e414f29b689114c8e01fccf25"
+    },
+    {
+      "path": "core/serve_frontend.py",
+      "group": "own",
+      "sha256": "d5b79f81453802fe163663854cf34a46982e172581d9afee3ac1ddff35754352"
+    },
+    {
+      "path": "docs/benchmark.md",
+      "group": "own",
+      "sha256": "7f96d5414b20490c22b2d519f65ec5bcad8b69f4f7a8240974f3c7455fa0b1d7"
+    },
+    {
+      "path": "docs/case_study.md",
+      "group": "own",
+      "sha256": "235157a5e3a68c2803a219c5b1ada878f77b3195207162ee23700bedfe5dc8b4"
+    },
+    {
+      "path": "docs/humanisation_check.md",
+      "group": "own",
+      "sha256": "548bfdc98aca50158dc44e304f8961be88fcb87e8a10b3ec42d679507595d85d"
+    },
+    {
+      "path": "docs/reproduce.md",
+      "group": "own",
+      "sha256": "947cae97e130944e82a7d7b3abaabe11ebac3eb68cbfb486fb21f0c6c4add7ed"
+    },
+    {
+      "path": "docs/validator.md",
+      "group": "own",
+      "sha256": "2fdc2b78937422b192e9272585a512d09b8780c535249f5ccb0605d9cf6dd85a"
+    },
+    {
+      "path": "frontend/app.js",
+      "group": "own",
+      "sha256": "cabc1557daf174a3e26537cc6b3bc3fe65dc10c2b7bdb2fc160f1c364bcce01a"
+    },
+    {
+      "path": "frontend/index.html",
+      "group": "own",
+      "sha256": "a1861c90ad5ff893fb4184c8c204acd361a4c980a38939d4b3522fbd473a5953"
+    },
+    {
+      "path": "frontend/styles.css",
+      "group": "own",
+      "sha256": "5b8589590da9000d97afe937a256a778835e69d58a4c13afeccf865f321606ec"
+    },
+    {
+      "path": "input_agent/__init__.py",
+      "group": "own",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "input_agent/agent.py",
+      "group": "own",
+      "sha256": "69045405068c95894dc29c4ca1c2f0039f9373dd0bd72be2e910988782f5c973"
+    },
+    {
+      "path": "input_agent/nodes.py",
+      "group": "own",
+      "sha256": "becb8a936f3662836baf320ffa3385785059477ae9abe9fb100727fbdd1339cb"
+    },
+    {
+      "path": "input_agent/pn_models.py",
+      "group": "own",
+      "sha256": "869e03d9b3255f1055ab77a8eae850b388886f3a62c9a57a1e510b3f77bbb035"
+    },
+    {
+      "path": "input_agent/src/PetriNetConfig.py",
+      "group": "own",
+      "sha256": "94337c44d9fbc9b03d5890187e9cf1e88f1a9ea64be6d3085839482005acf9c3"
+    },
+    {
+      "path": "input_agent/src/__init__.py",
+      "group": "own",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "input_agent/src/bottlenecks.py",
+      "group": "own",
+      "sha256": "a5c27a2be1e0be6736cc06d69399692817fbd5828ac70f5029ed5be77cdee629"
+    },
+    {
+      "path": "input_agent/src/dataset_generator_completeness.py",
+      "group": "own",
+      "sha256": "422f10aa5669ee8ff408699f81a1a18e197935c9b9c3283f58902469b97f7e2a"
+    },
+    {
+      "path": "input_agent/src/dataset_generator_complexity.py",
+      "group": "own",
+      "sha256": "da55e5515baf5f1fb2e682a8d51a8a7384e2362ece16e8bfcbb54fbf8f3c9a7d"
+    },
+    {
+      "path": "input_agent/src/fresh_simulation.py",
+      "group": "own",
+      "sha256": "526d57ab581de2192371dc6a0188fd63f40bf8c6976fd2c9a97bde25c8af773c"
+    },
+    {
+      "path": "input_agent/src/llm.py",
+      "group": "own",
+      "sha256": "aca9fc7dbd2e5cab610183063538918807ba93170399b3603279c618ab5077f1"
+    },
+    {
+      "path": "input_agent/src/models.py",
+      "group": "own",
+      "sha256": "015f4cd5141429b8a02d064e153851eeb2f4a4634a39902b26da9407fa02d767"
+    },
+    {
+      "path": "input_agent/src/narrativeProcess.py",
+      "group": "own",
+      "sha256": "e94c16cd8937d8a96d2b75b7cd9c5233a03bcef00f7c538410ae0539d0657a08"
+    },
+    {
+      "path": "input_agent/src/nomenclature_parser.py",
+      "group": "own",
+      "sha256": "fd0206ceb07e70cc2d9a81c9b4a5e8ab8c89d043e82a95e59b2c38be7d8f443b"
+    },
+    {
+      "path": "input_agent/src/prompts.py",
+      "group": "own",
+      "sha256": "444013d03eeb185b85214c526b7a021757459bd0b9c7d1f3e6227165164984ff"
+    },
+    {
+      "path": "input_agent/src/tools.py",
+      "group": "own",
+      "sha256": "8d5ea3b0b154d08add3014061bd45aa58d6b7a52e4b72365da43da221d8c3048"
+    },
+    {
+      "path": "input_agent/src/traceProcessor.py",
+      "group": "own",
+      "sha256": "93bc098f40759c67a2f441cf1d7a506b033787e0fefba3a02ca2c7076b3d7c57"
+    },
+    {
+      "path": "input_agent/src/visualization.py",
+      "group": "own",
+      "sha256": "49c9ecf220d0a197b20526c76ec3caef42649ffa14d3dabf7aaf007989417198"
+    },
+    {
+      "path": "input_agent/src/wiki.py",
+      "group": "own",
+      "sha256": "cb8ff7ebdad27170257db6ffc71e2cb8cf88024db1f25befd2b7df29119b96ac"
+    },
+    {
+      "path": "input_agent/sub_agents/chat.py",
+      "group": "own",
+      "sha256": "1dab1536a0f9745f952187dbb9d77cf9dbdc3474001230626f66e55897db2f2c"
+    },
+    {
+      "path": "input_agent/sub_agents/feedback.py",
+      "group": "own",
+      "sha256": "84b43cce5b838da54173f4134612bb8e42f0dbec527af3fe905a6ae9113ffac9"
+    },
+    {
+      "path": "input_agent/sub_agents/narrative.py",
+      "group": "own",
+      "sha256": "2ef7ee8c189919043f5930bf0e20fc0e3b57417f8334db3a4153d29fd0a8154b"
+    },
+    {
+      "path": "input_agent/sub_agents/optimizer.py",
+      "group": "own",
+      "sha256": "2e1627c257981dbfe583ca81ea1385eabaa638e0da59c3f77ba88fe604a1317f"
+    },
+    {
+      "path": "input_agent/sub_agents/orchester.py",
+      "group": "own",
+      "sha256": "73abee18ba5ece42671f87b5bbf17f51f41aaaadde8967ab15f0e56778963fee"
+    },
+    {
+      "path": "input_agent/sub_agents/planner.py",
+      "group": "own",
+      "sha256": "c3a5f8bf95a2ed4d04d95aec7bfc348ad2688c718a549645d8a2195615f1e45e"
+    },
+    {
+      "path": "input_agent/sub_agents/temporal_xai.py",
+      "group": "own",
+      "sha256": "f955c5c9003cbe9ff374266d4a2592ba90be5e4d8b81616ab89cacd535cd9881"
+    },
+    {
+      "path": "test_inputs/catalog.md",
+      "group": "own",
+      "sha256": "2dd79993bfc8b7f4967b2ec3d09f0fd8df1e04d03f1ebf91119b77b94ada175f"
+    },
+    {
+      "path": "test_inputs/input_14.json",
+      "group": "own",
+      "sha256": "c1521ff6a9461b2c46ac2c281eabe74db4a39082c4d1f9d2e5d0eb52f6b9457b"
+    },
+    {
+      "path": "test_inputs/input_15.json",
+      "group": "own",
+      "sha256": "6cdff326b4935a633df08c8dc508af189a5ea23c24ef62a9e2aa561bf990be36"
+    },
+    {
+      "path": "test_inputs/input_16.json",
+      "group": "own",
+      "sha256": "96dfd17936167e0125b1b1b37c138fd43d07278bd8f145304de55ec9096b047e"
+    },
+    {
+      "path": "test_inputs/input_17.json",
+      "group": "own",
+      "sha256": "aab6f43b442fd947b9ba63fa139b63d945bfc152d744683db02043e1c7ac29b0"
+    },
+    {
+      "path": "test_inputs/input_18.json",
+      "group": "own",
+      "sha256": "c177f9c08011a62fae9beffcb54d5d7ef1bc57ce8696a0992a54aed298108917"
+    },
+    {
+      "path": "test_inputs/input_19.json",
+      "group": "own",
+      "sha256": "a262b10c24a6cd3fff2194c36c04065ee7036b9702c70e62139cd332d5c20d03"
+    },
+    {
+      "path": "test_inputs/input_20.json",
+      "group": "own",
+      "sha256": "9212b697bb111cac3c45a41a9f4ce344711ecba40db5bf84b5cdfc8038601c4a"
+    },
+    {
+      "path": "test_inputs/input_21.json",
+      "group": "own",
+      "sha256": "acdf2da5f13165cc0d1002a0e8dfebc5059868eaf1619c6ff4de2a4330d386fa"
+    },
+    {
+      "path": "test_inputs/input_22.json",
+      "group": "own",
+      "sha256": "985ea38f863999a31fd77ba20f4de4c50920d3dd8c6a2dfcdd4031105055cd76"
+    },
+    {
+      "path": "test_inputs/input_23.json",
+      "group": "own",
+      "sha256": "3bc6a1d4827bfa9cc992465e10cf1837f5806af3d834e2892484b7afe2cba443"
+    },
+    {
+      "path": "test_inputs/input_24.json",
+      "group": "own",
+      "sha256": "02d2f152dde6b367c276315662230ce49fc522aaf07aeed0455e9d255fc276d1"
+    },
+    {
+      "path": "test_inputs/input_25.json",
+      "group": "own",
+      "sha256": "c3f0ee8bedac3da81972d7a09f0aea8a6afe5ef7ec0d816b457cc9bd9503ab32"
+    },
+    {
+      "path": "tests/conftest.py",
+      "group": "own",
+      "sha256": "d4955c0f5db3809cf4fc87d5e95061d971eda48a05bc410863e93607877550ce"
+    },
+    {
+      "path": "tests/unit/case_study.py",
+      "group": "own",
+      "sha256": "ead8e94cc8c75dbd9f48cb9253f62421ceb4da8e4648f6d0b458442188966e7b"
+    },
+    {
+      "path": "tests/unit/test_api_models.py",
+      "group": "own",
+      "sha256": "da2c8ff53c0dff0beec270ffbd710fb4568725d07ad4c8ea6ca1efac0f94ca9e"
+    },
+    {
+      "path": "tests/unit/test_chat_turn.py",
+      "group": "own",
+      "sha256": "bb204feeade9c58a1d097a80408c05db7f82f314ebc2f9028bdff7230809c6db"
+    },
+    {
+      "path": "tests/unit/test_comparison_metrics.py",
+      "group": "own",
+      "sha256": "9e69900864f1e64fb834c2ebf6030a7a55a4d6af12a1fb56c18f9ecd3c5eaa09"
+    },
+    {
+      "path": "tests/unit/test_config_models.py",
+      "group": "own",
+      "sha256": "7a8fe46c9a81674c5c591db788e430d76a75f1eb7f7fe12f823358434386a439"
+    },
+    {
+      "path": "tests/unit/test_config_update.py",
+      "group": "own",
+      "sha256": "932cb8eebb35cde9cc7ee23f5bc5998a28f015d411472b3b2fe18d431cd38353"
+    },
+    {
+      "path": "tests/unit/test_deterministic_validator.py",
+      "group": "own",
+      "sha256": "c8afc88e3e03861ba948bd73d6ccfc7cfe16674560088f7ddfdfeb827fba34eb"
+    },
+    {
+      "path": "tests/unit/test_diagnostic_routine.py",
+      "group": "own",
+      "sha256": "6b5c8105fc0bd63d8615a6550790a4d1b45be9865f837cea2355ada251c48e65"
+    },
+    {
+      "path": "tests/unit/test_executor_validation.py",
+      "group": "own",
+      "sha256": "d674eeae6b936a2739627e981df8dd14507c241546efa831d50b804df7a6c89f"
+    },
+    {
+      "path": "tests/unit/test_fresh_simulation.py",
+      "group": "own",
+      "sha256": "0d0f6571d5196958e31ca3c7d593690e533a7966137a09e3206791c934f3ab17"
+    },
+    {
+      "path": "tests/unit/test_humanisation_check.py",
+      "group": "own",
+      "sha256": "5432faded1826ba4cb9b82837f1561971618c650f43f96ccfe6cf8296e396ddc"
+    },
+    {
+      "path": "tests/unit/test_llm_request_profiles.py",
+      "group": "own",
+      "sha256": "3dd19abf6dfd767bab4e2528596dae06250b9018d8836f29be492968c3614c4d"
+    },
+    {
+      "path": "tests/unit/test_mapping_utils.py",
+      "group": "own",
+      "sha256": "183c0a42e89c5a0f53b5ffe742bfbcdcbd701a6b4d8bdb8095eb65fdee0f58f6"
+    },
+    {
+      "path": "tests/unit/test_optimizer_harness.py",
+      "group": "own",
+      "sha256": "1a0944612cd5033844dc7a464d5e24cf7c949d01c3fa855721cb167c1bf270aa"
+    },
+    {
+      "path": "tests/unit/test_optimizer_node.py",
+      "group": "own",
+      "sha256": "fef7d151656b4a3d3107cfbb5fdf14c9b6f9e668aca33ea8845e79c73df30e48"
+    },
+    {
+      "path": "tests/unit/test_optimizer_s_star.py",
+      "group": "own",
+      "sha256": "e0fa96b6a43109baac56864c0f3829dbb1e39ecda6e7fd02b5380e170dd90f75"
+    },
+    {
+      "path": "tests/unit/test_precedence_direction.py",
+      "group": "own",
+      "sha256": "79f77728640b092b468f761f8f3692d4f71915bf15ac95fcf181e47641d65d2a"
+    },
+    {
+      "path": "tests/unit/test_reindex_structure.py",
+      "group": "own",
+      "sha256": "90651c232297ad12e8e6dc53404fa6d9b3947427bc1e4e0b636db751f89a8a51"
+    },
+    {
+      "path": "tests/unit/test_release_info.py",
+      "group": "own",
+      "sha256": "293b61279a0e63b0c478b7a78dc724559afcb00c014637f5616055e47448bd6c"
+    },
+    {
+      "path": "tests/unit/test_runner_flags.py",
+      "group": "own",
+      "sha256": "0f5ebc6cbf5ae3bf981d69ac8dddc67a45dcf42fd418a637cc0d92c743d7d929"
+    },
+    {
+      "path": "tests/unit/test_runner_no_config.py",
+      "group": "own",
+      "sha256": "95dba05f9b7a9fd05bbaeab3919d55020ce538057c01f7713581b234bc389770"
+    },
+    {
+      "path": "tests/unit/test_third_party_boundary.py",
+      "group": "own",
+      "sha256": "f9cbe72a9c3d3e063d8b4b4452e23034a853136a763a850a4ef263cf20eed397"
+    },
+    {
+      "path": "tests/unit/test_xai_failure.py",
+      "group": "own",
+      "sha256": "a21b8e4fabaa7640b700bceca8d5206690e8fcadd2feb36557f3ac67a98e3b6b"
+    },
+    {
+      "path": "tests/unit/v1_validator_reference.py",
+      "group": "own",
+      "sha256": "dbf95724d09aced133d83dc3f58f41524a398c556d11fb7b5aa3262a60591fd0"
+    },
+    {
+      "path": "utils/__init__.py",
+      "group": "own",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "utils/automatic_documentation.py",
+      "group": "own",
+      "sha256": "752b7847258ca39bb79f31d32132dd2845dcc9d74c80015316e5ae04e5707de3"
+    }
+  ],
+  "generated": [
+    ".env.example",
+    ".github/workflows/tests.yml",
+    ".gitignore",
+    "CITATION.cff",
+    "LICENSE",
+    "README.md",
+    "RELEASE.json",
+    "THIRD_PARTY.md",
+    "benchmarks/results/zenodo_files.sha256",
+    "pyproject.toml",
+    "requirements.lock"
+  ],
+  "zenodo": [
+    {
+      "path": "benchmarks/datasets/benchmark_dataset_1_150.jsonl",
+      "sha256": "9ac10df3a0458fa29c79ba2a9e5a6b9caa2069c9038275152403a96fab03f7be",
+      "bytes": 40600820
+    },
+    {
+      "path": "benchmarks/datasets/benchmark_dataset_completeness_1_16_50samples.jsonl",
+      "sha256": "891ce23092b256c04d9ebbfcf1d4fdab15d124fbb0d958d1ae6dd7089cd0754a",
+      "bytes": 5869821
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/per_activity/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_0/per_activity/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/per_activity/gantt_Activity_021.png",
+      "sha256": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+      "bytes": 83992
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/S_k+1/per_activity/gantt_Activity_022.png",
+      "sha256": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+      "bytes": 102624
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T084426Z_gantt/gantt_chart_comparison.png",
+      "sha256": "f94f33894eb4e1957885641ff8a6e2f24ad966aadc4b02b5c9c683b2abbf9941",
+      "bytes": 169372
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A001.png",
+      "sha256": "b30482499534fe899c08ec910f723304c4764f50770ed7029a8c355b88f9cf3d",
+      "bytes": 170555
+    },
+    {
+      "path": "benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A002.png",
+      "sha256": "d426e926b3d096eabde4d815da68bd6da0d23fd4bcfb127cb992ca7f731acd32",
+      "bytes": 207412
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/agent_debug.log",
+      "sha256": "d1861a2486abdd40fe62f1e072265e53f199868a28e6b38dfcb7e179c4780be6",
+      "bytes": 46225
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q1/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q2/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q3/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q4/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/bottleneck_heatmap.png",
+      "sha256": "bae95d6d4b56b4c896c339c00042dccbd872dc07a5e460769f6f96d5dcda4770",
+      "bytes": 65454
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/gantt_Activity_021.png",
+      "sha256": "f9983974f10bfb90c1738e6fdb020548c49a439d566884d3b8fb7aaff5f22487",
+      "bytes": 84068
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q5/rejected_candidate_simulation/gantt_Activity_022.png",
+      "sha256": "85880ccc194e3638c0a0d663e65485bb8a2dbee143bdc1e4f4a3c51ca84fd054",
+      "bytes": 95728
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/bottleneck_heatmap.png",
+      "sha256": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+      "bytes": 65843
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/gantt_Activity_021.png",
+      "sha256": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+      "bytes": 83992
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q6/io_results/gantt_Activity_022.png",
+      "sha256": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+      "bytes": 102624
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/bottleneck_heatmap.png",
+      "sha256": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+      "bytes": 65843
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/gantt_Activity_021.png",
+      "sha256": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+      "bytes": 83992
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/q7/io_results/gantt_Activity_022.png",
+      "sha256": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+      "bytes": 102624
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/agent_debug.log",
+      "sha256": "08f7cb13f71ec34058ec8926e207b6ed60e1402375ac67206360da873185f253",
+      "bytes": 53762
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q1/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q2/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q3/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/bottleneck_heatmap.png",
+      "sha256": "1acb2b7a1214706d32ac3df2270d108f66816510fec2bd96982236853b94e638",
+      "bytes": 63882
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/gantt_Activity_021.png",
+      "sha256": "4c2526bebc028898210a6fdca51cea802b50c6d21b752f16c7545d4c0f98ffc8",
+      "bytes": 86095
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q4/io_results/gantt_Activity_022.png",
+      "sha256": "78732cee52242bff9cd498d7296d7cfe0e2b809c8a24d1f226466e97bd1ae713",
+      "bytes": 102383
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/bottleneck_heatmap.png",
+      "sha256": "bae95d6d4b56b4c896c339c00042dccbd872dc07a5e460769f6f96d5dcda4770",
+      "bytes": 65454
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/gantt_Activity_021.png",
+      "sha256": "f9983974f10bfb90c1738e6fdb020548c49a439d566884d3b8fb7aaff5f22487",
+      "bytes": 84068
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q5/rejected_candidate_simulation/gantt_Activity_022.png",
+      "sha256": "85880ccc194e3638c0a0d663e65485bb8a2dbee143bdc1e4f4a3c51ca84fd054",
+      "bytes": 95728
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/bottleneck_heatmap.png",
+      "sha256": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+      "bytes": 65843
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/gantt_Activity_021.png",
+      "sha256": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+      "bytes": 83992
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q6/io_results/gantt_Activity_022.png",
+      "sha256": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+      "bytes": 102624
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/bottleneck_heatmap.png",
+      "sha256": "3009b8aeaf3b3ecca4af46618d958f4a28c07a8d7b62e3512c509338529bf670",
+      "bytes": 65843
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/gantt_Activity_021.png",
+      "sha256": "358d0de8969d10f46fca99fe16a6c0fbd2c0704fd898cfa2fef5c375087772a2",
+      "bytes": 83992
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q7/io_results/gantt_Activity_022.png",
+      "sha256": "8718c1004de2d8c852596e1ab5b1b67367bd6f7adb9aa39ad3fdd6b8c721cd74",
+      "bytes": 102624
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/bottleneck_heatmap.png",
+      "sha256": "6ba12b442fbb18ba9da0607d6ea489df35740261173113754b274363daa456ef",
+      "bytes": 66451
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/gantt_Activity_021.png",
+      "sha256": "366a2ad7e949b13e40229cec69f4a2eaa76ecb1a2d7e6b273d7667b87ef1ec2f",
+      "bytes": 93147
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/io_results/gantt_Activity_022.png",
+      "sha256": "f01baf01cd1d62d3f0af4f937e45c3ff9a2ba9b4bf52c36711e6798d20af3690",
+      "bytes": 128739
+    },
+    {
+      "path": "benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/q8/iwo_convergence.png",
+      "sha256": "c0f7336de3f22fafecf087f6bd06dc60bf387c08b03ae36424bd576b5d7291e0",
+      "bytes": 76224
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_completeness_B.json",
+      "sha256": "19593a4acbe846539e3192d99961b6536e3c1d0e5a323623772a590321eb242d",
+      "bytes": 1895943
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_completeness_C.json",
+      "sha256": "13d5591c8aa11becb974b5b0f558aafded1fcd91debe0f6fd20a0cf2bd371dbd",
+      "bytes": 2952914
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_complexity_B.json",
+      "sha256": "4309b7b856cd14d43e73629ff64257ab9acf446cb2c92aea63fc7b9ba98ec56f",
+      "bytes": 623415
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/benchmark_compare_complexity_C.json",
+      "sha256": "9679f487eb2b396c27b0d267d108dc61a540fb8745d31acd0d1720690143953a",
+      "bytes": 617426
+    },
+    {
+      "path": "benchmarks/results/humanisation_check/veritas_qwen25_32b/calls.jsonl",
+      "sha256": "d6e4a3f5124e60668e50f3193e75ae6c3348fc5ec5edcd34de845fb60698acb4",
+      "bytes": 4161009
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/completeness/benchmark_compare_completeness.json",
+      "sha256": "e2277992bc97c74e9645f00b208febfe28353a6d34fbcf2676b4375546b42390",
+      "bytes": 17294288
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/completeness/benchmark_compare_completeness_rescored.json",
+      "sha256": "3f01b69aee0cd9be3f55a3b6d63c317dabf61adb2bcd6f5953bb44f8af3fa4b1",
+      "bytes": 17326817
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/completeness/petri_uq_plot.png",
+      "sha256": "a0db2cfe464713cd31bad7590eba5dcb25a8ab2fd6bcb2e60403beb82bb0d6c8",
+      "bytes": 975357
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/complexity/benchmark_compare_complexity.json",
+      "sha256": "a92875caa4f1186b5c915e260a93193b79f2281b0ca702bc2a8ff3e8566348ce",
+      "bytes": 20121935
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/complexity/benchmark_compare_complexity_rescored.json",
+      "sha256": "d55e2cc819b7955398fe9df40b242da5cb116c9acfbc76b47a2cd4ca6f441bdb",
+      "bytes": 20131818
+    },
+    {
+      "path": "benchmarks/results/models/claude-sonnet-4-6/complexity/petri_uq_plot.png",
+      "sha256": "936961a0c7c81fcb25d15f1c74ccec4dcc2b040bcb9fd62fd6e31536c5179c1b",
+      "bytes": 602317
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/completeness/benchmark_compare_completeness.json",
+      "sha256": "b2dc9fb5de2fe696eab097af3071cfceb84891b4b4d76614c2ad0cf4a2942649",
+      "bytes": 18792696
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/completeness/benchmark_compare_completeness_rescored.json",
+      "sha256": "a1d119ae6ac8370b8a2c0848eceb4e965eef3ceb33f96a4df25facbd02279f40",
+      "bytes": 18826001
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/completeness/petri_uq_plot.png",
+      "sha256": "38ff683b2687f7897e9cd80759cbec7104c353f88ba5ccf434326d9d7be3dfdc",
+      "bytes": 908594
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/complexity/benchmark_compare_complexity.json",
+      "sha256": "1d978fb0a678ac5dee0d8804a900cb7d0ba47b4f7686b1af5bf41d81a7987295",
+      "bytes": 14895463
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/complexity/benchmark_compare_complexity_rescored.json",
+      "sha256": "e93ec4ac668c8cfb7536ab2bcb69e12af450507dc1b0d77c9e08582d0d13d33e",
+      "bytes": 14907911
+    },
+    {
+      "path": "benchmarks/results/models/gpt-5.4/complexity/petri_uq_plot.png",
+      "sha256": "688be04edb771e0d8d883a1f4249d8982095dcfd0e3efdfcde0c7a607be81fd5",
+      "bytes": 600460
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/benchmark_compare_completeness.json",
+      "sha256": "6c38771d1f7f70ab2671c14abe2e6190eb13d133e2d432fde3d480b28d6a0b0b",
+      "bytes": 24142328
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/benchmark_compare_completeness_rescored.json",
+      "sha256": "c40b5c4fa8a48322ce4795ffded3730dcd993e5e9016c746d89272c4bee58c08",
+      "bytes": 24168384
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/completeness/petri_uq_plot.png",
+      "sha256": "2146396afe7e750dcdf84d4c005e63ceab14d0d31bd5451455fcc7805671bcc9",
+      "bytes": 820143
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/benchmark_compare_complexity.json",
+      "sha256": "0e0ffe94c5c5001cbaf2a64c9716e365f9f91678158400962df9f816ff7a9a85",
+      "bytes": 21215780
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/benchmark_compare_complexity_rescored.json",
+      "sha256": "929b16366419e067ca4faa77b16c5128be3eb03e457b9792539691c784b29445",
+      "bytes": 21226600
+    },
+    {
+      "path": "benchmarks/results/models/gpt-oss_20b/complexity/petri_uq_plot.png",
+      "sha256": "b622411cd7168b9123d7a4c1319a806bd42cbbda07c1a0e8febf543c7a5af031",
+      "bytes": 703557
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/completeness/benchmark_compare_completeness.json",
+      "sha256": "75ec516b78b8825731a45e554f5004ebfbdbbdca376c3339b3de6438561ad6ca",
+      "bytes": 37094462
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/completeness/benchmark_compare_completeness_rescored.json",
+      "sha256": "58772b15240a3fea6fe312dbbeea4e106de393db7b9e99155b5d4bde5c060e8d",
+      "bytes": 37133040
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/completeness/petri_uq_plot.png",
+      "sha256": "b2a90936bbac5adb9dcfe9d992d9512e1113987d8f113783f4f6d7569d2e9676",
+      "bytes": 726162
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/complexity/benchmark_compare_complexity.json",
+      "sha256": "0a4a6e59289f3d841434dc577c043d771c5bd814117e6aafcd71825752506252",
+      "bytes": 36487455
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/complexity/benchmark_compare_complexity_rescored.json",
+      "sha256": "fc000f5bb5d8cc72d6ce1b8577c0dbe7995dc7f13eea95412c420147471f04cf",
+      "bytes": 36493629
+    },
+    {
+      "path": "benchmarks/results/models/llama3.1_latest/complexity/petri_uq_plot.png",
+      "sha256": "b6dc5bad14abc20a9f5849b14766504d16781cb9f307c70b6b2dc80a327fcde9",
+      "bytes": 667633
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/pe_batches.csv",
+      "sha256": "57889154d4197fe8661887d8441353af3f760b505d6aa638ee57278585a9d01b",
+      "bytes": 4778326
+    },
+    {
+      "path": "benchmarks/results/validator_pass/20260928T224634Z_c818998_9ed0ce/vanilla_pass.csv",
+      "sha256": "34026259ba9f7e6096c0e996a7905f5ca308d351fd5460aa43e5403f931c50e8",
+      "bytes": 1920259
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+ID: GLOBAL_CONFIG
+TYPE: Metadata
+SIMULATION_PERIOD: 2000 hours
+TEAMS_AVAILABLE: 1
+RUN_ID: 25
+---
+ID: p3
+TYPE: Generic Place
+MEANING: team-capacity pool.
+---
+ID: p4
+TYPE: Generic Place
+MEANING: maintenance lock / allocation place.
+---
+ID: p5
+TYPE: Generic Place
+MEANING: work-state indicator.
+INITIAL_MARKING: 1
+---
+ID: p6
+TYPE: Generic Place
+MEANING: break-state indicator.
+---
+ID: p0
+TYPE: Generic Place
+MEANING: global system operational place.
+INITIAL_MARKING: 1
+---
+ID: p11
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: activity ready to start.
+---
+ID: p021
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: activity in the task loop state.
+---
+ID: p81
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: activity completion place.
+---
+ID: p001
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: initial place for activity 1. INITIAL_MARKING: 1
+---
+ID: p10
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: initial state within activity 1 subnet.
+---
+ID: pbuff1
+TYPE: Activity Place
+ACTIVITY: A001
+MEANING: buffer place for activity A001.
+---
+ID: p711
+TYPE: Task Place
+ACTIVITY: A001
+TASK: T001
+MEANING: internal task place for task 1 in activity 1.
+---
+ID: p721
+TYPE: Task Place
+ACTIVITY: A001
+TASK: T002
+MEANING: internal task place for task 2 in activity 1.
+---
+ID: p731
+TYPE: Task Place
+ACTIVITY: A001
+TASK: T003
+MEANING: internal task place for task 3 in activity 1.
+---
+ID: p12
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: activity ready to start.
+---
+ID: p022
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: activity in the task loop state.
+---
+ID: p82
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: activity completion place.
+---
+ID: p002
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: initial place for activity 2. INITIAL_MARKING: 1
+---
+ID: p20
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: initial state within activity 2 subnet.
+---
+ID: pbuff2
+TYPE: Activity Place
+ACTIVITY: A002
+MEANING: buffer place for activity A002.
+---
+ID: p712
+TYPE: Task Place
+ACTIVITY: A002
+TASK: T001
+MEANING: internal task place for task 1 in activity 2.
+---
+ID: p722
+TYPE: Task Place
+ACTIVITY: A002
+TASK: T002
+MEANING: internal task place for task 2 in activity 2.
+---
+ID: p732
+TYPE: Task Place
+ACTIVITY: A002
+TASK: T003
+MEANING: internal task place for task 3 in activity 2.
+---
+ID: p742
+TYPE: Task Place
+ACTIVITY: A002
+TASK: T004
+MEANING: internal task place for task 4 in activity 2.
+---
+ID: t3
+TYPE: Atomic Transition
+MEANING: allocation of workers (team allocation).
+---
+ID: t4
+TYPE: Atomic Transition
+MEANING: transition from break to work state.
+---
+ID: t5
+TYPE: Atomic Transition
+MEANING: transition from work to break state.
+---
+ID: t9
+TYPE: Atomic Transition
+MEANING: global reset transition.
+---
+ID: t001
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: activate activity 1
+---
+ID: t10
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: activation of activity 1 subnet.
+---
+ID: t11
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: entry into the task loop.
+---
+ID: t12
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: completion and return to p10.
+---
+ID: t00061
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: maintenance loop transition.
+---
+ID: t00081
+TYPE: Activity Transition
+ACTIVITY: A001
+MEANING: completion transition feeding p81 and pbuff1.
+---
+ID: t000711
+TYPE: Task Transition
+ACTIVITY: A001
+TASK: T001
+MEANING: execution of task 1 in activity 1.
+---
+ID: t000721
+TYPE: Task Transition
+ACTIVITY: A001
+TASK: T002
+MEANING: execution of task 2 in activity 1.
+---
+ID: t000731
+TYPE: Task Transition
+ACTIVITY: A001
+TASK: T003
+MEANING: execution of task 3 in activity 1.
+---
+ID: t002
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: activate activity 2
+---
+ID: t20
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: activation of activity 2 subnet.
+---
+ID: t21
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: entry into the task loop.
+---
+ID: t22
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: completion and return to p20.
+---
+ID: t00062
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: maintenance loop transition.
+---
+ID: t00082
+TYPE: Activity Transition
+ACTIVITY: A002
+MEANING: completion transition feeding p82 and pbuff2.
+---
+ID: t000712
+TYPE: Task Transition
+ACTIVITY: A002
+TASK: T001
+MEANING: execution of task 1 in activity 2.
+---
+ID: t000722
+TYPE: Task Transition
+ACTIVITY: A002
+TASK: T002
+MEANING: execution of task 2 in activity 2.
+---
+ID: t000732
+TYPE: Task Transition
+ACTIVITY: A002
+TASK: T003
+MEANING: execution of task 3 in activity 2.
+---
+ID: t000742
+TYPE: Task Transition
+ACTIVITY: A002
+TASK: T004
+MEANING: execution of task 4 in activity 2.
+---
+ID: FLOW_ACT_1
+TYPE: Activity Flow Path
+ACTIVITY: A001
+PATH: p001 -> t001 -> p11 -> t11 -> p021 -> t12 -> p10
+---
+ID: FLOW_TSK_1_1
+TYPE: Task Flow Path
+ACTIVITY: A001
+TASK: T001
+PATH: p021 <-> t000711 <-> p711
+---
+ID: FLOW_TSK_2_1
+TYPE: Task Flow Path
+ACTIVITY: A001
+TASK: T002
+PATH: p021 <-> t000721 <-> p721
+---
+ID: FLOW_TSK_3_1
+TYPE: Task Flow Path
+ACTIVITY: A001
+TASK: T003
+PATH: p021 <-> t000731 <-> p731
+---
+ID: FLOW_ACT_2
+TYPE: Activity Flow Path
+ACTIVITY: A002
+PATH: p002 -> t002 -> p12 -> t21 -> p022 -> t22 -> p20
+---
+ID: FLOW_TSK_1_2
+TYPE: Task Flow Path
+ACTIVITY: A002
+TASK: T001
+PATH: p022 <-> t000712 <-> p712
+---
+ID: FLOW_TSK_2_2
+TYPE: Task Flow Path
+ACTIVITY: A002
+TASK: T002
+PATH: p022 <-> t000722 <-> p722
+---
+ID: FLOW_TSK_3_2
+TYPE: Task Flow Path
+ACTIVITY: A002
+TASK: T003
+PATH: p022 <-> t000732 <-> p732
+---
+ID: FLOW_TSK_4_2
+TYPE: Task Flow Path
+ACTIVITY: A002
+TASK: T004
+PATH: p022 <-> t000742 <-> p742
+---
+ID: FLOW_MAINTENANCE
+TYPE: System Flow Path
+PATH: p5 -> t5 -> p6 -> t4 -> p5
+---
+ID: PREC_A001_T003_BEFORE_T001
+TYPE: Precedence Arc
+ACTIVITY: A001
+FROM: p731
+TO: t000711
+MEANING: A001.T003 precedes T001: T001 runs only after T003 has run.
+---
+ID: PREC_A001_T003_BEFORE_T002
+TYPE: Precedence Arc
+ACTIVITY: A001
+FROM: p731
+TO: t000721
+MEANING: A001.T003 precedes T002: T002 runs only after T003 has run.
+---
+ID: PREC_A002_T002_BEFORE_T001
+TYPE: Precedence Arc
+ACTIVITY: A002
+FROM: p722
+TO: t000712
+MEANING: A002.T002 precedes T001: T001 runs only after T002 has run.
+---
+ID: PREC_A002_T003_BEFORE_T001
+TYPE: Precedence Arc
+ACTIVITY: A002
+FROM: p732
+TO: t000712
+MEANING: A002.T003 precedes T001: T001 runs only after T003 has run.
+---
+ID: PREC_A002_T004_BEFORE_T002
+TYPE: Precedence Arc
+ACTIVITY: A002
+FROM: p742
+TO: t000722
+MEANING: A002.T004 precedes T002: T002 runs only after T004 has run.
+---
+ID: PREC_A002_T004_BEFORE_T003
+TYPE: Precedence Arc
+ACTIVITY: A002
+FROM: p742
+TO: t000732
+MEANING: A002.T004 precedes T003: T003 runs only after T004 has run.
+---
+ID: PREC_A002_BEFORE_A001
+TYPE: Inhibitor Arc
+FROM: p022
+TO: t11
+MEANING: A002 precedes A001: A001 cannot enter its task loop while A002 is in its task loop.
+---
+ID: BUFF_A002_BEFORE_A001
+TYPE: Precedence Arc
+FROM: pbuff2
+TO: t11
+MEANING: A002 precedes A001: A001 enters its task loop with the token A002 leaves in pbuff2 when it completes its tasks.
+---

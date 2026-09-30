@@ -1,0 +1,182 @@
+{
+  "run_id": "20260929T095804Z_single_edits",
+  "timestamp_utc": "2026-09-29T09:58:11.253538+00:00",
+  "git": {
+    "head": "0caefc43b69dd766c5b15303ebbeb6c3e728d077",
+    "dirty_paths": [],
+    "script_commit": "0caefc43b69dd766c5b15303ebbeb6c3e728d077"
+  },
+  "simulation": "input_agent.src.fresh_simulation.run_petrinets_simulation_fresh (one new process per configuration)",
+  "configurations": {
+    "S_0": "core/api.py initial_input",
+    "S_0_T_wait_6": "S_0 with only A002.T_wait = 6",
+    "S_0_T002_85": "S_0 with only A002.tasks.T002.Duration = 85",
+    "S_k+1": "S_0 with both edits"
+  },
+  "summary": {
+    "S_0": {
+      "description": "core/api.py initial_input",
+      "kpis": {
+        "Intervention_time_hours": 1130.0,
+        "P4_total_busy_hours": 1002.0,
+        "Net_plan_availability_percent": 87.5,
+        "Net_plan_unavailability_hours": 250.0
+      },
+      "a002_calendar_durations": {
+        "T001": [
+          120.0,
+          120.0
+        ],
+        "T002": [
+          162.0,
+          162.0
+        ],
+        "T003": [
+          78.0,
+          78.0
+        ],
+        "T004": [
+          21.0,
+          21.0
+        ]
+      },
+      "kpi_delta_vs_S_0": {
+        "Intervention_time_hours": 0.0,
+        "P4_total_busy_hours": 0.0,
+        "Net_plan_availability_percent": 0.0,
+        "Net_plan_unavailability_hours": 0.0
+      },
+      "a002_T003_delta_vs_S_0": [
+        0.0,
+        0.0
+      ]
+    },
+    "S_0_T_wait_6": {
+      "description": "S_0 with only A002.T_wait = 6",
+      "kpis": {
+        "Intervention_time_hours": 1134.0,
+        "P4_total_busy_hours": 1002.0,
+        "Net_plan_availability_percent": 85.9,
+        "Net_plan_unavailability_hours": 282.0
+      },
+      "a002_calendar_durations": {
+        "T001": [
+          120.0,
+          120.0
+        ],
+        "T002": [
+          146.0,
+          146.0
+        ],
+        "T003": [
+          94.0,
+          94.0
+        ],
+        "T004": [
+          21.0,
+          21.0
+        ]
+      },
+      "kpi_delta_vs_S_0": {
+        "Intervention_time_hours": 4.0,
+        "P4_total_busy_hours": 0.0,
+        "Net_plan_availability_percent": -1.5999999999999943,
+        "Net_plan_unavailability_hours": 32.0
+      },
+      "a002_T003_delta_vs_S_0": [
+        16.0,
+        16.0
+      ]
+    },
+    "S_0_T002_85": {
+      "description": "S_0 with only A002.tasks.T002.Duration = 85",
+      "kpis": {
+        "Intervention_time_hours": 1084.0,
+        "P4_total_busy_hours": 956.0,
+        "Net_plan_availability_percent": 87.5,
+        "Net_plan_unavailability_hours": 250.0
+      },
+      "a002_calendar_durations": {
+        "T001": [
+          120.0,
+          120.0
+        ],
+        "T002": [
+          139.0,
+          139.0
+        ],
+        "T003": [
+          78.0,
+          78.0
+        ],
+        "T004": [
+          21.0,
+          21.0
+        ]
+      },
+      "kpi_delta_vs_S_0": {
+        "Intervention_time_hours": -46.0,
+        "P4_total_busy_hours": -46.0,
+        "Net_plan_availability_percent": 0.0,
+        "Net_plan_unavailability_hours": 0.0
+      },
+      "a002_T003_delta_vs_S_0": [
+        0.0,
+        0.0
+      ]
+    },
+    "S_k+1": {
+      "description": "S_0 with both edits",
+      "kpis": {
+        "Intervention_time_hours": 1088.0,
+        "P4_total_busy_hours": 956.0,
+        "Net_plan_availability_percent": 85.9,
+        "Net_plan_unavailability_hours": 282.0
+      },
+      "a002_calendar_durations": {
+        "T001": [
+          120.0,
+          120.0
+        ],
+        "T002": [
+          123.0,
+          123.0
+        ],
+        "T003": [
+          94.0,
+          94.0
+        ],
+        "T004": [
+          21.0,
+          21.0
+        ]
+      },
+      "kpi_delta_vs_S_0": {
+        "Intervention_time_hours": -42.0,
+        "P4_total_busy_hours": -46.0,
+        "Net_plan_availability_percent": -1.5999999999999943,
+        "Net_plan_unavailability_hours": 32.0
+      },
+      "a002_T003_delta_vs_S_0": [
+        16.0,
+        16.0
+      ]
+    }
+  },
+  "files": {
+    "S_0/calculated_task_durations.xlsx": "bf08d9c0f1820c7538b789dde97dd0062122e2d764562e24e3a1580895c19eef",
+    "S_0/config.json": "415850a0178ed5ab645c941fca54bc7c8a746788f2932c801c369b5b62480a4d",
+    "S_0/general_outputs_all.json": "a48a681f2cee6518ad14a8c39c4d60d84d0cf9cb645a264e04a92dd1d3e71b82",
+    "S_0_T002_85/calculated_task_durations.xlsx": "97e72b170c45e78814f6ccbce1c8f866fc170c7ce558b4d97b9e56a9b37312d8",
+    "S_0_T002_85/config.json": "043c7e2fef75735cea15e59919e66c985893b46d95f4f556920e0649c46a2a48",
+    "S_0_T002_85/general_outputs_all.json": "9f9508a9af7d81e59d22f7f2b2abe3fc8b38871c97487f828ceee8cd9baecbd2",
+    "S_0_T_wait_6/calculated_task_durations.xlsx": "994fdb78abeaed5df6792daf1ad9bbab74ee2740879b8dba59b856865816c929",
+    "S_0_T_wait_6/config.json": "3daf7e84f437a84b07e630812e33bbf4576288256d91c9d761bc8fdc7c9b1d4b",
+    "S_0_T_wait_6/general_outputs_all.json": "72546ad3ee1252b9cde882842deb538087c141436cc725107a2aa63e98fb2e48",
+    "S_k+1/calculated_task_durations.xlsx": "d32b90112652a6ae1da837fd8596ca0daaf31099305d4e3f9569783920b200fc",
+    "S_k+1/config.json": "eb3ced07241bada55017003df166c3e3bf10d94f1de684a545753f3e122a92d6",
+    "S_k+1/general_outputs_all.json": "32abedb8a4bff45e31a0a3329697cd7c99bf1938d95937d15ce72b396cd392ff",
+    "summary.csv": "2210afb1025b2f29589a81c0206e10d8d3ce7c0ff7f5beb5767ec785096613ad",
+    "summary.json": "80cee52056971394286069dc3bdfbfd14070c7cbc1e2de67329625c7d557bc1f"
+  }
+}

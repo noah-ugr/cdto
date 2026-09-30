@@ -1,0 +1,939 @@
+{
+  "campos_esquema": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 14,
+      "sample_idx": 657,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A001.tasks.T006.Requires_Shutdown"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_esquema",
+          "group": "DOMINIO",
+          "path": "A001.tasks.T006.Requires_Shutdown",
+          "detail": "falta el campo"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 15,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A002.tasks.T001.Requires_Shutdown"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_esquema",
+          "group": "DOMINIO",
+          "path": "A002.tasks.T001.Requires_Shutdown",
+          "detail": "falta el campo"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "completeness",
+      "level": 2,
+      "sample_idx": 76,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A002.tasks.T008.Requires_Shutdown"
+        },
+        {
+          "operation": "SET",
+          "path": "A002.tasks.T001.Order_Enforced",
+          "value": true
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_esquema",
+          "group": "DOMINIO",
+          "path": "A002.tasks.T008.Requires_Shutdown",
+          "detail": "falta el campo"
+        }
+      ]
+    }
+  ],
+  "campos_fuera_de_nivel": [
+    {
+      "backend": "claude-sonnet-4-6",
+      "axis": "completeness",
+      "level": 11,
+      "sample_idx": 517,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A001.tasks.T016.Order_Enforced"
+        },
+        {
+          "operation": "DELETE",
+          "path": "A001.tasks.T005.Order_Enforced"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.tasks.T001.Requires_Shutdown",
+          "value": false
+        },
+        {
+          "operation": "SET",
+          "path": "A001.tasks.T001.Start_disp",
+          "value": 115
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T014.Order_Before",
+          "value": "T016"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T013.Order_Before",
+          "value": "T016"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T009.Order_Before",
+          "value": "T006"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T010"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T005"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T010.Order_Before",
+          "value": "T012"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T003"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_fuera_de_nivel",
+          "group": "DOMINIO",
+          "path": "A001.tasks.T001.Start_disp",
+          "detail": "campo de actividad en la tarea"
+        }
+      ]
+    },
+    {
+      "backend": "claude-sonnet-4-6",
+      "axis": "completeness",
+      "level": 15,
+      "sample_idx": 748,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.tasks.T015.Cost_per_hour",
+          "value": 672
+        },
+        {
+          "operation": "SET",
+          "path": "A001.Teams",
+          "value": 16
+        },
+        {
+          "operation": "DELETE",
+          "path": "A001.Activity_Order_Enforced"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.Team",
+          "value": "TeamE"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.Start_disp",
+          "value": 92
+        },
+        {
+          "operation": "SET",
+          "path": "A001.T_period",
+          "value": 7254
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T013"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T005"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T006.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T005.Order_Before",
+          "value": "T006"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T015.Order_Before",
+          "value": "T007"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T012.Order_Before",
+          "value": "T014"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T005"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T003.Order_Before",
+          "value": "T008"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_fuera_de_nivel",
+          "group": "DOMINIO",
+          "path": "A001.Teams",
+          "detail": "campo global en la actividad"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 12,
+      "sample_idx": 550,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A003.tasks.T001.Start_disp",
+          "value": "A002.Duration"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_fuera_de_nivel",
+          "group": "DOMINIO",
+          "path": "A003.tasks.T001.Start_disp",
+          "detail": "campo de actividad en la tarea"
+        }
+      ]
+    }
+  ],
+  "campos_leidos": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 10,
+      "sample_idx": 472,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A003.Start_disp"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_leidos",
+          "group": "RED DE PETRI",
+          "path": "A003.Start_disp",
+          "detail": "falta el campo"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "completeness",
+      "level": 1,
+      "sample_idx": 4,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A002.T_wait"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_leidos",
+          "group": "RED DE PETRI",
+          "path": "A002.T_wait",
+          "detail": "falta el campo"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "completeness",
+      "level": 4,
+      "sample_idx": 181,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A002.tasks.T001.Duration",
+          "value": 1
+        },
+        {
+          "operation": "DELETE",
+          "path": "A002.T_wait"
+        },
+        {
+          "operation": "SET",
+          "path": "A005.tasks.T002.Requires_Shutdown",
+          "value": true
+        },
+        {
+          "operation": "APPEND",
+          "path": "A004.Activity_Order_Before",
+          "value": "A003"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A004.tasks.T001.Order_Before",
+          "value": "T002"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "campos_leidos",
+          "group": "RED DE PETRI",
+          "path": "A002.T_wait",
+          "detail": "falta el campo"
+        }
+      ]
+    }
+  ],
+  "dom_int": [
+    {
+      "backend": "claude-sonnet-4-6",
+      "axis": "completeness",
+      "level": 7,
+      "sample_idx": 310,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A001.Activity_Order_Enforced"
+        },
+        {
+          "operation": "DELETE",
+          "path": "A001.tasks.T011.Order_Enforced"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.tasks.T003.Duration",
+          "value": 0.75
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T006"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T008.Order_Before",
+          "value": "T001"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T009.Order_Before",
+          "value": "T010"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "dom_int",
+          "group": "RED DE PETRI",
+          "path": "A001.tasks.T003.Duration",
+          "detail": "debe ser un entero >= 1, es 0.75"
+        }
+      ]
+    },
+    {
+      "backend": "gpt-5.4",
+      "axis": "completeness",
+      "level": 7,
+      "sample_idx": 310,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A001.Activity_Order_Enforced"
+        },
+        {
+          "operation": "DELETE",
+          "path": "A001.tasks.T011.Order_Enforced"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.tasks.T003.Duration",
+          "value": 0.75
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T006"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T008.Order_Before",
+          "value": "T001"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T009.Order_Before",
+          "value": "T010"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "dom_int",
+          "group": "RED DE PETRI",
+          "path": "A001.tasks.T003.Duration",
+          "detail": "debe ser un entero >= 1, es 0.75"
+        }
+      ]
+    },
+    {
+      "backend": "gpt-oss_20b",
+      "axis": "complexity",
+      "level": 10,
+      "sample_idx": 454,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Team members",
+          "value": [
+            "Operario1",
+            "Operario2",
+            "Operario3",
+            "Operario4",
+            "Operario5",
+            "Operario6",
+            "Operario7",
+            "Operario8"
+          ]
+        }
+      ],
+      "violations": [
+        {
+          "rule": "dom_int",
+          "group": "RED DE PETRI",
+          "path": "A001.Team members",
+          "detail": "debe ser un entero >= 1, es ['Operario1', 'Operario2', 'Operario3', 'Operario4', 'Operario5', 'Operario6', 'Operario7', 'Operario8']"
+        }
+      ]
+    }
+  ],
+  "dom_real": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 5,
+      "sample_idx": 220,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A002.Start_disp",
+          "value": "A001"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "dom_real",
+          "group": "RED DE PETRI",
+          "path": "A002.Start_disp",
+          "detail": "debe ser un número finito >= 0, es 'A001'"
+        }
+      ]
+    }
+  ],
+  "prec_aciclica": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 80,
+      "sample_idx": 2606,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "APPEND",
+          "path": "A004.tasks.T005.Order_Before",
+          "value": "T002"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "prec_aciclica",
+          "group": "RED DE PETRI",
+          "path": "A004.tasks",
+          "detail": "ciclo entre T002, T003, T005: T002 -> T003 (A004.tasks.T002.Order_Before); T003 -> T005 (A004.tasks.T003.Order_Before); T005 -> T002 (A004.tasks.T005.Order_Before)"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "completeness",
+      "level": 13,
+      "sample_idx": 615,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T006.Order_Before",
+          "value": "T008"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A002.tasks.T006.Order_Before",
+          "value": "T008"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A002.tasks.T007.Order_Before",
+          "value": "T001"
+        },
+        {
+          "operation": "SET",
+          "path": "A001.T_period",
+          "value": 1860
+        },
+        {
+          "operation": "DELETE",
+          "path": "A002.tasks.T008.Cost_per_hour"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.tasks.T004.Order_Before",
+          "value": "T002"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.Activity_Order_Before",
+          "value": "A001"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.tasks.T007.Order_Before",
+          "value": "T001"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T007"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "prec_aciclica",
+          "group": "RED DE PETRI",
+          "path": "A002.tasks",
+          "detail": "ciclo entre T002, T003, T004: T002 -> T003 (A002.tasks.T002.Order_Before); T003 -> T004 (A002.tasks.T003.Order_Before); T004 -> T002 (A002.tasks.T004.Order_Before)"
+        }
+      ]
+    }
+  ],
+  "rangos": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 12,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Shift_duration",
+          "value": 5256
+        }
+      ],
+      "violations": [
+        {
+          "rule": "rangos",
+          "group": "DOMINIO",
+          "path": "A001.Shift_duration",
+          "detail": "debe ser <= 24, es 5256"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 23,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Shift_duration",
+          "value": 4341
+        }
+      ],
+      "violations": [
+        {
+          "rule": "rangos",
+          "group": "DOMINIO",
+          "path": "A001.Shift_duration",
+          "detail": "debe ser <= 24, es 4341"
+        }
+      ]
+    },
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 1,
+      "sample_idx": 49,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Shift_duration",
+          "value": 3276
+        }
+      ],
+      "violations": [
+        {
+          "rule": "rangos",
+          "group": "DOMINIO",
+          "path": "A001.Shift_duration",
+          "detail": "debe ser <= 24, es 3276"
+        }
+      ]
+    }
+  ],
+  "referencias": [
+    {
+      "backend": "claude-sonnet-4-6",
+      "axis": "complexity",
+      "level": 28,
+      "sample_idx": 1391,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "DELETE",
+          "path": "A002.tasks.T004"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "referencias",
+          "group": "DOMINIO",
+          "path": "A002.tasks.T003.Order_Before",
+          "detail": "'T004' no es una tarea de A002"
+        }
+      ]
+    },
+    {
+      "backend": "claude-sonnet-4-6",
+      "axis": "completeness",
+      "level": 12,
+      "sample_idx": 597,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A003.tasks.T002.Order_Enforced",
+          "value": true
+        },
+        {
+          "operation": "DELETE",
+          "path": "A003.tasks.T002"
+        },
+        {
+          "operation": "SET",
+          "path": "A004.tasks.T003.Duration",
+          "value": 38
+        },
+        {
+          "operation": "SET",
+          "path": "Simulation_period",
+          "value": 3398
+        },
+        {
+          "operation": "APPEND",
+          "path": "A004.Activity_Order_Before",
+          "value": "A002"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A003.Activity_Order_Before",
+          "value": "A001"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T003"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.tasks.T001.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T003.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A002.tasks.T003.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A004.tasks.T002.Order_Before",
+          "value": "T003"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T003"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "referencias",
+          "group": "DOMINIO",
+          "path": "A003.tasks.T001.Order_Before",
+          "detail": "'T002' no es una tarea de A003"
+        }
+      ]
+    },
+    {
+      "backend": "gpt-5.4",
+      "axis": "completeness",
+      "level": 12,
+      "sample_idx": 597,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A003.tasks.T002.Order_Enforced",
+          "value": true
+        },
+        {
+          "operation": "DELETE",
+          "path": "A003.tasks.T002"
+        },
+        {
+          "operation": "SET",
+          "path": "A004.tasks.T003.Duration",
+          "value": 38
+        },
+        {
+          "operation": "SET",
+          "path": "Simulation_period",
+          "value": 3398
+        },
+        {
+          "operation": "APPEND",
+          "path": "A004.Activity_Order_Before",
+          "value": "A002"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A003.Activity_Order_Before",
+          "value": "A001"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A001.tasks.T004.Order_Before",
+          "value": "T003"
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.tasks.T001.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T003.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A002.tasks.T003.Order_Before",
+          "value": "T004"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A004.tasks.T002.Order_Before",
+          "value": "T003"
+        },
+        {
+          "operation": "REMOVE_ITEM",
+          "path": "A001.tasks.T002.Order_Before",
+          "value": "T003"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "referencias",
+          "group": "DOMINIO",
+          "path": "A003.tasks.T001.Order_Before",
+          "detail": "'T002' no es una tarea de A003"
+        }
+      ]
+    }
+  ],
+  "tipos": [
+    {
+      "backend": "gpt-oss_20b",
+      "axis": "complexity",
+      "level": 10,
+      "sample_idx": 454,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Team members",
+          "value": [
+            "Operario1",
+            "Operario2",
+            "Operario3",
+            "Operario4",
+            "Operario5",
+            "Operario6",
+            "Operario7",
+            "Operario8"
+          ]
+        }
+      ],
+      "violations": [
+        {
+          "rule": "tipos",
+          "group": "DOMINIO",
+          "path": "A001.Team members",
+          "detail": "debe ser un número entero, es ['Operario1', 'Operario2', 'Operario3', 'Operario4', 'Operario5', 'Operario6', 'Operario7', 'Operario8']"
+        }
+      ]
+    },
+    {
+      "backend": "gpt-oss_20b",
+      "axis": "complexity",
+      "level": 50,
+      "sample_idx": 2479,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Team members",
+          "value": [
+            "Operario1",
+            "Operario2"
+          ]
+        }
+      ],
+      "violations": [
+        {
+          "rule": "tipos",
+          "group": "DOMINIO",
+          "path": "A001.Team members",
+          "detail": "debe ser un número entero, es ['Operario1', 'Operario2']"
+        }
+      ]
+    },
+    {
+      "backend": "gpt-oss_20b",
+      "axis": "complexity",
+      "level": 100,
+      "sample_idx": 2732,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Team members",
+          "value": [
+            "Operario1",
+            "Operario2"
+          ]
+        }
+      ],
+      "violations": [
+        {
+          "rule": "tipos",
+          "group": "DOMINIO",
+          "path": "A001.Team members",
+          "detail": "debe ser un número entero, es ['Operario1', 'Operario2']"
+        }
+      ]
+    }
+  ],
+  "turno_minimo": [
+    {
+      "backend": "llama3.1_latest",
+      "axis": "complexity",
+      "level": 12,
+      "sample_idx": 595,
+      "em": 0,
+      "instructions": [
+        {
+          "operation": "SET",
+          "path": "A001.Shift_duration",
+          "value": 0
+        },
+        {
+          "operation": "APPEND",
+          "path": "A002.Activity_Order_Before",
+          "value": "A001"
+        }
+      ],
+      "violations": [
+        {
+          "rule": "turno_minimo",
+          "group": "RED DE PETRI",
+          "path": "A001.Shift_duration",
+          "detail": "debe ser >= 1, es 0"
+        }
+      ]
+    }
+  ]
+}

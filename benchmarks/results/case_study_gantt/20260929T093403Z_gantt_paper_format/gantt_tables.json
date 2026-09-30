@@ -1,0 +1,174 @@
+{
+  "gantt_A001": [
+    {
+      "transition": "t000731",
+      "task": "A001.T003",
+      "execution": 1,
+      "baseline_start": 388.0,
+      "baseline_end": 438.0,
+      "modified_start": 367.0,
+      "modified_end": 417.0,
+      "delta_start": -21.0,
+      "delta_end": -21.0,
+      "label": "a"
+    },
+    {
+      "transition": "t000711",
+      "task": "A001.T001",
+      "execution": 1,
+      "baseline_start": 438.0,
+      "baseline_end": 459.0,
+      "modified_start": 417.0,
+      "modified_end": 438.0,
+      "delta_start": -21.0,
+      "delta_end": -21.0,
+      "label": "b"
+    },
+    {
+      "transition": "t000721",
+      "task": "A001.T002",
+      "execution": 1,
+      "baseline_start": 459.0,
+      "baseline_end": 506.0,
+      "modified_start": 438.0,
+      "modified_end": 485.0,
+      "delta_start": -21.0,
+      "delta_end": -21.0,
+      "label": "c"
+    },
+    {
+      "transition": "t000731",
+      "task": "A001.T003",
+      "execution": 2,
+      "baseline_start": 1493.0,
+      "baseline_end": 1543.0,
+      "modified_start": 1451.0,
+      "modified_end": 1501.0,
+      "delta_start": -42.0,
+      "delta_end": -42.0,
+      "label": "d"
+    },
+    {
+      "transition": "t000711",
+      "task": "A001.T001",
+      "execution": 2,
+      "baseline_start": 1543.0,
+      "baseline_end": 1564.0,
+      "modified_start": 1501.0,
+      "modified_end": 1522.0,
+      "delta_start": -42.0,
+      "delta_end": -42.0,
+      "label": "e"
+    },
+    {
+      "transition": "t000721",
+      "task": "A001.T002",
+      "execution": 2,
+      "baseline_start": 1564.0,
+      "baseline_end": 1611.0,
+      "modified_start": 1522.0,
+      "modified_end": 1569.0,
+      "delta_start": -42.0,
+      "delta_end": -42.0,
+      "label": "f"
+    }
+  ],
+  "gantt_A002": [
+    {
+      "transition": "t000742",
+      "task": "A002.T004",
+      "execution": 1,
+      "baseline_start": 5.0,
+      "baseline_end": 26.0,
+      "modified_start": 7.0,
+      "modified_end": 28.0,
+      "delta_start": 2.0,
+      "delta_end": 2.0,
+      "label": "a"
+    },
+    {
+      "transition": "t000732",
+      "task": "A002.T003",
+      "execution": 1,
+      "baseline_start": 26.0,
+      "baseline_end": 104.0,
+      "modified_start": 28.0,
+      "modified_end": 122.0,
+      "delta_start": 2.0,
+      "delta_end": 18.0,
+      "label": "b"
+    },
+    {
+      "transition": "t000722",
+      "task": "A002.T002",
+      "execution": 1,
+      "baseline_start": 104.0,
+      "baseline_end": 266.0,
+      "modified_start": 122.0,
+      "modified_end": 245.0,
+      "delta_start": 18.0,
+      "delta_end": -21.0,
+      "label": "c"
+    },
+    {
+      "transition": "t000712",
+      "task": "A002.T001",
+      "execution": 1,
+      "baseline_start": 266.0,
+      "baseline_end": 386.0,
+      "modified_start": 245.0,
+      "modified_end": 365.0,
+      "delta_start": -21.0,
+      "delta_end": -21.0,
+      "label": "d"
+    },
+    {
+      "transition": "t000742",
+      "task": "A002.T004",
+      "execution": 2,
+      "baseline_start": 1110.0,
+      "baseline_end": 1131.0,
+      "modified_start": 1091.0,
+      "modified_end": 1112.0,
+      "delta_start": -19.0,
+      "delta_end": -19.0,
+      "label": "e"
+    },
+    {
+      "transition": "t000732",
+      "task": "A002.T003",
+      "execution": 2,
+      "baseline_start": 1131.0,
+      "baseline_end": 1209.0,
+      "modified_start": 1112.0,
+      "modified_end": 1206.0,
+      "delta_start": -19.0,
+      "delta_end": -3.0,
+      "label": "f"
+    },
+    {
+      "transition": "t000722",
+      "task": "A002.T002",
+      "execution": 2,
+      "baseline_start": 1209.0,
+      "baseline_end": 1371.0,
+      "modified_start": 1206.0,
+      "modified_end": 1329.0,
+      "delta_start": -3.0,
+      "delta_end": -42.0,
+      "label": "g"
+    },
+    {
+      "transition": "t000712",
+      "task": "A002.T001",
+      "execution": 2,
+      "baseline_start": 1371.0,
+      "baseline_end": 1491.0,
+      "modified_start": 1329.0,
+      "modified_end": 1449.0,
+      "delta_start": -42.0,
+      "delta_end": -42.0,
+      "label": "h"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+axis,level,n,A,B,C
+all,all,200,0,0,0
+complexity,all,100,0,0,0
+complexity,1,25,0,0,0
+complexity,16,25,0,0,0
+complexity,50,25,0,0,0
+complexity,150,25,0,0,0
+completeness,all,100,0,0,0
+completeness,1,25,0,0,0
+completeness,5,25,0,0,0
+completeness,10,25,0,0,0
+completeness,15,25,0,0,0

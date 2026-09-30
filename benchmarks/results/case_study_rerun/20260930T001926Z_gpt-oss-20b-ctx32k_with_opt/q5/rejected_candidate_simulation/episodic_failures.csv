@@ -1,0 +1,2 @@
+User Query,Validation Errors,Diagnosis
+Remove task T001 from A002; it looks like a redundant initial check.,[],"Removing task T001 from activity A002 violates referential integrity: both T002 and T003 in A002 list T001 in their taskCode fields. The engine detected these dangling references and rejected the delta. Although the KPI report shows a nominal efficiency gain, the configuration is invalid because the remaining tasks would reference a non‑existent task, leading to runtime errors and an inconsistent Petri net model."

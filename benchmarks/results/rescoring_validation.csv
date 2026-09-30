@@ -1,0 +1,9 @@
+model,axis,records,source_exact_match,em_recomputed_mismatch,legacy_mismatch,unchanged_field_changed,source_failed_case,source_no_config
+claude-sonnet-4-6,complexity,1600,1416,0,0,0,184,0.0
+claude-sonnet-4-6,completeness,1500,988,0,0,0,512,0.0
+gpt-5.4,complexity,1600,1472,0,0,0,128,0.0
+gpt-5.4,completeness,1500,925,0,0,0,575,0.0
+gpt-oss_20b,complexity,1600,1304,0,0,0,292,4.0
+gpt-oss_20b,completeness,1500,702,0,0,0,798,0.0
+llama3.1_latest,complexity,1600,730,0,0,0,866,4.0
+llama3.1_latest,completeness,1500,186,0,0,0,1314,0.0
