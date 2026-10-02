@@ -14,7 +14,7 @@ authors:
     affiliation: "University of Granada"
 preferred-citation:
   type: article
-  title: "A Cognitive Digital Twin Orchestrator: Agentic Artificial Intelligence for Operator-Driven Modification, Simulation and Optimisation of Petri Net Maintenance Models"
+  title: "An Agentic Artificial Intelligence Framework for Operator-Driven Interaction with Petri Net Maintenance Models in Industry 5.0"
   authors:
     - family-names: "Masegosa Cáceres"
       given-names: "Noah"
