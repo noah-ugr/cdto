@@ -1,11 +1,12 @@
-# TODO before publishing: add repository-code, the Zenodo DOI under identifiers, and the
-# journal, year and DOI of the article once they exist.
+# TODO: add the Zenodo DOI under identifiers, and the journal, year and DOI of the article
+# once they exist.
 cff-version: 1.2.0
 message: "If you use this software, please cite the article below."
 type: software
 title: "CDTO: Cognitive Digital Twin Orchestrator"
 version: "1.0.0"
 license: MIT
+repository-code: "https://github.com/noah-ugr/cdto"
 authors:
   - family-names: "Masegosa Cáceres"
     given-names: "Noah"
