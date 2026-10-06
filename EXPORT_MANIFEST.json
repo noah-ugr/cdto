@@ -2244,7 +2244,6 @@
     ".env.example",
     ".github/workflows/tests.yml",
     ".gitignore",
-    "CITATION.cff",
     "LICENSE",
     "README.md",
     "RELEASE.json",
