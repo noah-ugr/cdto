@@ -121,7 +121,7 @@ python benchmarks/metrics/petri_net_uq.py `
   benchmarks/results/models/$m/$axis/benchmark_compare_${axis}_rescored.json --axis $axis --seed 42 `
   --csv benchmarks/results/models/$m/$axis/uq_${axis}_results.csv `
   --manifest benchmarks/results/models/$m/$axis/benchmark_compare_${axis}_manifest.json `
-  --plot benchmarks/results/models/$m/$axis/uq_${axis}_plot.png
+  --plot benchmarks/results/models/$m/$axis/petri_uq_plot.png
 ```
 
 With the same library versions (recorded in the manifest), the intervals are bit-identical.
@@ -235,7 +235,7 @@ Use the same variables, and add `--with-optimization` to both commands:
 - `$RunId` ends in `_with_opt`.
 - `CDTO_IO_DIR` must be `C:\tmp\io`, and the folder must be empty or not exist; the optimizer
   reads and writes that folder. Rename an earlier one instead of deleting it.
-- The IWO takes about 100 minutes.
+- The IWO took 67 minutes in the recorded run.
 
 ```powershell
 $env:CDTO_IO_DIR = "C:\tmp\io"

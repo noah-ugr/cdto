@@ -1,7 +1,7 @@
 # CDTO: Cognitive Digital Twin Orchestrator
 
-Code, results and reproduction scripts of the paper *An Agentic Artificial Intelligence Framework
-for Operator-Driven Interaction with Petri Net Maintenance Models in Industry 5.0*.
+Code, results and reproduction scripts of the manuscript *An Agentic Artificial Intelligence
+Framework for Operator-Driven Interaction with Petri Net Maintenance Models in Industry 5.0*.
 
 ![The CDTO: the agentic layer proposes, the deterministic layer decides](docs/figures/cdto_architecture.jpg)
 
@@ -27,7 +27,7 @@ configuration that meets a KPI target, and its result passes the same check as a
 | `frontend/` | Web interface of the demo |
 | `config/` | Paths of the input/output folder of the simulations |
 | `benchmarks/` | Benchmark runners, metrics, uncertainty quantification, figures, humanisation check and case study |
-| `benchmarks/results/` | Results behind the paper: tables, figures, manifests and the case-study runs |
+| `benchmarks/results/` | Results behind the manuscript: tables, figures, manifests and the case-study runs |
 | `docs/` | Documentation of the validator, the benchmark, the humanisation check, the case study and the reproduction of every table and figure |
 | `tests/` | Unit tests |
 | `test_inputs/` | Example configurations |
@@ -78,35 +78,162 @@ use (episodic memory and documentation lookups). Model settings go in `.env` or 
 environment; see [.env.example](.env.example). [docs/benchmark.md](docs/benchmark.md#deployment-environments)
 gives the serving conditions of every run.
 
-## Reproducing the paper
+## Running the experiments
 
-Each row gives the command, the file it writes and what it needs: **git** (this repository),
-**Zenodo** (the deposit), **LLM** (model calls), **engine** or **optimizer** (third-party code).
-Commands run from the repository root. [docs/reproduce.md](docs/reproduce.md) gives every command
-with its arguments, and maps each figure and table of the paper to its file.
+The steps run in this order, from the repository root. Steps 1, 7 and 8 call a model; the others
+are offline. Each offline step reads the output of the steps before it, or the same files from the
+Zenodo deposit, so the experiments can start at any step. [docs/reproduce.md](docs/reproduce.md)
+gives the remaining options of each command.
 
-| Paper | Command | Result | Needs |
+| Parameter | Values |
+|---|---|
+| `<axis>` | `complexity`, `completeness` |
+| `<model>` | `claude-sonnet-4-6`, `gpt-5.4`, `gpt-oss_20b`, `llama3.1_latest` (results folder of each backend) |
+| `<base_url>` | `/v1` URL of an OpenAI-compatible server; for Ollama, `http://localhost:11434/v1` |
+
+### 1. Benchmark runs (LLM)
+
+Once per backend. They read the two datasets of the Zenodo deposit.
+
+```bash
+python benchmarks/comparisons/benchmark_compare_complexity.py --provider <provider> --llm-model <llm_model> --complexity 1 5 10 12 14 16 18 20 24 28 32 40 50 80 100 150 --samples-per-complexity 50
+python benchmarks/comparisons/benchmark_compare_completeness.py --provider <provider> --llm-model <llm_model>
+```
+
+| Backend | `<provider>` | `<llm_model>` | `<model>` | Extra arguments |
+|---|---|---|---|---|
+| Claude Sonnet 4.6 | `anthropic` | `claude-sonnet-4-6` | `claude-sonnet-4-6` | — |
+| GPT-5.4 | `openai` | `gpt-5.4` | `gpt-5.4` | — |
+| gpt-oss:20b | `openai_compatible` | `gpt-oss:20b` | `gpt-oss_20b` | `--llm-base-url <base_url> --request-profile 2026-04-28-benchmark` |
+| Llama 3.1 8B | `openai_compatible` | `llama3.1:latest` | `llama3.1_latest` | `--llm-base-url <base_url>` |
+
+The API keys go in `.env` (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`). Output:
+`benchmarks/results/models/<model>/<axis>/benchmark_compare_<axis>.json`.
+
+### 2. Rescoring with the corrected excision metric
+
+```bash
+python benchmarks/metrics/rescore_results.py --validation-csv benchmarks/results/rescoring_validation.csv
+```
+
+Output: `benchmark_compare_<axis>_rescored.json`, next to each file of step 1.
+
+### 3. Per-cell 95 % intervals
+
+Once per `<model>` and `<axis>`:
+
+```bash
+python benchmarks/metrics/petri_net_uq.py benchmarks/results/models/<model>/<axis>/benchmark_compare_<axis>_rescored.json --axis <axis> --seed 42 --csv benchmarks/results/models/<model>/<axis>/uq_<axis>_results.csv --manifest benchmarks/results/models/<model>/<axis>/benchmark_compare_<axis>_manifest.json --plot benchmarks/results/models/<model>/<axis>/petri_uq_plot.png
+```
+
+The intervals are bit-identical with the library versions recorded in the manifest.
+
+### 4. Tables and numbers of the text
+
+```bash
+python benchmarks/metrics/cdto_vs_vanilla_summary.py
+python benchmarks/metrics/per_level_tables.py
+python benchmarks/metrics/token_cost_summary.py
+python benchmarks/metrics/zero_token_calls.py
+python benchmarks/metrics/budget_complexity.py
+python benchmarks/metrics/c_star_by_backend.py
+python benchmarks/metrics/output_truncation.py --axis completeness
+python benchmarks/metrics/output_truncation.py --axis complexity --models claude-sonnet-4-6 gpt-5.4 gpt-oss_20b llama3.1_latest
+```
+
+The first three read the intervals of step 3; the others read the files of steps 1 and 2 and the
+datasets.
+
+### 5. Figures of the two axes
+
+```bash
+python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
+python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
+```
+
+The order of the models sets the colours of the series. Output:
+`benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf`.
+
+### 6. Offline pass of the validator
+
+```bash
+python benchmarks/metrics/validator_pass.py --rules-commit c818998
+python benchmarks/metrics/validator_rule_table.py --run-dir benchmarks/results/validator_pass/<run_id>
+```
+
+The first command reads the files of step 2 and writes `benchmarks/results/validator_pass/<run_id>/`;
+`--rules-commit` records the commit of the development repository that froze the rules. Without
+`--run-dir`, the second command reads the recorded run, `20260928T224634Z_c818998_9ed0ce`.
+
+### 7. Humanisation check (LLM)
+
+On an Ollama server. `<run_dir>` is a new folder under `benchmarks/results/humanisation_check/`;
+the recorded run is `veritas_qwen25_32b`.
+
+```bash
+ollama create gpt-oss-20b-ctx32k -f benchmarks/humanisation_check/Modelfile.gpt-oss-20b-ctx32k
+python -m benchmarks.humanisation_check.select_samples --run-dir <run_dir>
+python -m benchmarks.humanisation_check.rehumanise --run-dir <run_dir> --model qwen2.5:32b --base-url <base_url>
+python -m benchmarks.humanisation_check.fidelity --run-dir <run_dir>
+python -m benchmarks.humanisation_check.run_paired --run-dir <run_dir> --llm-base-url <base_url> --derived-model gpt-oss-20b-ctx32k --ssh-host <host>
+python -m benchmarks.humanisation_check.compare --run-dir <run_dir>
+```
+
+`ollama create` runs on the server and derives the evaluated model: `gpt-oss:20b` with a
+32768-token context.
+`--ssh-host` records the GPU, the Ollama version and the server settings in the manifest.
+`compare` is offline: on the recorded run, with the files of the Zenodo deposit, it rebuilds the
+tables of [docs/humanisation_check.md](docs/humanisation_check.md#results).
+
+### 8. Case study (LLM, engine and optimizer)
+
+Not runnable in this release, which leaves out the engine and the optimizer. The driver reads the
+model settings from the environment only; [docs/reproduce.md](docs/reproduce.md#case-study-subsection-42)
+lists the variables to set.
+
+```bash
+python benchmarks/case_study/rerun_case_study.py --model gpt-oss-20b-ctx32k --base-url <base_url> --preflight-only
+python benchmarks/case_study/rerun_case_study.py --model gpt-oss-20b-ctx32k --base-url <base_url>
+python benchmarks/case_study/rerun_case_study.py --model gpt-oss-20b-ctx32k --base-url <base_url> --with-optimization
+python benchmarks/case_study/regenerate_gantt.py
+python benchmarks/case_study/single_edit_attribution.py
+python benchmarks/case_study/plot_gantt_comparison.py
+```
+
+The second command runs queries 1–7 (categories A to E); the third adds query 8 (category F, the
+IWO), which took 67 minutes in the recorded run. The last command does run in this release: it
+redraws the execution plans from the recorded simulations.
+
+## Where each result of the manuscript comes from
+
+**Needs:** **git** (this repository), **Zenodo** (the deposit), **LLM** (model calls), **engine** or
+**optimizer** (third-party code, not in this release).
+
+| Result in the manuscript | Script | Output | Needs |
 |---|---|---|---|
-| `tab:cdto_improvement_summary` | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` | git |
-| `fig:cost_axis`, `fig:fidelity_axis` | `python benchmarks/aggregator/plot_multi_model_uq.py --axis <complexity/completeness> ...` | `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf` | git |
-| Per-level means and intervals (note of `tab:cdto_improvement_summary`) | `python benchmarks/metrics/per_level_tables.py` | `benchmarks/results/per_level/` | git |
-| `\tokflat`, `\tokgrowth`, `\tokcross` | `python benchmarks/metrics/token_cost_summary.py` | `benchmarks/results/token_cost_summary.csv` | git |
-| Footnote of Section 5 (zero-token calls) | `python benchmarks/metrics/zero_token_calls.py` | `benchmarks/results/zero_token_calls_by_axis.csv` | Zenodo |
-| Output-budget thresholds C* (`supp:tab:cstar`) | `python benchmarks/metrics/c_star_by_backend.py` | `benchmarks/results/c_star_by_backend.csv` | Zenodo |
-| Truncation at the output budget (Sections 5 and 6) | `python benchmarks/metrics/output_truncation.py --axis <axis>`; the complexity table adds `--models claude-sonnet-4-6 gpt-5.4 gpt-oss_20b llama3.1_latest` | `benchmarks/results/truncation_<axis>_by_level.csv` | Zenodo |
-| Corrected excision metric | `python benchmarks/metrics/rescore_results.py` | `benchmark_compare_<axis>_rescored.json` | Zenodo |
-| Per-cell 95 % intervals | `python benchmarks/metrics/petri_net_uq.py ...` | `benchmarks/results/models/<model>/<axis>/uq_<axis>_results.csv` | Zenodo |
-| `\rejrate`, `\rejreq`, `\rejcatch` (abstract, Section 7, conclusions) | `python benchmarks/metrics/validator_pass.py --rules-commit c818998` | `benchmarks/results/validator_pass/<run>/pe_summary.csv` | Zenodo |
-| `\rejcycle`, per-rule table of [docs/validator.md](docs/validator.md) | `python benchmarks/metrics/validator_rule_table.py` | `pe_rules_by_category.csv`, `pe_cycle_only_rejections.csv` | Zenodo |
-| Humanisation check (Subsection 4.1) | `python -m benchmarks.humanisation_check.compare --run-dir <run>` | `comparison_planner_executor.csv` | Zenodo (offline part); LLM (full check) |
-| `tab:simulation_configuration` | `core/api.py` (`initial_input`) | `S0.json` of each case-study run | git |
-| `fig:agent_interactions`, `tab:agent_eval` | `python benchmarks/case_study/rerun_case_study.py ...` | `benchmarks/results/case_study_rerun/<run>/` | LLM, engine; optimizer for category F |
-| `fig:gantt_chart_modified` | `python benchmarks/case_study/plot_gantt_comparison.py` | `gantt_A001.pdf` | git (from the recorded simulations); engine to simulate again (`regenerate_gantt.py`) |
-| Attribution of each edit (Subsection 4.2) | `python benchmarks/case_study/single_edit_attribution.py` | `benchmarks/results/case_study_attribution/<run>/summary.csv` | engine |
-| `supp:fig:iwo_convergence` | `rerun_case_study.py --with-optimization` | `q8/iwo_convergence.png` | Zenodo (recorded); LLM, engine and optimizer to run again |
-| `supp:tab:split` | No script: medians of `token_usage` in the raw complexity JSONs | — | Zenodo |
+| Table of the differences between P-E and the single-pass baseline | `cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` | git |
+| Figures of the results along the complexity and completeness axes | `plot_multi_model_uq.py` | `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf` | git |
+| Per-level means and intervals (note of the table of differences) | `per_level_tables.py` | `benchmarks/results/per_level/` | git |
+| Token cost along the complexity axis (flatness of P-E, growth of the baseline, crossing level) | `token_cost_summary.py` | `benchmarks/results/token_cost_summary.csv` | git |
+| Zero-token calls (footnote of Section 5) | `zero_token_calls.py` | `benchmarks/results/zero_token_calls_by_axis.csv` | Zenodo |
+| Supplementary table of the output-budget thresholds C* | `c_star_by_backend.py` | `benchmarks/results/c_star_by_backend.csv` | Zenodo |
+| Truncation at the output budget (Sections 5 and 6) | `output_truncation.py` | `benchmarks/results/truncation_<axis>_by_level.csv` | Zenodo |
+| Corrected excision metric | `rescore_results.py` | `benchmark_compare_<axis>_rescored.json` | Zenodo |
+| Per-cell 95 % intervals | `petri_net_uq.py` | `benchmarks/results/models/<model>/<axis>/uq_<axis>_results.csv` | Zenodo |
+| Rejection rates of the validator (abstract, Section 7, conclusions) | `validator_pass.py` | `benchmarks/results/validator_pass/<run_id>/pe_summary.csv` | Zenodo |
+| Rejections caused only by a cycle; per-rule table of [docs/validator.md](docs/validator.md) | `validator_rule_table.py` | `pe_rules_by_category.csv`, `pe_cycle_only_rejections.csv` | Zenodo |
+| Humanisation check (Subsection 4.1) | `benchmarks/humanisation_check/` | `comparison_planner_executor.csv` | Zenodo (offline part); LLM (full check) |
+| Table of the simulation configuration of the baseline case | `core/api.py` (`initial_input`) | `S0.json` of each case-study run | git |
+| Figure of the user-agent interactions; table of the categories of the demonstration | `rerun_case_study.py` | `benchmarks/results/case_study_rerun/<run_id>/` | LLM, engine; optimizer for category F |
+| Figure of the execution plans of `A001` | `plot_gantt_comparison.py` | `gantt_A001.pdf` | git (from the recorded simulations); engine to simulate again (`regenerate_gantt.py`) |
+| Attribution of each edit (Subsection 4.2) | `single_edit_attribution.py` | `benchmarks/results/case_study_attribution/<run_id>/summary.csv` | engine |
+| Supplementary figure of the convergence of the IWO | `rerun_case_study.py --with-optimization` | `q8/iwo_convergence.png` | Zenodo (recorded); LLM, engine and optimizer to run again |
+| Supplementary table of the median prompt and completion tokens | No script: medians of `token_usage` in the raw complexity JSONs | — | Zenodo |
 | Datasets | `input_agent/src/dataset_generator_*.py` | `benchmarks/datasets/*.jsonl` | LLM; not bit-reproducible, the files are the datasets |
-| Benchmark runs | `benchmarks/comparisons/benchmark_compare_<axis>.py` | `benchmarks/results/models/<model>/<axis>/benchmark_compare_<axis>.json` | LLM |
+| Benchmark runs | `benchmark_compare_<axis>.py` | `benchmarks/results/models/<model>/<axis>/benchmark_compare_<axis>.json` | LLM |
+
+[docs/reproduce.md](docs/reproduce.md) maps every figure and table of the manuscript, by its LaTeX
+label, to its file.
 
 ## What this release cannot reproduce
 
@@ -151,6 +278,3 @@ The tests marked `engine` or `optimizer` are skipped in this release.
 The code written by Noah Masegosa Cáceres is released under the MIT licence ([LICENSE](LICENSE)).
 The licence covers only that code. [THIRD_PARTY.md](THIRD_PARTY.md)
 lists the third-party components this release leaves out.
-## Citation
-
-See [CITATION.cff](CITATION.cff).
