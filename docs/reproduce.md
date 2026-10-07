@@ -16,16 +16,17 @@ There are two kinds of steps:
 - **Zenodo files.** The files listed in `benchmarks/results/zenodo_files.sha256` are in the
   Zenodo deposit: the two datasets, the raw and re-scored per-call JSONs of the benchmark, the
   per-batch and per-record CSVs of the validator pass, the per-call log and the B/C results of
-  the humanisation check, the logs of the case-study runs and every result PNG. Put them at their
-  listed paths and check them:
+  the humanisation check, the logs of the runs of the illustrative case and every result PNG. Put
+  them at their listed paths and check them:
 
   ```bash
   sha256sum -c benchmarks/results/zenodo_files.sha256
   ```
 
 - **LLM variables.** The runners read the model settings from the command line or from
-  `LLM_*` / `BENCHMARK_LLM_*`. The case-study driver refuses to start if any variable that
-  would override the model, the URL or the request format is set; its preflight lists them.
+  `LLM_*` / `BENCHMARK_LLM_*`. The driver of the illustrative case refuses to start if any
+  variable that would override the model, the URL or the request format is set; its preflight
+  lists them.
 
 ## Figures and tables of the paper
 
@@ -37,6 +38,7 @@ from. "Zenodo" marks files of the deposit, listed in `benchmarks/results/zenodo_
 | Paper | File in the paper sources | File in the repository | Made by |
 |---|---|---|---|
 | M `fig:maintenance_evolution` | `Figures/maintenance_evolution.pdf` | none: drawing | — |
+| M `fig:overview` | TikZ in the manuscript | `docs/figures/CDTO_graphical_abstract.png` (the same design, used as graphical abstract) | — |
 | M `fig:petrinet_architecture` | `Figures/rect5.pdf` | none: drawing of the net | — |
 | M `fig:pipeline` | TikZ in the manuscript | none | — |
 | M `fig:dataset_pipeline` | TikZ in the manuscript | none | — |
@@ -45,37 +47,37 @@ from. "Zenodo" marks files of the deposit, listed in `benchmarks/results/zenodo_
 | M `fig:gantt_chart_modified` | `Figures/gantt_chart_comparison_new.pdf` | `benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A001.pdf` | `plot_gantt_comparison.py` on the simulations of `20260929T084426Z_gantt` |
 | M `fig:cost_axis` | `complexity_results/multi_model_uq_complexity_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_complexity_v2.pdf` | `plot_multi_model_uq.py --axis complexity` |
 | M `fig:fidelity_axis` | `completeness_results/multi_model_uq_completeness_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_completeness_v2.pdf` | `plot_multi_model_uq.py --axis completeness` |
-| S `supp:fig:iwo_convergence` | `Figures/iwo_convergence.png` | `q8/iwo_convergence.png` of `20260930T001926Z_gpt-oss-20b-ctx32k_with_opt` (Zenodo) | the IWO, in query 8 of the case study |
+| S `supp:fig:iwo_convergence` | `Figures/iwo_convergence.png` | `q8/iwo_convergence.png` of `20260930T001926Z_gpt-oss-20b-ctx32k_with_opt` (Zenodo) | the IWO, in query 8 of the illustrative case |
 | S `supp:fig:petristate`, `supp:fig:contracts` | text in the supplementary | none | — |
 | S `fig:cdto_full_landscape` | `Figures/CDTO_interface.pdf`, `CDTO_json.pdf`, `forensic_analysis.pdf`, `causality.pdf`, `temporal_narrative.pdf`, `temporal_state.pdf` | none: screenshots of the web interface (`frontend/`) | — |
 
 `gantt_chart_comparison.pdf` in `benchmarks/results/case_study_gantt/20260929T084426Z_gantt/` is
 an earlier two-panel drawing of the same simulations, not the figure of the paper; the paper's
-`gantt_chart_comparison_new.pdf` is `gantt_A001.pdf` byte for byte, except its creation date. The figures of
-`benchmarks/results/models/aggregated/delta_<axis>/` (`plot_delta_uq.py`) are not used in the
-paper.
+`gantt_chart_comparison_new.pdf` is `gantt_A001.pdf` byte for byte, except its creation date. The
+figures of `benchmarks/results/models/aggregated/delta_<axis>/` (`plot_delta_uq.py`) are not used
+in the paper.
 
 ### Tables
 
 | Paper | Source in the repository |
 |---|---|
-| M `tab:petri_net_config`, `tab:dsl`, `tab:metrics` | Descriptive; `input_agent/src/models.py` (DSL operations) and `benchmarks/metrics/comparison_metrics.py` (metrics) |
+| M `tab:petri_net_config`, `tab:dsl`, `tab:metrics` | Descriptive; `input_agent/src/models.py` (operations of the edit language) and `benchmarks/metrics/comparison_metrics.py` (metrics) |
 | M `tab:rules` | `check_configuration` in `input_agent/src/tools.py`; [validator.md](validator.md) |
-| M `tab:simulation_configuration` | $S_0$ in `core/api.py` (`initial_input`); `S0.json` of each case-study run |
-| M `tab:agent_eval` | Queries in `benchmarks/case_study/rerun_case_study.py`; `q*/node_updates.json` of the two case-study runs |
+| M `tab:simulation_configuration` | $S_0$ in `core/api.py` (`initial_input`); `S0.json` of each run of the illustrative case |
+| M `tab:agent_eval` | Queries in `benchmarks/case_study/rerun_case_study.py`; `q*/node_updates.json` of the two runs of the illustrative case |
 | M `tab:cdto_improvement_summary` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` |
-| S `supp:tab:iwo_params` | `optimizers/algorithms/iwo-new-single.py` and `optimizers/formulations/CostMinimization_underAvailability _TaskConstraints.py` (code; not in a release without the optimizer) |
+| S `supp:tab:iwo_params` | Optimiser code (third-party, not in this release) |
 | S `supp:tab:schema` | `input_agent/pn_models.py` (declared types) and `input_agent/src/dataset_generator_complexity.py` (value domains) |
 | S `supp:tab:metrics` | Constants of `benchmarks/metrics/comparison_metrics.py` |
 | S `supp:tab:cstar` | `benchmarks/results/c_star_by_backend.csv` |
 | S `supp:tab:split` | No versioned file: medians of `token_usage` in the raw `benchmark_compare_complexity.json` files (Zenodo), without the calls that logged no usage |
-| S `supp:tab:models` | `summary` blocks of the benchmark JSONs; `manifest.json` of the humanisation check and of the case-study runs; [benchmark.md](benchmark.md#deployment-environments) |
+| S `supp:tab:models` | `summary` blocks of the benchmark JSONs; `manifest.json` of the humanisation check and of the runs of the illustrative case; [benchmark.md](benchmark.md#deployment-environments) |
 
 ## Benchmark
 
 ### Raw runs (inference)
 
-One run per backend and axis. The recorded runs used these arguments; the other settings are
+One run per model and axis. The recorded runs used these arguments; the other settings are
 the runners' defaults, listed in [benchmark.md](benchmark.md#runs).
 
 ```powershell
@@ -89,7 +91,7 @@ python benchmarks/comparisons/benchmark_compare_completeness.py `
   --provider <anthropic|openai|openai_compatible> --llm-model <model> [--llm-base-url <BASE_URL>]
 ```
 
-| Backend | `--provider` | `--llm-model` |
+| LLM | `--provider` | `--llm-model` |
 |---|---|---|
 | Claude Sonnet 4.6 | `anthropic` | `claude-sonnet-4-6` |
 | GPT-5.4 | `openai` | `gpt-5.4` |
@@ -130,17 +132,17 @@ With the same library versions (recorded in the manifest), the intervals are bit
 
 | Paper element | Command | Output |
 |---|---|---|
-| `tab:cdto_improvement_summary`, P-E vs vanilla (rows per model, axis and regime; per-model means; overall budget-safe mean) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_{by_model_axis_regime,mean_per_model,overall}.csv` |
+| `tab:cdto_improvement_summary`, P-E vs vanilla (rows per model, axis and regime; per-model means; overall mean below the thresholds) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_{by_model_axis_regime,mean_per_model,overall}.csv` |
 | `tab:cdto_improvement_summary` with the earlier split at the cl100k C*_low (49) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py --budget-safe-max-level 49 --output-suffix _cut49` | `…_cut49.csv` |
 | `\tokflat`, `\tokgrowth`, `\tokcross`: token cost along complexity (flatness of P-E, growth of vanilla, crossing level), per model and as macros | `python benchmarks/metrics/token_cost_summary.py`; `--exclude-zero-tokens` recomputes the means without the calls that logged no tokens | `benchmarks/results/token_cost_summary.csv` (`token_cost_summary_exclude_zero_tokens.csv`) |
-| Output-budget truncation per level | `python benchmarks/metrics/output_truncation.py --axis completeness` (gpt-oss:20b and Llama 3.1, the default) and `python benchmarks/metrics/output_truncation.py --axis complexity --models claude-sonnet-4-6 gpt-5.4 gpt-oss_20b llama3.1_latest` | `benchmarks/results/truncation_<axis>_by_level.csv` |
-| Effect of zero-token vanilla calls on the budget-safe means | `python benchmarks/metrics/zero_token_calls.py` | `benchmarks/results/zero_token_calls.csv` |
-| Footnote of Section 5: Llama 3.1 without the samples that have a zero-token vanilla call (`drop_paired`). Token delta at complexity C ≤ 32 (+5.4 %) and at completeness (−16.5 %); largest change of the exact-match advantage over the two regimes (−0.7 pp, at complexity) | `python benchmarks/metrics/zero_token_calls.py` (prints the three figures per model) | `benchmarks/results/zero_token_calls_by_axis.csv` (`TotalTokens` and `ExactMatchChange`, row `drop_paired`) |
+| Truncation at the output limit per level | `python benchmarks/metrics/output_truncation.py --axis completeness` (gpt-oss:20b and Llama 3.1, the default) and `python benchmarks/metrics/output_truncation.py --axis complexity --models claude-sonnet-4-6 gpt-5.4 gpt-oss_20b llama3.1_latest` | `benchmarks/results/truncation_<axis>_by_level.csv` |
+| Effect of zero-token vanilla calls on the means below the thresholds | `python benchmarks/metrics/zero_token_calls.py` | `benchmarks/results/zero_token_calls.csv` |
+| Footnote of Subsection 6.3: Llama 3.1 without the samples that have a zero-token vanilla call (`drop_paired`). Token delta at complexity C ≤ 32 (+5.4 %) and at completeness (−16.5 %); largest change of the exact-match advantage over the two regimes (−0.7 pp, at complexity) | `python benchmarks/metrics/zero_token_calls.py` (prints the three figures per model) | `benchmarks/results/zero_token_calls_by_axis.csv` (`TotalTokens` and `ExactMatchChange`, row `drop_paired`) |
 | Output-budget threshold C* (cl100k): length per level and C*_low 49, C*_mean 90, C*_high 115 | `python benchmarks/metrics/budget_complexity.py` | `benchmarks/results/budget_complexity_cl100k.csv` |
-| `supp:tab:cstar`, output-budget thresholds per backend (outputs, r_b, m_b, C*_low, C*_mean, C*_high in each backend's tokens) | `python benchmarks/metrics/c_star_by_backend.py`; `--variants` adds the definitions that do not reproduce them. Exits with status 1 if a C*_low differs from `c_star.py` | `benchmarks/results/c_star_by_backend.csv` |
-| Per-level means and 95 % intervals archived for the note of `tab:cdto_improvement_summary` (six metrics, per backend, axis and approach; corrected metric; intervals as in Supplementary Material C) | `python benchmarks/metrics/per_level_tables.py` | `benchmarks/results/per_level/per_level_{complexity,completeness}.csv` and `per_level_tables.md` |
+| `supp:tab:cstar`, output-budget thresholds per model (outputs, r_b, m_b, C*_low, C*_mean, C*_high in each model's tokens) | `python benchmarks/metrics/c_star_by_backend.py`; `--variants` adds the definitions that do not reproduce them. Exits with status 1 if a C*_low differs from `c_star.py` | `benchmarks/results/c_star_by_backend.csv` |
+| Per-level means and 95 % intervals archived for the note of `tab:cdto_improvement_summary` (six metrics, per model, axis and approach; corrected metric; intervals as in Supplementary Material C) | `python benchmarks/metrics/per_level_tables.py` | `benchmarks/results/per_level/per_level_{complexity,completeness}.csv` and `per_level_tables.md` |
 
-The per-backend C* markers of the complexity figures are constants in
+The per-model C* markers of the complexity figures are constants in
 [benchmarks/aggregator/c_star.py](../benchmarks/aggregator/c_star.py): the C*_low column of
 `c_star_by_backend.csv` (Claude 34, Llama 38, gpt-oss 45, GPT-5.4 48), which the script checks.
 
@@ -150,7 +152,7 @@ The per-backend C* markers of the complexity figures are constants in
 $models = "claude-sonnet-4-6", "gpt-oss_20b", "gpt-5.4", "llama3.1_latest"
 $labels = "Claude Sonnet 4.6", "gpt-oss-20b", "GPT 5.4", "Llama 3.1"
 foreach ($axis in "complexity", "completeness") {
-  # Per-cell intervals of every backend
+  # Per-cell intervals of every model
   python benchmarks/aggregator/plot_multi_model_uq.py --axis $axis --models $models --labels $labels
   # Paired P-E - vanilla deltas (architecture effect) and model effects against GPT-5.4
   python benchmarks/aggregator/plot_delta_uq.py --axis $axis --models $models --labels $labels `
@@ -172,7 +174,7 @@ foreach ($axis in "complexity", "completeness") {
 | Paper element | Command | Output |
 |---|---|---|
 | Offline pass of the validator over the P-E batches: categories, rejection rates (`\rejrate`, `\rejreq`, `\rejcatch` from `pe_summary.csv`), per group, c2 per rule (offline) | `python benchmarks/metrics/validator_pass.py --rules-commit c818998` | `benchmarks/results/validator_pass/<run_id>/` |
-| Per-rule table of [validator.md](validator.md#per-rule), and the rejections whose only violation is a cycle in a list the net does not read (`\rejcycle`) | `python benchmarks/metrics/validator_rule_table.py` (reads `pe_batches.csv`, from Zenodo) | `pe_rules_by_category.csv` and `pe_cycle_only_rejections.csv` in the run folder |
+| Per-rule table of [validator.md](validator.md#per-rule), and the rejections whose only violation is a cycle in a list the net does not read | `python benchmarks/metrics/validator_rule_table.py` (reads `pe_batches.csv`, from Zenodo) | `pe_rules_by_category.csv` and `pe_cycle_only_rejections.csv` in the run folder |
 
 The recorded run is `20260928T224634Z_c818998_9ed0ce`.
 
@@ -199,16 +201,16 @@ python -m benchmarks.humanisation_check.compare --run-dir $run
   `comparison_summary_planner_executor.json`, which hold the tables of
   [humanisation_check.md](humanisation_check.md#results).
 
-## Case study (Subsection 4.2)
+## Illustrative case (Subsections 5.1 and 6.1)
 
 | Paper element | Source |
 |---|---|
-| Table `tab:simulation_configuration` | $S_0$ in `core/api.py` (`initial_input`); copied to `S0.json` by every run |
+| Table `tab:simulation_configuration` (initial plan $S_0$) | $S_0$ in `core/api.py` (`initial_input`); copied to `S0.json` by every run |
 | Table `tab:agent_eval` (sub-agents and expected behaviour per query) | `q*/node_updates.json` of the two runs below |
 | Figure `fig:agent_interactions`, boxes A–E | `q1`–`q7/response.json` of `20260930T001541Z_gpt-oss-20b-ctx32k` |
 | Figure `fig:agent_interactions`, box F | `q8` of `20260930T001926Z_gpt-oss-20b-ctx32k_with_opt` |
 | Figure `fig:gantt_chart_modified` | `gantt_A001.pdf` of `benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/` |
-| Attributions in the text (per-edit KPI changes) | `benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/summary.csv` |
+| Attributions in the text (per-edit KPI changes, Supplementary Material D) | `benchmarks/results/case_study_attribution/20260929T095804Z_single_edits/summary.csv` |
 
 ### Queries 1–7, categories A to E (inference)
 
@@ -268,7 +270,7 @@ python benchmarks/case_study/single_edit_attribution.py          # S_0, each edi
   run.
 - **Determinism:** each simulation runs in a new process. The recorded runs gave identical
   outputs for the same configuration: `general_outputs_all.json` of $S_{k+1}$ has the same
-  SHA-256 in the attribution run and in both case-study runs.
+  SHA-256 in the attribution run and in the two runs of the illustrative case.
 
 ## Tests
 
