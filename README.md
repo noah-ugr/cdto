@@ -1,7 +1,8 @@
 # CDTO: Cognitive Digital Twin Orchestrator
 
-Code, results and reproduction scripts of the manuscript *An Agentic Artificial Intelligence
-Framework for Operator-Driven Interaction with Petri Net Maintenance Models in Industry 5.0*.
+Code, results and reproduction scripts of the manuscript *Agentic Cognitive Digital Twin
+Orchestrator for Natural-Language Modification, Simulation and Optimisation of Petri Net
+Maintenance Plans*.
 
 ![The CDTO: the LLM proposes edits to the maintenance plan, and a deterministic check decides](docs/figures/CDTO_graphical_abstract.png)
 
