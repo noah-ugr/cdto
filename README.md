@@ -3,7 +3,7 @@
 Code, results and reproduction scripts of the manuscript *An Agentic Artificial Intelligence
 Framework for Operator-Driven Interaction with Petri Net Maintenance Models in Industry 5.0*.
 
-![The CDTO: the agentic layer proposes, the deterministic layer decides](docs/figures/cdto_architecture.jpg)
+![The CDTO: the LLM proposes edits to the maintenance plan, and a deterministic check decides](docs/figures/CDTO_graphical_abstract.png)
 
 The CDTO is an agentic AI framework that lets an operator read, modify, simulate, explain and
 optimise a Petri net maintenance model in natural language. A LangGraph dispatcher routes each
