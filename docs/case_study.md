@@ -1,4 +1,4 @@
-# Case study (Subsection 4.2)
+# Case study (Subsections 5.1 and 6.1)
 
 This document backs the case study with detail the paper leaves out:
 
@@ -48,7 +48,7 @@ Queries 1–7 are run in both, with the same results and different texts:
   identical too.
 - **Different:** the texts of the LLM, because the model has no seed and its chat template inserts
   the current date. The temporal answer of query 7 describes the handoff from A002 to A001 in
-  `001541Z` and from A001 to A002 in `001926Z`; this is the second run that Subsection 4.2
+  `001541Z` and from A001 to A002 in `001926Z`; this is the second run that Subsection 6.1
   mentions.
 
 The comparison test of category F, one report on $S_0$, $S_{k+1}$ and $S^*$, was not run (see

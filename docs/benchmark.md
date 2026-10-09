@@ -200,8 +200,9 @@ Every bootstrap in the repository fixes its seeds and records them.
 - **Paired deltas** ([benchmarks/aggregator/plot_delta_uq.py](../benchmarks/aggregator/plot_delta_uq.py)):
   BCa on the paired P-E − vanilla differences per sample, with 10 000 resamples.
   - Seeds: `np.random.default_rng(42)` draws one seed per series, in the order of `--models`:
-    per model in Fig. 1 and per compared model in Figs. 2 and 3. Each series seed then gives one
-    seed per level and metric.
+    per model in `fig1_architecture_effect.pdf` and per compared model in
+    `fig2_model_effect_agentic.pdf` and `fig3_model_effect_vanilla.pdf`. Each series seed then
+    gives one seed per level and metric.
   - No manifest records the library versions of these figures.
 - **`tab:cdto_improvement_summary`** ([benchmarks/metrics/cdto_vs_vanilla_summary.py](../benchmarks/metrics/cdto_vs_vanilla_summary.py)):
   - Paired mean improvements of P-E over vanilla per model, axis and regime, taken from the UQ

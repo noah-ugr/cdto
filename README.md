@@ -4,14 +4,50 @@ Code, results and reproduction scripts of the manuscript *Agentic Cognitive Digi
 Orchestrator for Natural-Language Modification, Simulation and Optimisation of Petri Net
 Maintenance Plans*.
 
-![The CDTO: the LLM proposes edits to the maintenance plan, and a deterministic check decides](docs/figures/CDTO_graphical_abstract.png)
+## Contributions
+
+![From a static Petri net to an agentic interface, in three stages](docs/figures/fig2_contributions.png)
+
+*Figure 2 of the manuscript. From a static Petri net (PN) to an agentic interface, shown on one
+illustrative request ("Add a 20 h inspection task to A002"). (1) With a static PN, a new activity or
+task means rebuilding the net by hand, and the operator depends on an expert for every change. (2) A
+dynamic PN, the first contribution, is generated from the configuration, but the operator must edit
+a long configuration by hand or send the whole plan to an external LLM that checks nothing. (3) The
+CDTO, the second contribution, turns requests in natural language into checked edits, regenerates
+and simulates the net, and explains each change, while the operator stays in the loop.*
+
+The manuscript makes four contributions.
+
+1. **A dynamic PN maintenance model**, generated automatically from a configuration written in
+   maintenance terms. Every change that the check admits yields a new net without manual modelling,
+   which lets the operator test alternatives and run what-if analyses in natural language.
+2. **The CDTO**, an agentic architecture in which every plan that reaches the operator has passed a
+   deterministic admissibility check, whatever LLM is used. The manuscript states which rules the
+   check decides and which errors it cannot detect.
+3. **An LLM cost that does not depend on plan size.** The LLM planner receives the configuration
+   schema and the edit language, not the configuration itself. The cost of a request therefore
+   follows the number of edits it implies, and the plan does not have to leave the facility.
+4. **A request-translation benchmark** that varies the number of tasks in the plan and the number of
+   instructions per request. It compares the LLM planner and edit engine of the CDTO with a
+   single-pass baseline that receives the whole configuration and returns it modified. The
+   references are generated with the same engine that applies the edits, so every deviation reflects
+   the translation and not the evaluation harness.
+
+## How the CDTO works
+
+![Components of the CDTO](docs/figures/fig4_cdto_overview.png)
+
+*Figure 4 of the manuscript. Components of the CDTO. Grey boxes are LLM sub-agents and white boxes
+deterministic components. Indigo boxes form the dynamic PN, and the plum region encloses the CDTO.
+Thick arrows mark the loop with the operator and the only path to the plan, which crosses the
+validator.*
 
 The CDTO is a human-in-the-loop agentic AI framework that lets an operator inspect, modify,
 simulate and optimise a Petri net maintenance plan in natural language. A LangGraph dispatcher
 routes each request to eight sub-agents. The LLM planner turns a request into typed edits in a
 small edit language (`SET`, `DELETE`, `APPEND`, `REMOVE_ITEM`, `GET`); a deterministic edit engine
 applies them to a working copy; and a deterministic validator checks the result against the rules
-of the model (Table 3 of the manuscript) before it is committed. Committed plans are simulated as
+of the model (Table 2 of the manuscript) before it is committed. Committed plans are simulated as
 a timed Petri net, and explainer sub-agents report the change in KPIs. An optimisation layer
 (Invasive Weed Optimisation) searches for a configuration that meets a KPI target, and its result
 passes the same check as any edit.

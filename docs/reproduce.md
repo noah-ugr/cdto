@@ -37,10 +37,10 @@ from. "Zenodo" marks files of the deposit, listed in `benchmarks/results/zenodo_
 
 | Paper | File in the paper sources | File in the repository | Made by |
 |---|---|---|---|
-| M `fig:maintenance_evolution` | `Figures/maintenance_evolution.pdf` | none: drawing | — |
-| M `fig:overview` | TikZ in the manuscript | `docs/figures/CDTO_graphical_abstract.png` (the same design, used as graphical abstract) | — |
+| M `fig:maintenance_evolution` | `Figures/maintenance_evolution.pdf`, with a TikZ overlay in the manuscript (the "CDTO (ours)" label that marks the agentic era) | none: drawing | — |
+| M `fig:evolution` | TikZ in the manuscript | `docs/figures/fig2_contributions.png` (rendered from the TikZ of the manuscript) | — |
 | M `fig:petrinet_architecture` | `Figures/rect5.pdf` | none: drawing of the net | — |
-| M `fig:pipeline` | TikZ in the manuscript | none | — |
+| M `fig:overview` | TikZ in the manuscript | `docs/figures/fig4_cdto_overview.png` (rendered from the TikZ of the manuscript) | — |
 | M `fig:dataset_pipeline` | TikZ in the manuscript | none | — |
 | M `fig:agent_interactions`, boxes A–E | text in the manuscript | `q1`–`q7/response.json` of `benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/` (condensed) | `rerun_case_study.py` |
 | M `fig:agent_interactions`, box F | text in the manuscript | `q8/response.json` of `benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/` (condensed) | `rerun_case_study.py --with-optimization` |
@@ -49,6 +49,7 @@ from. "Zenodo" marks files of the deposit, listed in `benchmarks/results/zenodo_
 | M `fig:fidelity_axis` | `completeness_results/multi_model_uq_completeness_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_completeness_v2.pdf` | `plot_multi_model_uq.py --axis completeness` |
 | S `supp:fig:iwo_convergence` | `Figures/iwo_convergence.png` | `q8/iwo_convergence.png` of `20260930T001926Z_gpt-oss-20b-ctx32k_with_opt` (Zenodo) | the IWO, in query 8 of the illustrative case |
 | S `supp:fig:petristate`, `supp:fig:contracts` | text in the supplementary | none | — |
+| S `supp:fig:trace` | TikZ in the Supplementary Material | `q3`–`q6/` of `benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/` and `q8/` of `benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/` | `rerun_case_study.py`; `--with-optimization` for `q8` |
 | S `fig:cdto_full_landscape` | `Figures/CDTO_interface.pdf`, `CDTO_json.pdf`, `forensic_analysis.pdf`, `causality.pdf`, `temporal_narrative.pdf`, `temporal_state.pdf` | none: screenshots of the web interface (`frontend/`) | — |
 
 `gantt_chart_comparison.pdf` in `benchmarks/results/case_study_gantt/20260929T084426Z_gantt/` is
@@ -61,10 +62,12 @@ in the paper.
 
 | Paper | Source in the repository |
 |---|---|
-| M `tab:petri_net_config`, `tab:dsl`, `tab:metrics` | Descriptive; `input_agent/src/models.py` (operations of the edit language) and `benchmarks/metrics/comparison_metrics.py` (metrics) |
+| M `tab:petri_net_config` | Descriptive |
 | M `tab:rules` | `check_configuration` in `input_agent/src/tools.py`; [validator.md](validator.md) |
+| M `tab:dsl` | Descriptive; `input_agent/src/models.py` (operations of the edit language) |
 | M `tab:simulation_configuration` | $S_0$ in `core/api.py` (`initial_input`); `S0.json` of each run of the illustrative case |
 | M `tab:agent_eval` | Queries in `benchmarks/case_study/rerun_case_study.py`; `q*/node_updates.json` of the two runs of the illustrative case |
+| M `tab:metrics` | Descriptive; `benchmarks/metrics/comparison_metrics.py` (metrics) |
 | M `tab:cdto_improvement_summary` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` |
 | S `supp:tab:iwo_params` | Optimiser code (third-party, not in this release) |
 | S `supp:tab:schema` | `input_agent/pn_models.py` (declared types) and `input_agent/src/dataset_generator_complexity.py` (value domains) |
