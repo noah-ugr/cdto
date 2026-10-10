@@ -158,12 +158,13 @@ The per-model C* markers of the complexity figures are constants in
 
 ```powershell
 $models = "claude-sonnet-4-6", "gpt-oss_20b", "gpt-5.4", "llama3.1_latest"
-$labels = "Claude Sonnet 4.6", "gpt-oss-20b", "GPT 5.4", "Llama 3.1"
+$labels = "Claude Sonnet 4.6", "gpt-oss:20b", "GPT-5.4", "Llama 3.1"
+$delta_labels = "Claude Sonnet 4.6", "gpt-oss-20b", "GPT 5.4", "Llama 3.1"   # labels of the versioned delta figures
 foreach ($axis in "complexity", "completeness") {
   # Per-cell intervals of every model, six metrics (Supplementary Material C)
   python benchmarks/aggregator/plot_multi_model_uq.py --axis $axis --models $models --labels $labels
   # Paired P-E - vanilla deltas (architecture effect) and model effects against GPT-5.4
-  python benchmarks/aggregator/plot_delta_uq.py --axis $axis --models $models --labels $labels `
+  python benchmarks/aggregator/plot_delta_uq.py --axis $axis --models $models --labels $delta_labels `
     --reference-model gpt-5.4 --seed 42 --n-iter 10000 --run-tag rescored `
     --output-dir benchmarks/results/models/aggregated/delta_$axis
 }

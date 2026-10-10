@@ -185,10 +185,10 @@ datasets.
 ### 5. Figures of the two axes
 
 ```bash
-python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
-python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
-python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1" --panels tokens latency em --layout 1x3 --output benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf
-python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1" --panels em f1 fn fp --layout 2x2 --output benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf
+python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss:20b" "GPT-5.4" "Llama 3.1"
+python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss:20b" "GPT-5.4" "Llama 3.1"
+python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss:20b" "GPT-5.4" "Llama 3.1" --panels tokens latency em --layout 1x3 --output benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf
+python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss:20b" "GPT-5.4" "Llama 3.1" --panels em f1 fn fp --layout 2x2 --output benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf
 ```
 
 The order of the models sets the colours of the series. The first two commands write the

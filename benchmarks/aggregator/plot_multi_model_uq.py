@@ -58,8 +58,8 @@ FONT_SERIF = ["Times New Roman"]
 FIGSIZE = (18, 10)
 DPI = 160
 
-# Reserve room at the bottom of the figure for the legend and its gap.
-TIGHT_LAYOUT_RECT = (0, 0.14, 1, 0.98)
+# Top of the panels; the bottom is set by the height of the legend.
+TIGHT_LAYOUT_TOP = 0.98
 
 # ── C* saturation markers (complexity axis only) ──────────────────────────────
 # Per-backend thresholds and band live in benchmarks/aggregator/c_star.py.
@@ -72,11 +72,16 @@ MARKEVERY = 2
 CI_BAND_ALPHA = 0.15
 
 # ── Legend ────────────────────────────────────────────────────────────────────
-LEGEND_NCOL = 4                  # models (4) + C* entries (2) fit better in 4 cols wrapped
+# Two rows (one column per pair of entries) when they fit the width of the
+# panels, otherwise the last pair in a third row.
 LEGEND_BBOX = (0.5, -0.01)
 LEGEND_BORDERPAD = 0.9
 LEGEND_HANDLETEXTPAD = 1.0
 LEGEND_COLUMNSPACING = 2.2
+LEGEND_MAX_WIDTH = 0.95          # fraction of the figure width that the panels span
+LEGEND_GAP = 0.25                # inches between the legend and the x-labels (plus the layout pad)
+LINE_STYLE_COLOR = "#333333"     # dark grey of the P-E / baseline entries
+LINE_STYLE_MARKER_SIZE = 9
 
 # ── Figures with a subset of the panels (--panels / --layout) ─────────────────
 # Same width as the six-panel figure. Each panel prints larger at the text
@@ -87,9 +92,7 @@ SUBSET_FONT_SIZE_SUBPLOT_LABEL = 30
 SUBSET_FONT_SIZE_LEGEND = 28
 SUBSET_X_TICK_SPACING = 1.4      # inches of panel width per x-tick interval (at most)
 SUBSET_LEGEND_COLUMNSPACING = 1.5
-SUBSET_ROW_HEIGHT = 5.0          # inches per row of panels
-SUBSET_LEGEND_ROW_HEIGHT = 0.65  # inches per row of the legend
-SUBSET_LEGEND_PAD = 0.85         # inches for the legend frame and its gap
+SUBSET_ROW_HEIGHT = 5.0          # inches per row of panels, plus the legend below
 
 
 plt.rcParams.update({
@@ -107,45 +110,36 @@ plt.rcParams.update({
 @dataclass(frozen=True)
 class FigureStyle:
     figsize: tuple[float, float]
-    tight_layout_rect: tuple[float, float, float, float]
+    grow_for_legend: bool        # add the legend below figsize (otherwise it fits inside)
     font_size_axis_label: float
     font_size_tick_label: float
     font_size_subplot_label: float
     font_size_legend: float
-    legend_ncol: int
     legend_columnspacing: float
     x_nbins: int
 
 
 SIX_PANEL_STYLE = FigureStyle(
     figsize=FIGSIZE,
-    tight_layout_rect=TIGHT_LAYOUT_RECT,
+    grow_for_legend=False,
     font_size_axis_label=FONT_SIZE_AXIS_LABEL,
     font_size_tick_label=FONT_SIZE_TICK_LABEL,
     font_size_subplot_label=FONT_SIZE_SUBPLOT_LABEL,
     font_size_legend=FONT_SIZE_LEGEND,
-    legend_ncol=LEGEND_NCOL,
     legend_columnspacing=LEGEND_COLUMNSPACING,
     x_nbins=10,                  # MaxNLocator default
 )
 
 
-def _subset_style(n_rows: int, n_cols: int, n_legend_entries: int) -> FigureStyle:
+def _subset_style(n_rows: int, n_cols: int) -> FigureStyle:
     """Style of a figure with fewer panels: same width, larger fonts."""
-    legend_ncol = 3 if n_legend_entries > 4 else n_legend_entries
-    legend_height = (
-        math.ceil(n_legend_entries / legend_ncol) * SUBSET_LEGEND_ROW_HEIGHT
-        + SUBSET_LEGEND_PAD
-    )
-    height = n_rows * SUBSET_ROW_HEIGHT + legend_height
     return FigureStyle(
-        figsize=(FIGSIZE[0], height),
-        tight_layout_rect=(0, legend_height / height, 1, 0.98),
+        figsize=(FIGSIZE[0], n_rows * SUBSET_ROW_HEIGHT),
+        grow_for_legend=True,
         font_size_axis_label=SUBSET_FONT_SIZE_AXIS_LABEL,
         font_size_tick_label=SUBSET_FONT_SIZE_TICK_LABEL,
         font_size_subplot_label=SUBSET_FONT_SIZE_SUBPLOT_LABEL,
         font_size_legend=SUBSET_FONT_SIZE_LEGEND,
-        legend_ncol=legend_ncol,
         legend_columnspacing=SUBSET_LEGEND_COLUMNSPACING,
         x_nbins=max(3, min(10, int(FIGSIZE[0] / n_cols / SUBSET_X_TICK_SPACING))),
     )
@@ -191,10 +185,8 @@ _HIGH_CONTRAST_COLORS = [
 
 # Approach → line style
 _APPROACH_STYLE: Dict[str, dict] = {
-    "planner_executor": dict(linestyle="-",  marker="o",
-                             label="Planner-Executor  (agentic: plan then execute)"),
-    "vanilla":          dict(linestyle="--", marker="s",
-                             label="Vanilla  (monolithic: single-step answer)"),
+    "planner_executor": dict(linestyle="-",  marker="o", label="P-E"),
+    "vanilla":          dict(linestyle="--", marker="s", label="Single-pass baseline"),
 }
 _DEFAULT_APPROACH_STYLE = dict(linestyle=":", marker="^", label="unknown")
 
@@ -286,7 +278,7 @@ def _auto_ylimits(
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Legend (single row below the subplots)
+# Legend (below the subplots)
 # ══════════════════════════════════════════════════════════════════════════════
 
 def _attach_legends(
@@ -296,22 +288,33 @@ def _attach_legends(
     colors: Dict[str, str],
     model_labels: Dict[str, str],
     include_c_star: bool = False,
-    ncol: int = LEGEND_NCOL,
     fontsize: float = FONT_SIZE_LEGEND,
     columnspacing: float = LEGEND_COLUMNSPACING,
-) -> None:
+) -> float:
     """
-    Build the legend at the bottom of the figure.
-    Models come first (colour patches). If include_c_star is True, two
-    additional entries are appended: the per-backend C*_low triangle and the
-    saturation band.
+    Build the legend at the bottom of the figure and return its height in inches.
+    Models come first (colour patches), then the line style of each approach.
+    If include_c_star is True, two additional entries are appended: the per-LLM
+    C*_low triangle and the saturation band.
     """
     model_handles = [
         mpatches.Patch(color=colors[m], label=model_labels.get(m, m))
         for m in models
     ]
+    approach_handles = [
+        mlines.Line2D(
+            [], [],
+            color=LINE_STYLE_COLOR,
+            linestyle=style["linestyle"],
+            marker=style["marker"],
+            linewidth=LINE_WIDTH,
+            markersize=LINE_STYLE_MARKER_SIZE,
+            label=style["label"],
+        )
+        for style in (_APPROACH_STYLE.get(a, _DEFAULT_APPROACH_STYLE) for a in approaches)
+    ]
 
-    handles = list(model_handles)
+    handles = model_handles + approach_handles
 
     if include_c_star:
         band_lo, band_hi = C_STAR_BAND
@@ -323,7 +326,7 @@ def _attach_legends(
                 markersize=C_STAR_MARKER_SIZE,
                 color="#9a9a9a",
                 markeredgecolor=C_STAR_MARKER_EDGE,
-                label=r"$C^{*}_{\mathrm{low}}$ per backend",
+                label=r"$C^{*}_{\mathrm{low}}$ per LLM",
             ),
             mpatches.Patch(
                 color=C_STAR_BAND_COLOR,
@@ -333,21 +336,39 @@ def _attach_legends(
         ]
         handles.extend(c_star_handles)
 
-    fig.legend(
-        handles,
-        [h.get_label() for h in handles],
-        loc="lower center",
-        ncol=ncol,
-        frameon=True,
-        framealpha=0.97,
-        edgecolor="#444444",
-        fontsize=fontsize,
-        handlelength=3.0,
-        handletextpad=LEGEND_HANDLETEXTPAD,
-        columnspacing=columnspacing,
-        borderpad=LEGEND_BORDERPAD,
-        bbox_to_anchor=LEGEND_BBOX,
-    )
+    # One column per pair of entries (two rows). If that is wider than the
+    # panels, the last pair moves to a third row of its own.
+    pairs = [handles[i:i + 2] for i in range(0, len(handles), 2)]
+    layouts = [pairs]
+    if len(pairs) > 2:
+        last, blank = pairs[-1], mlines.Line2D([], [], linestyle="none", label="")
+        layouts.append([
+            pair + [last[i] if i < len(last) else blank]
+            for i, pair in enumerate(pairs[:-1])
+        ])
+
+    renderer = fig.canvas.get_renderer()
+    for columns in layouts:
+        entries = [h for column in columns for h in column]
+        legend = fig.legend(
+            entries,
+            [h.get_label() for h in entries],
+            loc="lower center",
+            ncol=len(columns),
+            frameon=True,
+            framealpha=0.97,
+            edgecolor="#444444",
+            fontsize=fontsize,
+            handlelength=3.0,
+            handletextpad=LEGEND_HANDLETEXTPAD,
+            columnspacing=columnspacing,
+            borderpad=LEGEND_BORDERPAD,
+            bbox_to_anchor=LEGEND_BBOX,
+        )
+        extent = legend.get_window_extent(renderer)
+        if extent.width <= LEGEND_MAX_WIDTH * fig.bbox.width or columns is layouts[-1]:
+            return extent.height / fig.dpi
+        legend.remove()
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -388,7 +409,7 @@ def plot_multi_model_uq(
     if list(panels) == list(PANEL_KEYS) and tuple(layout) == DEFAULT_LAYOUT:
         fig_style = SIX_PANEL_STYLE
     else:
-        fig_style = _subset_style(n_rows, n_cols, len(models) + (2 if include_c_star else 0))
+        fig_style = _subset_style(n_rows, n_cols)
 
     x_label = "Complexity (C)" if axis == "complexity" else "Completeness (K)"
 
@@ -456,15 +477,19 @@ def plot_multi_model_uq(
             va='bottom', ha='center'
         )
 
-    _attach_legends(
+    legend_height = _attach_legends(
         fig, models, approaches, colors, model_labels,
         include_c_star=include_c_star,
-        ncol=fig_style.legend_ncol,
         fontsize=fig_style.font_size_legend,
         columnspacing=fig_style.legend_columnspacing,
     )
 
-    plt.tight_layout(rect=fig_style.tight_layout_rect)
+    # Panels above the legend: grow the figure for it, or reserve its height.
+    width, height = fig_style.figsize
+    if fig_style.grow_for_legend:
+        fig.set_size_inches(width, height + legend_height + LEGEND_GAP)
+    bottom = LEGEND_BBOX[1] + (legend_height + LEGEND_GAP) / fig.get_figheight()
+    plt.tight_layout(rect=(0, bottom, 1, TIGHT_LAYOUT_TOP))
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
