@@ -3,11 +3,17 @@ Aggregate multi-model UQ CSVs and generate combined CI95 plots.
 
 Expected input per model:
   benchmarks/results/models/<model_slug>/<axis>/uq_<axis>[_tag]_results.csv
+
+By default the figure has the six metrics in a 2 x 3 grid. --panels picks an
+ordered subset of them (em, f1, latency, tokens, fp, fn) and --layout the grid
+(e.g. 1x3, 2x2).
 """
 
 from __future__ import annotations
 
 import argparse
+import math
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List
 
@@ -72,6 +78,19 @@ LEGEND_BORDERPAD = 0.9
 LEGEND_HANDLETEXTPAD = 1.0
 LEGEND_COLUMNSPACING = 2.2
 
+# ── Figures with a subset of the panels (--panels / --layout) ─────────────────
+# Same width as the six-panel figure. Each panel prints larger at the text
+# width of the paper (16.5 cm), so the fonts are larger.
+SUBSET_FONT_SIZE_AXIS_LABEL = 32
+SUBSET_FONT_SIZE_TICK_LABEL = 28
+SUBSET_FONT_SIZE_SUBPLOT_LABEL = 30
+SUBSET_FONT_SIZE_LEGEND = 28
+SUBSET_X_TICK_SPACING = 1.4      # inches of panel width per x-tick interval (at most)
+SUBSET_LEGEND_COLUMNSPACING = 1.5
+SUBSET_ROW_HEIGHT = 5.0          # inches per row of panels
+SUBSET_LEGEND_ROW_HEIGHT = 0.65  # inches per row of the legend
+SUBSET_LEGEND_PAD = 0.85         # inches for the legend frame and its gap
+
 
 plt.rcParams.update({
     "font.family":      FONT_FAMILY,
@@ -83,6 +102,53 @@ plt.rcParams.update({
     "ytick.labelsize":  FONT_SIZE_TICK_LABEL,
     "legend.fontsize":  FONT_SIZE_LEGEND,
 })
+
+
+@dataclass(frozen=True)
+class FigureStyle:
+    figsize: tuple[float, float]
+    tight_layout_rect: tuple[float, float, float, float]
+    font_size_axis_label: float
+    font_size_tick_label: float
+    font_size_subplot_label: float
+    font_size_legend: float
+    legend_ncol: int
+    legend_columnspacing: float
+    x_nbins: int
+
+
+SIX_PANEL_STYLE = FigureStyle(
+    figsize=FIGSIZE,
+    tight_layout_rect=TIGHT_LAYOUT_RECT,
+    font_size_axis_label=FONT_SIZE_AXIS_LABEL,
+    font_size_tick_label=FONT_SIZE_TICK_LABEL,
+    font_size_subplot_label=FONT_SIZE_SUBPLOT_LABEL,
+    font_size_legend=FONT_SIZE_LEGEND,
+    legend_ncol=LEGEND_NCOL,
+    legend_columnspacing=LEGEND_COLUMNSPACING,
+    x_nbins=10,                  # MaxNLocator default
+)
+
+
+def _subset_style(n_rows: int, n_cols: int, n_legend_entries: int) -> FigureStyle:
+    """Style of a figure with fewer panels: same width, larger fonts."""
+    legend_ncol = 3 if n_legend_entries > 4 else n_legend_entries
+    legend_height = (
+        math.ceil(n_legend_entries / legend_ncol) * SUBSET_LEGEND_ROW_HEIGHT
+        + SUBSET_LEGEND_PAD
+    )
+    height = n_rows * SUBSET_ROW_HEIGHT + legend_height
+    return FigureStyle(
+        figsize=(FIGSIZE[0], height),
+        tight_layout_rect=(0, legend_height / height, 1, 0.98),
+        font_size_axis_label=SUBSET_FONT_SIZE_AXIS_LABEL,
+        font_size_tick_label=SUBSET_FONT_SIZE_TICK_LABEL,
+        font_size_subplot_label=SUBSET_FONT_SIZE_SUBPLOT_LABEL,
+        font_size_legend=SUBSET_FONT_SIZE_LEGEND,
+        legend_ncol=legend_ncol,
+        legend_columnspacing=SUBSET_LEGEND_COLUMNSPACING,
+        x_nbins=max(3, min(10, int(FIGSIZE[0] / n_cols / SUBSET_X_TICK_SPACING))),
+    )
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -97,6 +163,25 @@ METRICS = [
     ("CollateralRate", "Collateral Rate",   "Collateral Rate"),
     ("OmissionRate",   "Omission Rate",     "Omission Rate"),
 ]
+
+# --panels keys, in the order of METRICS. fp: collateral edits, fn: omissions.
+PANEL_KEYS = {
+    "em":      "ExactMatch",
+    "f1":      "F1Micro",
+    "latency": "Latency",
+    "tokens":  "TotalTokens",
+    "fp":      "CollateralRate",
+    "fn":      "OmissionRate",
+}
+DEFAULT_LAYOUT = (2, 3)
+
+
+def _default_layout(n_panels: int) -> tuple[int, int]:
+    """One row up to three panels, otherwise two rows (six panels: 2 x 3)."""
+    if n_panels <= 3:
+        return 1, n_panels
+    return 2, math.ceil(n_panels / 2)
+
 
 _HIGH_CONTRAST_COLORS = [
     "#1f77b4", "#d62728", "#2ca02c", "#ff7f0e",
@@ -211,6 +296,9 @@ def _attach_legends(
     colors: Dict[str, str],
     model_labels: Dict[str, str],
     include_c_star: bool = False,
+    ncol: int = LEGEND_NCOL,
+    fontsize: float = FONT_SIZE_LEGEND,
+    columnspacing: float = LEGEND_COLUMNSPACING,
 ) -> None:
     """
     Build the legend at the bottom of the figure.
@@ -249,14 +337,14 @@ def _attach_legends(
         handles,
         [h.get_label() for h in handles],
         loc="lower center",
-        ncol=LEGEND_NCOL,
+        ncol=ncol,
         frameon=True,
         framealpha=0.97,
         edgecolor="#444444",
-        fontsize=FONT_SIZE_LEGEND,
+        fontsize=fontsize,
         handlelength=3.0,
         handletextpad=LEGEND_HANDLETEXTPAD,
-        columnspacing=LEGEND_COLUMNSPACING,
+        columnspacing=columnspacing,
         borderpad=LEGEND_BORDERPAD,
         bbox_to_anchor=LEGEND_BBOX,
     )
@@ -272,19 +360,44 @@ def plot_multi_model_uq(
     axis: str,
     out_path: Path,
     model_labels: Dict[str, str] | None = None,
+    panels: List[str] | None = None,
+    layout: tuple[int, int] | None = None,
 ) -> None:
+    """
+    panels: ordered PANEL_KEYS to draw (default: the six, in METRICS order).
+    layout: (rows, cols) of the grid (default: _default_layout of the panels).
+    The default panels and layout give the six-panel _v2 figure.
+    """
     if model_labels is None:
         model_labels = {m: m for m in models}
+    if panels is None:
+        panels = list(PANEL_KEYS)
+    if layout is None:
+        layout = _default_layout(len(panels))
+    n_rows, n_cols = layout
+    if n_rows * n_cols < len(panels):
+        raise ValueError(f"Layout {n_rows}x{n_cols} has fewer cells than the {len(panels)} panels.")
+
+    metric_by_key = {m[0]: m for m in METRICS}
+    metrics = [metric_by_key[PANEL_KEYS[p]] for p in panels]
 
     approaches = sorted(df["Approach"].unique().tolist())
     colors     = _palette(models)
+    include_c_star = axis == "complexity"
+
+    if list(panels) == list(PANEL_KEYS) and tuple(layout) == DEFAULT_LAYOUT:
+        fig_style = SIX_PANEL_STYLE
+    else:
+        fig_style = _subset_style(n_rows, n_cols, len(models) + (2 if include_c_star else 0))
 
     x_label = "Complexity (C)" if axis == "complexity" else "Completeness (K)"
 
-    fig, axes = plt.subplots(2, 3, figsize=FIGSIZE)
+    fig, axes = plt.subplots(n_rows, n_cols, figsize=fig_style.figsize, squeeze=False)
     flat_axes = axes.flatten()
+    for ax in flat_axes[len(metrics):]:
+        ax.remove()
 
-    for ax, (metric_key, title, y_label) in zip(flat_axes, METRICS):
+    for ax, (metric_key, title, y_label) in zip(flat_axes, metrics):
         mean_col = f"{metric_key}_Mean"
         lo_col   = f"{metric_key}_CI_Lower"
         hi_col   = f"{metric_key}_CI_Upper"
@@ -318,37 +431,40 @@ def plot_multi_model_uq(
                 )
                 ax.fill_between(x, lo, hi, color=color, alpha=CI_BAND_ALPHA)
 
-        ax.set_xlabel(x_label, fontsize=FONT_SIZE_AXIS_LABEL)
-        ax.set_ylabel(y_label, fontsize=FONT_SIZE_AXIS_LABEL)
-        ax.xaxis.set_major_locator(MaxNLocator(integer=True))
+        ax.set_xlabel(x_label, fontsize=fig_style.font_size_axis_label)
+        ax.set_ylabel(y_label, fontsize=fig_style.font_size_axis_label)
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=fig_style.x_nbins, integer=True))
         ax.xaxis.set_major_formatter(StrMethodFormatter("{x:.0f}"))
         ax.grid(True, linestyle="--", alpha=0.35)
         ax.spines[["top", "right"]].set_visible(False)
-        ax.tick_params(axis="both", which="major", labelsize=FONT_SIZE_TICK_LABEL)
+        ax.tick_params(axis="both", which="major", labelsize=fig_style.font_size_tick_label)
         ax.set_ylim(y_lo, y_hi)
 
-        if axis == "complexity":
+        if include_c_star:
             x_all_for_ax = df["Level"].to_numpy()
             _draw_c_star_markers(ax, x_all_for_ax, colors)
 
-    # Add centered subplot labels (a, b, c, ...).
-    subplot_labels = ['(a)', '(b)', '(c)', '(d)', '(e)', '(f)']
+    # Add centered subplot labels (a, b, c, ...) in the order of the panels.
+    subplot_labels = [f"({chr(ord('a') + i)})" for i in range(len(metrics))]
     for ax, label in zip(flat_axes, subplot_labels):
         ax.text(
             0.5, 1.02,
             label,
             transform=ax.transAxes,
-            fontsize=FONT_SIZE_SUBPLOT_LABEL,
+            fontsize=fig_style.font_size_subplot_label,
             fontweight='bold',
             va='bottom', ha='center'
         )
 
     _attach_legends(
         fig, models, approaches, colors, model_labels,
-        include_c_star=(axis == "complexity"),
+        include_c_star=include_c_star,
+        ncol=fig_style.legend_ncol,
+        fontsize=fig_style.font_size_legend,
+        columnspacing=fig_style.legend_columnspacing,
     )
 
-    plt.tight_layout(rect=TIGHT_LAYOUT_RECT)
+    plt.tight_layout(rect=fig_style.tight_layout_rect)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=DPI, bbox_inches="tight")
@@ -359,6 +475,17 @@ def plot_multi_model_uq(
 # ══════════════════════════════════════════════════════════════════════════════
 # CLI
 # ══════════════════════════════════════════════════════════════════════════════
+
+def _parse_layout(value: str) -> tuple[int, int]:
+    """'1x3' -> (1, 3)."""
+    try:
+        rows, cols = (int(v) for v in value.lower().split("x"))
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"expected ROWSxCOLS, e.g. 1x3 or 2x2, got {value!r}")
+    if rows < 1 or cols < 1:
+        raise argparse.ArgumentTypeError(f"rows and columns must be positive, got {value!r}")
+    return rows, cols
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -375,7 +502,23 @@ def main() -> None:
                         help="Optional run tag used when generating UQ CSV names")
     parser.add_argument("--output",       default=None,
                         help="Output PNG path. If omitted uses benchmarks/results/models/aggregated/")
+    parser.add_argument("--panels",       nargs="+", choices=list(PANEL_KEYS), default=None,
+                        help="Ordered metrics to draw (default: em f1 latency tokens fp fn). "
+                             "fp is the collateral rate and fn the omission rate.")
+    parser.add_argument("--layout",       type=_parse_layout, default=None,
+                        help="Grid as ROWSxCOLS, e.g. 1x3 or 2x2 (default: 2x3 for the six "
+                             "panels, one row up to three, otherwise two rows).")
     args = parser.parse_args()
+
+    if args.panels and len(set(args.panels)) != len(args.panels):
+        parser.error("--panels must not repeat a metric.")
+    panels = args.panels or list(PANEL_KEYS)
+    layout = args.layout or _default_layout(len(panels))
+    if layout[0] * layout[1] < len(panels):
+        parser.error(f"--layout {layout[0]}x{layout[1]} has fewer cells than the {len(panels)} panels.")
+    if (args.panels or args.layout) and not args.output:
+        parser.error("--output is required with --panels or --layout, "
+                     "so that the six-panel _v2 figure is not overwritten.")
 
     models = args.models
     labels = args.labels if args.labels else models
@@ -403,7 +546,7 @@ def main() -> None:
     out_path = out_path.with_suffix('.pdf')
 
     plot_multi_model_uq(df=df, models=models, axis=args.axis, out_path=out_path,
-                        model_labels=model_labels)
+                        model_labels=model_labels, panels=panels, layout=layout)
 
 
 if __name__ == "__main__":

@@ -45,10 +45,12 @@ from. "Zenodo" marks files of the deposit, listed in `benchmarks/results/zenodo_
 | M `fig:agent_interactions`, boxes A–E | text in the manuscript | `q1`–`q7/response.json` of `benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/` (condensed) | `rerun_case_study.py` |
 | M `fig:agent_interactions`, box F | text in the manuscript | `q8/response.json` of `benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/` (condensed) | `rerun_case_study.py --with-optimization` |
 | M `fig:gantt_chart_modified` | `Figures/gantt_chart_comparison_new.pdf` | `benchmarks/results/case_study_gantt/20260929T093403Z_gantt_paper_format/gantt_A001.pdf` | `plot_gantt_comparison.py` on the simulations of `20260929T084426Z_gantt` |
-| M `fig:cost_axis` | `complexity_results/multi_model_uq_complexity_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_complexity_v2.pdf` | `plot_multi_model_uq.py --axis complexity` |
-| M `fig:fidelity_axis` | `completeness_results/multi_model_uq_completeness_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_completeness_v2.pdf` | `plot_multi_model_uq.py --axis completeness` |
+| M `fig:cost_axis` | `complexity_results/multi_model_uq_complexity_rq2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf` | `plot_multi_model_uq.py --axis complexity --panels tokens latency em --layout 1x3 --output benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf` |
+| M `fig:fidelity_axis` | `completeness_results/multi_model_uq_completeness_rq3.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf` | `plot_multi_model_uq.py --axis completeness --panels em f1 fn fp --layout 2x2 --output benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf` |
 | S `supp:fig:iwo_convergence` | `Figures/iwo_convergence.png` | `q8/iwo_convergence.png` of `20260930T001926Z_gpt-oss-20b-ctx32k_with_opt` (Zenodo) | the IWO, in query 8 of the illustrative case |
 | S `supp:fig:petristate`, `supp:fig:contracts` | text in the supplementary | none | — |
+| S `supp:fig:complexity_full` | `complexity_results/multi_model_uq_complexity_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_complexity_v2.pdf` (the six metrics) | `plot_multi_model_uq.py --axis complexity` |
+| S `supp:fig:completeness_full` | `completeness_results/multi_model_uq_completeness_v2.pdf` | `benchmarks/results/models/aggregated/multi_model_uq_completeness_v2.pdf` (the six metrics) | `plot_multi_model_uq.py --axis completeness` |
 | S `supp:fig:trace` | TikZ in the Supplementary Material | `q3`–`q6/` of `benchmarks/results/case_study_rerun/20260930T001541Z_gpt-oss-20b-ctx32k/` and `q8/` of `benchmarks/results/case_study_rerun/20260930T001926Z_gpt-oss-20b-ctx32k_with_opt/` | `rerun_case_study.py`; `--with-optimization` for `q8` |
 | S `fig:cdto_full_landscape` | `Figures/CDTO_interface.pdf`, `CDTO_json.pdf`, `forensic_analysis.pdf`, `causality.pdf`, `temporal_narrative.pdf`, `temporal_state.pdf` | none: screenshots of the web interface (`frontend/`) | — |
 
@@ -68,7 +70,8 @@ in the paper.
 | M `tab:simulation_configuration` | $S_0$ in `core/api.py` (`initial_input`); `S0.json` of each run of the illustrative case |
 | M `tab:agent_eval` | Queries in `benchmarks/case_study/rerun_case_study.py`; `q*/node_updates.json` of the two runs of the illustrative case |
 | M `tab:metrics` | Descriptive; `benchmarks/metrics/comparison_metrics.py` (metrics) |
-| M `tab:cdto_improvement_summary` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` |
+| M `tab:cdto_improvement_summary` (Table 7, complexity axis) | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv`, rows with `axis` = `complexity` (`cdto_vs_vanilla_summary.py`) |
+| M `tab:completeness_summary` (Table 8, completeness axis) | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv`, rows with `axis` = `completeness` (`cdto_vs_vanilla_summary.py`) |
 | S `supp:tab:iwo_params` | Optimiser code (third-party, not in this release) |
 | S `supp:tab:schema` | `input_agent/pn_models.py` (declared types) and `input_agent/src/dataset_generator_complexity.py` (value domains) |
 | S `supp:tab:metrics` | Constants of `benchmarks/metrics/comparison_metrics.py` |
@@ -135,7 +138,9 @@ With the same library versions (recorded in the manifest), the intervals are bit
 
 | Paper element | Command | Output |
 |---|---|---|
-| `tab:cdto_improvement_summary`, P-E vs vanilla (rows per model, axis and regime; per-model means; overall mean below the thresholds) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_{by_model_axis_regime,mean_per_model,overall}.csv` |
+| `tab:cdto_improvement_summary` (Table 7), P-E vs vanilla along the complexity axis (rows per model and regime) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv`, rows with `axis` = `complexity` |
+| `tab:completeness_summary` (Table 8), P-E vs vanilla along the completeness axis (rows per model) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` (the same run) | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv`, rows with `axis` = `completeness` |
+| Per-model and overall means of the differences below the thresholds, over both axes (complexity at C ≤ 32 and the completeness axis, weighted by the number of levels) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py` (the same run) | `benchmarks/results/cdto_vs_vanilla_{mean_per_model,overall}.csv` |
 | `tab:cdto_improvement_summary` with the earlier split at the cl100k C*_low (49) | `python benchmarks/metrics/cdto_vs_vanilla_summary.py --budget-safe-max-level 49 --output-suffix _cut49` | `…_cut49.csv` |
 | `\tokflat`, `\tokgrowth`, `\tokcross`: token cost along complexity (flatness of P-E, growth of vanilla, crossing level), per model and as macros | `python benchmarks/metrics/token_cost_summary.py`; `--exclude-zero-tokens` recomputes the means without the calls that logged no tokens | `benchmarks/results/token_cost_summary.csv` (`token_cost_summary_exclude_zero_tokens.csv`) |
 | Truncation at the output limit per level | `python benchmarks/metrics/output_truncation.py --axis completeness` (gpt-oss:20b and Llama 3.1, the default) and `python benchmarks/metrics/output_truncation.py --axis complexity --models claude-sonnet-4-6 gpt-5.4 gpt-oss_20b llama3.1_latest` | `benchmarks/results/truncation_<axis>_by_level.csv` |
@@ -155,16 +160,27 @@ The per-model C* markers of the complexity figures are constants in
 $models = "claude-sonnet-4-6", "gpt-oss_20b", "gpt-5.4", "llama3.1_latest"
 $labels = "Claude Sonnet 4.6", "gpt-oss-20b", "GPT 5.4", "Llama 3.1"
 foreach ($axis in "complexity", "completeness") {
-  # Per-cell intervals of every model
+  # Per-cell intervals of every model, six metrics (Supplementary Material C)
   python benchmarks/aggregator/plot_multi_model_uq.py --axis $axis --models $models --labels $labels
   # Paired P-E - vanilla deltas (architecture effect) and model effects against GPT-5.4
   python benchmarks/aggregator/plot_delta_uq.py --axis $axis --models $models --labels $labels `
     --reference-model gpt-5.4 --seed 42 --n-iter 10000 --run-tag rescored `
     --output-dir benchmarks/results/models/aggregated/delta_$axis
 }
+# Figures of the body: the panels of each research question
+python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models $models --labels $labels `
+  --panels tokens latency em --layout 1x3 `
+  --output benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf
+python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models $models --labels $labels `
+  --panels em f1 fn fp --layout 2x2 `
+  --output benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf
 ```
 
-- `plot_multi_model_uq.py` writes `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf`.
+- `plot_multi_model_uq.py` writes `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf`
+  without `--panels` (the six metrics, Supplementary Material C), and the file of `--output` with
+  them (`fig:cost_axis` and `fig:fidelity_axis`). `--panels` takes the metrics in order (`em`,
+  `f1`, `latency`, `tokens`, `fp` for the collateral rate, `fn` for the omission rate) and
+  `--layout` the grid as rows x columns.
 - `plot_delta_uq.py` writes `fig1_architecture_effect.pdf`, `fig2_model_effect_agentic.pdf` and
   `fig3_model_effect_vanilla.pdf` to `--output-dir`.
 - **Arguments.** The model order sets the colours and the bootstrap seed of each series.

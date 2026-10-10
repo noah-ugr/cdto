@@ -187,10 +187,17 @@ datasets.
 ```bash
 python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
 python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1"
+python benchmarks/aggregator/plot_multi_model_uq.py --axis complexity --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1" --panels tokens latency em --layout 1x3 --output benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf
+python benchmarks/aggregator/plot_multi_model_uq.py --axis completeness --models claude-sonnet-4-6 gpt-oss_20b gpt-5.4 llama3.1_latest --labels "Claude Sonnet 4.6" "gpt-oss-20b" "GPT 5.4" "Llama 3.1" --panels em f1 fn fp --layout 2x2 --output benchmarks/results/models/aggregated/multi_model_uq_completeness_rq3.pdf
 ```
 
-The order of the models sets the colours of the series. Output:
-`benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf`.
+The order of the models sets the colours of the series. The first two commands write the
+six-panel figures, `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf`
+(Supplementary Material C). The last two write the figures of the body, with the panels of each
+research question: `multi_model_uq_complexity_rq2.pdf` (tokens, latency and exact match) and
+`multi_model_uq_completeness_rq3.pdf` (exact match, F1, omission and collateral rates).
+`--panels` takes the metrics in order (`em`, `f1`, `latency`, `tokens`, `fp` for the collateral
+rate, `fn` for the omission rate) and `--layout` the grid as rows x columns.
 
 ### 6. Offline pass of the validator
 
@@ -249,9 +256,9 @@ redraws the execution plans from the recorded simulations.
 
 | Result in the manuscript | Script | Output | Needs |
 |---|---|---|---|
-| Table of the differences between P-E and the single-pass baseline | `cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` | git |
-| Figures of the results along the complexity and completeness axes | `plot_multi_model_uq.py` | `benchmarks/results/models/aggregated/multi_model_uq_<axis>_v2.pdf` | git |
-| Per-level means and intervals (note of the table of differences) | `per_level_tables.py` | `benchmarks/results/per_level/` | git |
+| Tables of the differences between P-E and the single-pass baseline, one per axis (complexity and completeness) | `cdto_vs_vanilla_summary.py` | `benchmarks/results/cdto_vs_vanilla_by_model_axis_regime.csv` (both tables) | git |
+| Figures of the results along the complexity and completeness axes | `plot_multi_model_uq.py` | Body: `benchmarks/results/models/aggregated/multi_model_uq_complexity_rq2.pdf` and `multi_model_uq_completeness_rq3.pdf`; Supplementary Material C: the six-panel `multi_model_uq_<axis>_v2.pdf` | git |
+| Per-level means and intervals (notes of the two tables of differences) | `per_level_tables.py` | `benchmarks/results/per_level/` | git |
 | Token cost along the complexity axis (flatness of P-E, growth of the baseline, crossing level) | `token_cost_summary.py` | `benchmarks/results/token_cost_summary.csv` | git |
 | Zero-token calls (footnote of Subsection 6.3) | `zero_token_calls.py` | `benchmarks/results/zero_token_calls_by_axis.csv` | Zenodo |
 | Supplementary table of the output-budget thresholds C* | `c_star_by_backend.py` | `benchmarks/results/c_star_by_backend.csv` | Zenodo |

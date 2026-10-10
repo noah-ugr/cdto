@@ -17,7 +17,8 @@ Sign convention:
 - For efficiency and error metrics (Latency, TotalTokens, CollateralRate,
   OmissionRate), negative means P-E is better.
 
-Produces three CSVs matching the three parts of table tab:cdto_improvement_summary:
+Produces three CSVs. The first feeds two tables: tab:cdto_improvement_summary
+(complexity axis) and tab:completeness_summary (completeness axis).
   - cdto_vs_vanilla_by_model_axis_regime.csv  (individual table rows)
   - cdto_vs_vanilla_mean_per_model.csv        (per-model budget-safe mean, weighted by n)
   - cdto_vs_vanilla_overall.csv               (overall budget-safe mean, weighted by n)
